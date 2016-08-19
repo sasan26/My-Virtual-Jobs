@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Virtual Jobs</title>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/styles/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/app/styles/styles.css">
+    <!-- endinject -->
+    <!-- External Font -->
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:900|Exo+2:900' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-app="jobApp">
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-http-auth/src/http-auth-interceptor.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/filepicker-js/filepicker.js"></script>
+    <script src="bower_components/angular-filepicker/dist/angular_filepicker.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <!-- endbower -->
+
+   <div ui-view></div> <!-- router -->
+
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/auth/auth.controller.js"></script>
+    <script src="/app/auth/auth.service.js"></script>
+    <script src="/app/partner/partner.controller.js"></script>
+    <script src="/app/partner/partner.service.js"></script>
+    <script src="/app/gamer/gamer.controller.js"></script>
+    <script src="/app/gamer/gamer.service.js"></script>
+    <!-- endinject -->
+</body>
+</html>

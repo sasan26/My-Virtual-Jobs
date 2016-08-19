@@ -1,0 +1,872 @@
+<div class="container-fluid gamer">
+    <!-- the page header -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well well-lg well-partner">
+                <table>
+                    <tr>
+                        <!-- pahe logo -->
+                        <td class="logo-partner">Partner Console</td>
+                        <!-- start button -->
+                        <td class="tdMenu7-partner">
+                            <a class="btn icon-btn menu-top-partner enable" ng-click=""><span class="glyphicon btn-glyphicon fa fa-check img-circle menu-top2-partner enable2"></span>Enable your business</a>
+                        </td>
+                        <!-- account info button -->
+                        <td class="tdMenu1-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                        </td>
+                        <!-- plan button -->
+                        <td class="tdMenu2-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=true; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-map-o img-circle menu-top2-partner"></span>Plan</a>
+                        </td>
+                        <!-- ads button -->
+                        <td class="tdMenu3-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=true; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
+                        </td>
+                        <!-- analyse button -->
+                        <td class="tdMenu5-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=false; analyse=true; payment=true"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
+                        </td>
+                        <!-- payment button -->
+                        <td class="tdMenu6-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                        </td>
+                        <!-- sign out button -->
+                        <td class="tdMenu4-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2-partner"></span>sign out</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- ./ End of the page header -->
+        <!-- Strat of partner user information -->
+        <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Account ************************************** -->
+        <div class="panel-group" ng-show="partnerInfo">
+            <div class="panel panel-info">
+                <div class="panel-heading">Account <span class="fa fa-user"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">Email:</td>
+                                <td class="result2">{{vm.username}}</td>
+                                <td class="result3"><button class="btn btn-warning ch-Email" ng-click="changeEmail=!changeEmail">change your Email</button></td>
+                            </tr>
+                            <tr>
+                                <td class="result">Password</td>
+                                <td class="result2">(hidden)</td>
+                                <td class="result3"><button class="btn btn-warning" ng-click="changePass=!changePass">change your Password</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-danger" ng-click="vm.deleteAccount()"> delete your account2</button>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of partner user information -->
+
+        <!-- Strat of partner plan -->
+        <!-- *************************************************************************************** -->
+        <!-- ******************************************* Plan ************************************** -->
+        <div class="panel-group" ng-show="plan">
+            <div class="panel panel-info">
+                <div class="panel-heading">Plan <span class="fa fa-map-o"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">Current Plan:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                      </div>
+                      <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">Change your plan</td>
+                            </tr>
+                            <tr>
+                                <td class="result5">Top Degrees For Getting Hired:</td>
+                                <td class="result4">
+                                  <!-- start of toggle buttons -->
+
+                                  <!-- diploma button -->
+                                  <a class="btn icon-btn plan-on" ng-show="diplomaOn" ng-click="diplomaOn=false; diplomaOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>diploma</a>
+
+                                  <a class="btn icon-btn off-btn" ng-hide="diplomaOff" ng-click="diplomaOn=true; diplomaOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>diploma</a>
+
+                                  <!-- associate button -->
+                                  <a class="btn icon-btn plan-on" ng-show="associateOn" ng-click="associateOn=false; associateOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>associate</a>
+
+                                  <a class="btn icon-btn off-btn" ng-hide="associateOff" ng-click="associateOn=true; associateOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>associate</a>
+
+                                  <!-- bachelor button -->
+                                  <a class="btn icon-btn plan-on" ng-show="bachelorOn" ng-click="bachelorOn=false; bachelorOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>bachelor</a>
+
+                                  <a class="btn icon-btn off-btn" ng-hide="bachelorOff" ng-click="bachelorOn=true; bachelorOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>bachelor</a>
+
+                                  <!-- master button -->
+                                  <a class="btn icon-btn plan-on" ng-show="masterOn" ng-click="masterOn=false; masterOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>master</a>
+
+                                  <a class="btn icon-btn off-btn" ng-hide="masterOff" ng-click="masterOn=true; masterOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>master</a>
+
+                                  <!-- doctoral button -->
+                                  <a class="btn icon-btn plan-on" ng-show="doctoralOn" ng-click="doctoralOn=false; doctoralOff= false; doctoralText='' "><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>doctoral</a>
+
+                                  <a class="btn icon-btn off-btn" ng-hide="doctoralOff" ng-click="doctoralOn=true; doctoralOff= true; doctoralText='doctoral' "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>doctoral</a>
+
+                                  <!-- ./ End of the toggle buttons -->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-warning">change</button>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of partner plan -->
+
+        <!-- Strat of partner video ads -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Ads ****************************************** -->
+        <div class="panel-group" ng-show="ads">
+            <div class="panel panel-info">
+                <div class="panel-heading">Ads <span class="fa fa-file-video-o"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                    <span class="fa fa-plus"></span>
+                    Add a new ad
+                        <table>
+                            <tr>
+                                <td class="result6">
+                                  <!-- upload button -->
+                                  <button type="button" class="btn btn-default" ng-click="vm.upload()">
+                                      Upload <span class="caret"></span>
+                                  </button>
+                                </td>
+
+                                <td class="result7">                                  
+                                  <!-- Show the thumbnail only when the picture is uploaded -->
+                                    <a href="{{vm.superhero.picture.url}}" class="thumbnail" ng-if="vm.superhero.picture">
+                                    <!-- the picture is rendered with width: 500 and sharpened -->
+                                    <img ng-src="{{vm.superhero.picture.url | fpConvert: {filter:'sharpen'} }}">
+                                    </a>
+                                    <input type="text" class="form-control" name="videoId" ng-model="vm.videoId" placeholder="youtube video id">
+                                    <button type="submit" class="btn btn-danger btn-block"  ng-click="vm.pic()" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture">Submit</button> 
+                                </td>
+                            </tr>
+                            <!-- select menu (job categories) -->
+                            <tr>
+                                <td class="result6">
+                                    
+                                      <ul class="nav2">
+                                        <li class="dropdown">
+      
+                                          <a class="btn icon-btn plan-on" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon btn-glyphicon fa fa-folder-open img-circle"></span>
+                                          Select a Category
+                                          <!-- down arrow -->
+                                          <span class="caret"></span></a>
+                                          <ul class="dropdown-menu">
+                                            <li><a ng-click="agri=!agri; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Agriculture and occupation</a></li>
+                                            <li><a ng-click="art=!art; agri=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Arts, audio/video technology</a></li>
+                                            <li><a ng-click="edu=!edu; art=false; agri=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Education</a></li>
+                                            <li><a ng-click="gov=!gov; art=false; edu=false; agri=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Government and public Administration</a></li>
+                                            <li><a ng-click="hos=!hos; art=false; edu=false; gov=false; agri=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Hospitality and Turism</a></li>
+                                            <li><a ng-click="inf=!inf; art=false; edu=false; gov=false; hos=false; agri=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Information Technology</a></li>
+                                            <li><a ng-click="man=!man; art=false; edu=false; gov=false; hos=false; inf=false; agri=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Manufacturing</a></li>
+                                            <li><a ng-click="sci=!sci; art=false; edu=false; gov=false; hos=false; inf=false; man=false; agri=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Science and Engineering</a></li>
+                                            <li><a ng-click="arc=!arc; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; agri=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Architecture and Construction</a></li>
+                                            <li><a ng-click="bus=!bus; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; agri=false; fin=false; hea=false; hum=false; law=false; mar=false; tra=false;">Business Management and Administration</a></li>
+                                            <li><a ng-click="fin=!fin; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; agri=false; hea=false; hum=false; law=false; mar=false; tra=false;">Finance</a></li>
+                                            <li><a ng-click="hea=!hea; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; agri=false; hum=false; law=false; mar=false; tra=false;">Health Science</a></li>
+                                            <li><a ng-click="hum=!hum; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; agri=false; law=false; mar=false; tra=false;">Human Service</a></li>
+                                            <li><a ng-click="law=!law; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; agri=false; mar=false; tra=false;">Law, Safety and Security</a></li>
+                                            <li><a ng-click="mar=!mar; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; agri=false; tra=false;">Marketing and Sales</a></li>
+                                            <li><a ng-click="tra=!tra; art=false; edu=false; gov=false; hos=false; inf=false; man=false; sci=false; arc=false; bus=false; fin=false; hea=false; hum=false; law=false; mar=false; agri=false;">Transportation and Logistics</a></li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                   <!-- /.navbar-collapse -->
+
+                                </td>
+
+                                <td class="result7">
+
+                                  <!-- *********************** -->
+                                  <!-- ********* Agri ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="agri">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Agriculture and occupation</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                        <option value="agr-dip-03-Agricultural Equipment Operators">Agricultural Equipment Operators</option>  
+                                        <option value="agr-dip-08-Agriculture Sciences Teacher, Postsecondary">Agriculture Sciences Teacher, Postsecondary</option>
+                                        <option value="agr-dip-08-Animal Scientist">Animal Scientist</option>
+                                        <option value="agr-dip-06-Farm Products Agent">Farm Products Agent</option>  
+                                        <option value="agr-dip-05-Mining Machine Operator">Mining Machine Operator</option>
+                                        <option value="agr-dip-04-Derrick Operator, oil and gas">Derrick Operator, oil and gas</option>
+                                        <option value="agr-dip-09-Environmental Engineer">Environmental Engineer</option>                        <option value="">Farm equipment Technician</option>
+                                        <option value="agr-dip-06-Farmworkers">Farmworkers</option> 
+                                        <option value="agr-dip-03-Fisher">Fisher</option>
+                                        <option value="agr-dip-04-Forest Technician">Forest Technician</option>
+                                        <option value="agr-dip-02-Hunter">Hunter</option>
+                                        <option value="agr-dip-05-Loading Machine Operator">Loading Machine Operator</option>
+                                        <option value="agr-dip-02-Meat and Fish Cutter">Meat and Fish Cutter</option>
+                                        <option value="agr-dip-02-Animal Caretaker">Animal Caretaker</option>
+                                        <option value="agr-dip-03-Pest Control">Pest Control</option>
+                                        <option value="agr-dip-06-Petroleum Pump Operator">Petroleum Pump Operator</option>
+                                        <option value="agr-dip-03-Tree Trimmer">Tree Trimmer</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">
+                                        <option value="agr-bac-04-Agriculture Inspector">Agriculture Inspector</option>
+                                        <option value="agr-bac-06-Cartographer">Cartographer</option>
+                                        <option value="agr-bac-04-Fallers">Fallers</option>
+                                        <option value="agr-bac-06-Fish Wardens">Fish Wardens</option>
+                                        <option value="agr-bac-08-Agricultural Engineer">Agricultural Engineer</option>
+      
+                                    </optgroup>
+                                    <optgroup label="Master">
+                                      <option value="agr-mas-05-Farm and home managment advisor">Farm and home managment advisor</option>
+                                      <option value="agr-mas-06-Zoologist">Zoologist</option>
+                                    </optgroup>
+                                  </select>
+                                  
+                                  <!-- ********************** -->
+                                  <!-- ********* Art ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="art">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Arts, audio/video technology</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="art-dip-04-Actor">Actor</option>
+                                      <option value="art-dip-04-Choreographer">Choreographer</option>
+                                      <option value="art-dip-03-Craft Artist">Craft Artist</option>
+                                      <option value="art-dip-03-Dancer">Dancer</option>
+                                      <option value="art-dip-05-mackeup Artist">Mackeup Artist</option>
+                                      <option value="art-dip-04-Photographer">Photographer</option>
+                                      <option value="art-dip-07-Writer( poet, lyricist )">Writer( poet, lyricist )</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">
+                                      <option value="art-ass-04-Audio and video equipment technician">Audio and video equipment technician</option>
+                                      <option value="art-ass-05-Camera Operator">Camera Operator</option>
+                                      <option value="art-ass-05-Music Arranger">Music Arranger</option>
+                                      <option value="art-ass-04-Singer">Singer</option>
+                                      <option value="art-ass-04-musician, instrumental">musician, instrumental</option>
+                                      <option value="art-ass-05-Sound Engineer">Sound Engineer</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">
+                                      <option value="art-bac-07-Broadcasting news analyst">Broadcasting news analyst</option>
+                                      <option value="art-bac-06-Commercial and industrial designer">Commercial and industrial designer</option>
+                                      <option value="art-bac-09-Director (tv, radio, stage)">Director (tv, radio, stage)</option>
+                                      <option value="art-bac-06-Film editor">Film editor</option>
+                                      <option value="art-bac-05-Painter Artist">Painter Artist</option>
+                                      <option value="art-bac-05-Graphic designer">Graphic designer</option>
+                                      <option value="art-bac-06-Animator">Animator</option>
+                                      <option value="art-bac-05-Music Composer">Music Composer</option>
+                                      <option value="art-bac-06-Producer">Producer</option>
+                                      <option value="art-bac-04-Radio or TV Announcer">Radio or TV Announcer</option>
+                                      <option value="art-bac-04-Reporter">Reporter</option>
+                                    </optgroup>
+                                    <optgroup label="Master">
+                                      <option value="art-mas-07-Art, Drama, music teacher">Art, Drama, music teacher</option>
+                                    </optgroup>
+                                  </select>
+                                  
+                                  <!-- **************************** -->
+                                  <!-- ********* Education ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="edu">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Education</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">
+                                      <option value="edu-ass-08-Fitness Coordinator">Fitness Coordinator</option>
+                                      <option value="edu-ass-03-Preschool Teacher">Preschool Teacher</option>
+                                      <option value="edu-ass-02-Teacher Assistant">Teacher Assistant</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">
+                                      <option value="edu-bac-05-Education Teacher, middle school">Education Teacher, middle school</option>
+                                      <option value="edu-bac-05-Education Teacher, secondary school">Education Teacher, secondary school</option>
+                                      <option value="edu-bac-03-Coach and Scout">Coach and Scout</option>
+                                      <option value="edu-bac-04-Elementary School Teacher">Elementary School Teacher</option>
+                                      <option value="edu-bac-04-Kindergarten Teacher">Kindergarten Teacher</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="edu-mas-04-Adult basic teacher">Adult basic teacher</option>
+                                      <option value="edu-mas-07-English language teacher">English language teacher</option>
+                                      <option value="edu-mas-06-Foreign language teacher">Foreign language teacher</option>
+                                      <option value="edu-mas-07-Economic Teacher">Economic Teacher</option>
+                                      <option value="edu-mas-06-Librarian">Librarian</option>
+                                    </optgroup>
+                                    <optgroup label="Doctoral">   
+                                      <option value="edu-doc-10-Earth, Marine and Space teacher">Earth, Marine and Space teacher</option>
+                                      <option value="edu-doc-09-Biological science teacher">Biological science teacher</option>
+                                      <option value="edu-doc-08-Chemistry teacher">Chemistry teacher</option>
+                                      <option value="edu-doc-07-Geography teacher">Geography teacher</option>
+                                      <option value="edu-doc-08-History teacher">History teacher</option>
+                                      <option value="edu-doc-07-Mathematical science teacher">Mathematical science teacher</option>
+                                      <option value="edu-doc-07-Philosophy teacher">Philosophy teacher</option>
+                                      <option value="edu-doc-09-Physics Teacher">Physics Teacher</option>
+                                      <option value="edu-doc-08-Political Science Teacher">Political Science Teacher</option>
+                                      <option value="edu-doc-07-Psychology Teacher">Psychology Teacher</option>
+                                      <option value="edu-doc-07-Social Work teacher">Social Work teacher</option>
+                                      <option value="edu-doc-07-Sociology Teacher">Sociology Teacher</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ***************************** -->
+                                  <!-- ********* Government ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="gov">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Government and public Administration</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="gov-dip-03-Court Clerk">Court Clerk</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">
+                                      <option value="gov-ass-04-Legislator">Legislator</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">
+                                      <option value="gov-bac-07-Climate Change Analyst">Climate Change Analyst</option>
+                                      <option value="gov-bac-07-Detective and Criminal Investigator">Detective and Criminal Investigator</option>
+                                      <option value="gov-bac-05-Tax Examiners and Collector">Tax Examiners and Collector</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ****************************** -->
+                                  <!-- ********* hospitality ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="hos">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Hospitality and Turism</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="hos-dip-02-Baggage Porters and Bellhops">Baggage Porters and Bellhops</option>
+                                      <option value="hos-dip-02-barista">barista</option>
+                                      <option value="hos-dip-02-Counter Attendant">Counter Attendant</option>
+                                      <option value="hos-dip-02-Dishwasher">Dishwasher</option>
+                                      <option value="hos-dip-02-Food Server">Food Server</option>
+                                      <option value="hos-dip-02-Mai and Housekeeping">Mai and Housekeeping</option>
+                                      <option value="hos-dip-03-baker">baker</option>
+                                      <option value="hos-dip-04-bartender">bartender</option>
+                                      <option value="hos-dip-03-Travel Agent">Travel Agent</option>
+                                      <option value="hos-dip-02-Waiter and Waitres">Waiter and Waitres</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ********************* -->
+                                  <!-- ********* IT ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="inf">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Information Technology</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">
+                                      <option value="inf-bac-05-Computer Network Specialist">Computer Network Specialist</option>
+                                      <option value="inf-bac-08-Computer System Analyst">Computer System Analyst</option>
+                                      <option value="inf-bac-10-Computer Engineer">Computer Engineer</option>
+                                      <option value="inf-bac-08-Database Architect">Database Architect</option>
+                                      <option value="inf-bac-08-Information Security Analyst">Information Security Analyst</option>
+                                      <option value="inf-bac-11-IT project manager">IT project manager</option>
+                                      <option value="inf-bac-09-Software Developer">Software Developer</option>
+                                      <option value="inf-bac-05-VideoGame Designer">VideoGame Designer</option>
+                                      <option value="inf-bac-08-Web developer">Web developer</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="inf-mas-10-Computer and Information Scientist">Computer and Information Scientist</option>
+                                      <option value="inf-mas-08-Computer Network Architect">Computer Network Architect</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ******************************** -->
+                                  <!-- ********* Manufacturing ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="man">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Manufacturing</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="man-dip-05-Aircraft Structure">Aircraft Structure</option>
+                                      <option value="man-dip-05-Chemical Plant and system Operator">Chemical Plant and system Operator</option>
+                                      <option value="man-dip-03-Cooling and Freezing Equipment Operator">Cooling and Freezing Equipment Operator</option>
+                                      <option value="man-dip-04-Jeweler">Jeweler</option>
+                                      <option value="man-dip-04-Machinist">Machinist</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">  
+                                      <option value="man-ass-04-Computer repairer">Computer repairer</option>
+                                      <option value="man-ass-05-Industrial Engineering Technician">Industrial Engineering Technician</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="man-bac-08-Nuclear Power Reactor Operator">Nuclear Power Reactor Operator</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ************************** -->
+                                  <!-- ********* Science ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="sci">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Science and Engineering</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">
+                                      <option value="sci-ass-06-Electrical Technician">Electrical Technician</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="sci-bac-10-Aerospace Engineer">Aerospace Engineer</option>
+                                      <option value="sci-bac-08-Automotive Engineer">Automotive Engineer</option>
+                                      <option value="sci-bac-08-Biochemical Engineer">Biochemical Engineer</option>
+                                      <option value="sci-bac-10-Chemical Engineer">Chemical Engineer</option>
+                                      <option value="sci-bac-07-Chemist">Chemist</option>
+                                      <option value="sci-bac-05-Civil Drafter">Civil Drafter</option>
+                                      <option value="sci-bac-06-Electrical Engineer">Electrical Engineer</option>
+                                      <option value="sci-bac-09-Energy Engineer">Energy Engineer</option>
+                                      <option value="sci-bac-06-Historian">Historian</option>
+                                      <option value="sci-bac-08-Marine Architect">Marine Architect</option>
+                                      <option value="sci-bac-09-Nanosystem Engineer">Nanosystem Engineer</option>
+                                      <option value="sci-bac-10-Nuclear Engineer">Nuclear Engineer</option>
+                                      <option value="sci-bac-13-Petroleum Engineer">Petroleum Engineer</option>
+                                      <option value="sci-bac-09-Robotic Engineer">Robotic Engineer</option>
+                                      <option value="sci-bac-09-Solar Engineer">Solar Engineer</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="sci-mas-07-Geographer">Geographer</option>
+                                    </optgroup>
+                                    <optgroup label="Doctoral">  
+                                      <option value="sci-doc-10-Mathematician">Mathematician</option>
+                                      <option value="sci-doc-10-Microbiologist">Microbiologist</option>
+                                      <option value="sci-doc-12-physicist">physicist</option>                                      
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- **************************** -->
+                                  <!-- ********* Architect ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="arc">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="selected">Architecture and Construction</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">  
+                                      <option value="arc-dip-07-Elevator Installer and Repairer">Elevator Installer and Repairer</option>
+                                      <option value="arc-dip-04-Heating and air conditioning Mechanic">Heating and air conditioning Mechanic</option>
+                                      <option value="arc-dip-05-Plumber">Plumber</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="arc-bac-08-Civil Engineer">Civil Engineer</option>
+                                      <option value="arc-bac-05-Interior Designer">Interior Designer</option>
+                                    </optgroup>
+                                    <optgroup label="Master">
+                                      <option value="arc-mas-05-Archeologist">Archeologist</option>  
+                                      <option value="arc-mas-08-Architect, Except Landscape and Naval">Architect, Except Landscape and Naval</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- *************************** -->
+                                  <!-- ********* Admin *********** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="bus">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Business Management and Administration</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="bus-dip-03-Data Entry Keyers">Data Entry Keyers</option>
+                                      <option value="bus-dip-03-Telephone Operator">Telephone Operator</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">  
+                                      <option value="bus-ass-04-Computer Operator">Computer Operator</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="bus-bac-07-Accountant">Accountant</option>
+                                      <option value="bus-bac-09-Administrative Service Manager">Administrative Service Manager</option>
+                                      <option value="bus-bac-10-Advertising and Promotion Manager">Advertising and Promotion Manager</option>
+                                      <option value="bus-bac-09-Agent of Artists, Athletes and Performers">Agent of Artists, Athletes and Performers</option>
+                                      <option value="bus-bac-12-Financial Manager">Financial Manager</option>
+                                      <option value="bus-bac-12-Marketing Manager">Marketing Manager</option>
+                                      <option value="bus-bac-11-Sales Manager">Sales Manager</option>
+                                      <option value="bus-bac-04-Spa Manager">Spa Manager</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="bus-mas-08-Operation Research Analyst">Operation Research Analyst</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ************************** -->
+                                  <!-- ********* Finance ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="fin">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Finance</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="fin-dip-03-Bill and Account Collector">Bill and Account Collector</option>
+                                      <option value="fin-dip-04-Tax Preparer">Tax Preparer</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="fin-bac-10-Actuaries">Actuaries</option>
+                                      <option value="fin-bac-07-Credit Analyst">Credit Analyst</option>
+                                      <option value="fin-bac-03-Credit Authorizer">Credit Authorizer</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ************************* -->
+                                  <!-- ********* Health ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="hea">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Health Science</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="hea-dip-03-Dental Assistant">Dental Assistant</option>
+                                      <option value="hea-dip-03-Medical Assistant">Medical Assistant</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">  
+                                      <option value="hea-ass-07-Dental Hygienist">Dental Hygienist</option>
+                                      <option value="hea-ass-04-medical technician">medical technician</option>
+                                      <option value="hea-ass-08-Radiation Therapist">Radiation Therapist</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="hea-bac-04-Athletic Trainer">Athletic Trainer</option>
+                                      <option value="hea-bac-03-Patient Representative">Patient Representative</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="hea-mas-08-Acupuncturist">Acupuncturist</option>
+                                      <option value="hea-mas-04-Mental Health Technician">Mental Health Technician</option>
+                                      <option value="hea-mas-08-Physical Therapist">Physical Therapist</option>
+                                    </optgroup>
+                                    <optgroup label="Doctoral">  
+                                      <option value="hea-doc-22-Anesthesiologist">Anesthesiologist</option>
+                                      <option value="hea-doc-08-Chiropractors">Chiropractors</option>
+                                      <option value="hea-doc-16-Dentist">Dentist</option>
+                                      <option value="hea-doc-19-Dermatologist">Dermatologist</option>
+                                      <option value="hea-doc-19-Nuclear Medicine Technologist">Nuclear Medicine Technologist</option>
+                                      <option value="hea-doc-07-Occupational Therapist">Occupational Therapist</option>
+                                      <option value="hea-doc-22-Oral Surgeon">Oral Surgeon</option>
+                                      <option value="hea-doc-20-Orthodontist">Orthodontist</option>
+                                      <option value="hea-doc-23-Surgeon">Surgeon</option>
+                                      <option value="hea-doc-19-Urologist">Urologist</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ************************ -->
+                                  <!-- ********* Human ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="hum">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Human Service</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="hum-dip-03-barber">barber</option>
+                                      <option value="hum-dip-02-childcare workers">childcare workers</option>
+                                      <option value="hum-dip-02-Funeral Attendants">Funeral Attendants</option>
+                                      <option value="hum-dip-02-Laundry Worker">Laundry Worker</option>
+                                      <option value="hum-dip-02-Nanny">Nanny</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="hum-bac-05-Clergy">Clergy</option>
+                                      <option value="hum-bac-04-Fitness an Aerobic Instructor">Fitness an Aerobic Instructor</option>
+                                      <option value="Shum-bac-03-social and Human Service Assistant">Social and Human Service Assistant</option>
+                                    </optgroup>
+                                    <optgroup label="Master">  
+                                      <option value="hum-mas-04-Director, Religious Activity and Education">Director, Religious Activity and Education</option>
+                                      <option value="hum-mas-04-Marriage and Family Therapist">Marriage and Family Therapist</option>
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ********************** -->
+                                  <!-- ********* Law ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="law">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Law, Safety and Security</option>
+                                    </optgroup>                                    
+                                    <optgroup label="Diploma">  
+                                      <option value="law-dip-04-Bailiffs">Bailiffs</option>
+                                      <option value="law-dip-03-Officers and jailers">Officers and jailers</option>
+                                      <option value="law-dip-07-Criminal Investigator">Criminal Investigator</option>
+                                      <option value="law-dip-05-Police, Fire and Ambulance Dispatcher">Police, Fire and Ambulance Dispatcher</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">  
+                                      <option value="law-ass-06-Fire Inspector">Fire Inspector</option>
+                                      <option value="law-ass-03-Emmergency Medical Technician">Emmergency Medical Technician</option>
+                                      <option value="law-ass-03-Firefighter">Firefighter</option>
+                                      <option value="law-ass-03-Forest Firefighter">Forest Firefighter</option>
+                                      <option value="law-ass-05-Polic and Sheriff's Patrol Officer">Polic and Sheriff's Patrol Officer</option>
+                                    </optgroup>
+                                    <optgroup label="Doctoral">  
+                                      <option value="law-doc-14-Lawyer">Lawyer</option>                                     
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- **************************** -->
+                                  <!-- ********* Marketing ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="mar">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Marketing and Sales</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">
+                                      <option value="mar-dip-02-Cashier">Cashier</option>
+                                      <option value="mar-dip-05-Models">Models</option>
+                                      <option value="mar-dip-03-Customer Service Representative">Customer Service Representative</option>
+                                      <option value="mar-dip-05-Real Estate Sales Agent">Real Estate Sales Agent</option>
+                                      <option value="mar-dip-02-Stock Clerks">Stock Clerks</option>
+                                    </optgroup>
+                                    <optgroup label="Associate">  
+                                      <option value="mar-ass-07-Fashion Designer">Fashion Designer</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="mar-bac-06-Appraiser, Real Estate">Appraiser, Real Estate</option>                                      
+                                    </optgroup>
+                                  </select>
+
+                                  <!-- ********************************* -->
+                                  <!-- ********* Transportation ******** -->
+                                  <select name="category" id="category" ng-model="vm.job" class="select-category" ng-show="tra">
+                                    <optgroup>
+                                        <option disabled="disabled" selected="">Transportation and Logistics</option>
+                                    </optgroup>
+                                    <optgroup label="Diploma">  
+                                      <option value="tra-dip-08-Air Traffic Controller">Air Traffic Controller</option>
+                                      <option value="tra-dip-05-Aircraft Technician">Aircraft Technician</option>
+                                      <option value="tra-dip-02-Ambulance Driver">Ambulance Driver</option>
+                                      <option value="tra-dip-03-Bus Drivers">Bus Drivers</option>
+                                      <option value="tra-dip-04-Truck Driver">Truck Driver</option>
+                                    </optgroup>
+                                    <optgroup label="Bachelor">  
+                                      <option value="tra-bac-12-Pilots">Pilots</option>
+                                      <option value="tra-bac-07-Ship Captain">Ship Captain</option>
+                                      <option value="tra-bac-07-Logistician">Logistician</option>
+                                      <option value="tra-bac-09-Transportation Manager">Transportation Manager</option>                                     
+                                    </optgroup>
+                                  </select>
+                               </td>
+                            </tr>
+                        </table>
+
+                  <a class="btn icon-btn plan-on"><span class="glyphicon btn-glyphicon fa fa-upload img-circle"></span>upload</a>
+
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">Your ads: </td>
+                            </tr>
+                            <tr >
+                            <td class="result">
+                                <div class="row"> <!-- print the image ads from the server -->
+                                    <div class="col-md-4" ng-repeat="data in vm.superheroes | filter:vm.username">
+                                        <a class="close fa fa-trash-o" aria-label="close"></a>
+                                        <div class="alert alert-warning pic-alert">
+                                          <div class="job-details">
+                                            <h5>{{data.job.slice(11, 100)}}</h5>
+                                            <h6>{{data.job.slice(8, 10)}}
+                                            <img src="../../img/coin.png" class="ad-details"> /min</h6>
+                                          </div>
+                                          <img class="pic-ad" src="{{data.picurl}}">
+                                          <iframe class="ad-video" type="text/html" width="250" height="150" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe><br></div>
+                                    </div>
+                                </div>    
+                            </td>
+                            </tr>
+
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of partner user ad -->
+
+        <!-- Strat of the ad analyse -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Analyse ************************************** -->
+        <div class="panel-group" ng-show="analyse">
+            <div class="panel panel-info">
+                <div class="panel-heading">Analyse <span class="fa fa-line-chart"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td>
+                                  <table class="table table-hover">
+                                    <tr>
+                                      <td class="result9">#</td>
+                                      <td class="result9">ad-Id</td>
+                                      <td class="result9"># of views</td>
+                                      <td class="result9">total paid</td>
+                                      <td class="result9">status</td>
+                                    </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td>
+                                  <table class="table table-hover">
+                                    <tr>
+                                      <td class="result9">#</td>
+                                      <td class="result9">employee-Id</td>
+                                      <td class="result9">total paid</td>
+                                      <td class="result9">employye-Degree</td>
+                                      <td class="result10">
+                                        <span class=" fa fa-exclamation-triangle"></span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="result9"></td>
+                                      <td class="result9"></td>
+                                      <td class="result9"></td>
+                                      <td class="result9"></td>
+                                      <td class="result11">
+                                        <button class="btn btn-danger btn-sm">fire</button>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of the analyse -->
+        
+        <!-- Strat of the payments -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Payment ************************************** -->
+        <div class="panel-group" ng-hide="payment">
+            <div class="panel panel-info">
+                <div class="panel-heading">Payment <span class="fa fa-credit-card"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                    Your payment method:
+                                </td>
+                                <td class="result9">none</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Add a payment method
+                                  <br><br>
+                                  <img src="../../img/credit-card-icons.png" class="payment-logo">
+                                  <div class="form-group">
+                                    <label class="payment-label">Credit Card Number</label>
+                                    <input type="text" placeholder="credit card number" class="form-control payment-input" required>
+                                    <label class="payment-label">Cardholder Name</label>
+                                    <input type="text" placeholder="cardholder name" class="form-control payment-input" required>
+                                    <label class="payment-label">CVC</label>
+                                    <input type="number" placeholder="CVC" class="form-control payment-cvc" required>
+                                    <label class="payment-label">Expiration Date</label>
+                                    <input type="date" placeholder="MM/YYYY" class="form-control payment-date" required>
+                                    <button class="btn btn-success plan-on">Register My Card</button>
+                                  </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                    Payment History
+                                    <br><br>
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <td class="result9">#</td>
+                                            <td class="result9">date</td>
+                                            <td class="result9">amount $</td>
+                                        </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Video Ad Payment Method
+                                  <br><br>
+                                  <table class="table table-hover">
+                                      <tr>
+                                          <td class="result9">#</td>
+                                          <td class="result9">date</td>
+                                          <td class="result9">amount $</td>
+                                          <td class="result9">user-Id</td>
+                                      </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Ballance:
+                                  <br><br>
+                                  <input type="text" disabled="disabled" class="form-inline balance result9" value= "0 Coins">
+                                  <a class="btn icon-btn btn-plus"><span class="glyphicon btn-glyphicon fa fa-plus img-circle"></span>Add More Coins</a>
+                                  <img src="../../img/coin.png" class="coin">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of the payments -->
+        </div>
+        <!-- ./ End of the panel group -->
+
+        <!-- Strat of partner user Change Email -->
+        <div class="panel-group" ng-show="changeEmail">
+            <div class="panel panel-info panel-chEmail">
+                <div class="panel-heading">Change your Email Address <span class="fa fa-user"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-success">
+                        <table>
+                            <tr>
+                                <td class="result">New Email:</td>
+                                <td><input type="text" class="form-control" placeholder="your new email . . ."></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-success">change</button>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of partner user change Email -->
+
+        <!-- Strat of partner user Change Password -->
+        <div class="panel-group" ng-show="changePass">
+            <div class="panel panel-info panel-chEmail">
+                <div class="panel-heading">Change your password <span class="fa fa-key"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-success">
+                        <table>
+                            <tr>
+                                <td class="result">current password</td>
+                                <td><input type="text" class="form-control" placeholder="your old password . . ."></td>
+                            </tr>
+                            <tr>
+                                <td class="result">new password</td>
+                                <td><input type="text" class="form-control" placeholder="your new password . . ."></td>
+                            </tr>
+                            <tr>
+                                <td class="result">new password confirmation</td>
+                                <td><input type="text" class="form-control" placeholder="your new password confirmation. . ."></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-success">change</button>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of partner user change password -->
+
+
+    </div>
+    <!-- /. row -->
+</div>

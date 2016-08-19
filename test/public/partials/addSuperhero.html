@@ -1,0 +1,35 @@
+<div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">
+                <span class="glyphicon glyphicon-user"></span>Upload image 
+            </h2>
+        </div>
+        <div class="panel-body">
+            <!-- The form to add superheroes information -->
+            <form name ="addForm" novalidate>
+                
+                
+                <div class="form-group">
+                    <label for="picture">Main picture</label>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-default" ng-click="upload()">
+                            Upload <span class="caret"></span>
+                        </button>
+                        <div style="margin-top:10px;">
+                            <!-- Show the thumbnail only when the picture is uploaded -->
+                            <a href="{{superhero.picture.url}}" class="thumbnail" ng-if="superhero.picture">
+                            <!-- the picture is rendered with width: 500 and sharpened -->
+                            <img ng-src="{{superhero.picture.url | fpConvert: {filter:'sharpen'} }}">
+                            </a>
+                        </div>                  
+                    </div>
+                </div>
+
+                
+                <hr />              
+                <button type="submit" class="btn btn-danger btn-block"  ng-click="createSuperhero()" ng-disabled="superhero.$invalid || !superhero.picture">Submit</button>             
+            </form>
+        </div>
+    </div>
+</div>

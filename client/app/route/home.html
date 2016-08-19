@@ -1,0 +1,145 @@
+
+<div class="container text-center">
+  <div class="row content">    
+    <div class="col-sm-12">
+
+<!-- ************************************************************************************ -->
+      <div class="alert alert-success login">
+        <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
+        <span class="title">My Virtual Jobs</span>
+        <hr>
+        <!-- user buttons -->
+        <button type="button" class="btn btn-default btntop gamer-on glyphicon glyphicon-user
+" ng-click = " gamer=!gamer; partner=false "><span class="t-btn">Gamer User</span></button>
+
+        <button type="button" class="btn btn-default btntop partner-on glyphicon glyphicon-user
+" ng-click = " partner=!partner; gamer=false "><span class="t-btn2">Partner User</span></button>
+        <!-- gamer form *************************************************************** -->
+        <div class="user-form-gamer" ng-show="gamer">
+          <!-- SIGN IN / UP toggle buttons -->
+          <hr>
+          <div class="toggle-btn">
+            <!-- sign in toggle buttons -->
+            <a class="btn icon-btn gamer-on" href="#" ng-show="SignInOn" ng-click=" SignInOn = false; SignInOff = false; SignUpOn=false; SignUpOff=false; SignUpForm=false; SignInForm=false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle gamer-on"></span>Sign in</a>
+
+            <a class="btn icon-btn off-btn" href="#" ng-hide="SignInOff" ng-click=" SignInOff = true; SignInOn = true; SignUpOn=true; SignUpOff=true; SignUpForm=true; SignInForm=true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Sign in</a>
+
+            <!-- sign up toggle buttons -->
+             <a class="btn icon-btn gamer-on" href="#" ng-hide="SignUpOn" ng-click=" SignUpOff = true; SignUpOn = true; SignInOn=true; SignInOff=true; SignUpForm=true; SignInForm=true"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle gamer-on"></span>Sign up</a>
+
+            <a class="btn icon-btn off-btn" href="#" ng-show="SignUpOff" ng-click=" SignUpOn = false; SignUpOff = false; SignInOn=false; SignInOff=false; SignUpForm=false; SignInForm=false"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Sign up</a>            
+          </div> <!-- ./ End of the toggle buttons -->
+
+            <!-- GAMER SIGN UP Form-->          
+            <form role="form" ng-hide="SignUpForm">
+              <div class="col-sm-6 social-btn">
+                <button class="btn btn-social btn-facebook social">
+                <span class="fa fa-facebook"></span>
+                Sign Up with Facebook</button>
+                <button class="btn btn-social btn-twitter social">
+                <span class="fa fa-twitter"></span>
+                Sign Up with Twitter</button>
+                <button class="btn btn-social btn-google social">
+                <span class="fa fa-google"></span>
+                Sign Up with Google+</button>
+              </div> 
+              <div class="col-sm-6 alert alert-info">
+                <div class="form-group">
+
+                  <label for="email">Sign Up</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" name="username" ng-model="vm.registerForm.username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" ng-model="vm.registerForm.password">
+                  <input type="hidden" ng-model="vm.registerForm.usertype">
+                </div>
+                <button class="btn btn-info btn-block" ng-click="vm.registerForm.usertype='gamer'; vm.register(vm.registerForm)">Sign Up as a Gamer User</button>
+              </div>               
+            </form> <!-- ./ End of the SIGN IN Form -->
+
+            <!--GAMER SIGN IN Form-->
+            <form role="form" ng-show="SignInForm">
+              <div class="col-sm-6 social-btn">
+                <button class="btn btn-social btn-facebook social">
+                <span class="fa fa-facebook"></span>
+                Sign In with Facebook</button>
+                <button class="btn btn-social btn-twitter social">
+                <span class="fa fa-twitter"></span>
+                Sign In with Twitter</button>
+                <button class="btn btn-social btn-google social">
+                <span class="fa fa-google"></span>
+                Sign In with Google+</button>
+              </div> 
+              <div class="col-sm-6 alert alert-info">
+                <div class="form-group">
+
+                  <label for="email">Sign In</label>
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" name="username" ng-model="vm.loginForm.username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" ng-model="vm.loginForm.password">
+                  <input type="hidden" ng-model="vm.loginForm.usertype">
+                </div>
+                <button class="btn btn-info btn-block" ng-click="vm.loginForm.usertype='gamer'; vm.login(vm.loginForm)">Sign In as a Gamer User</button>
+              </div>               
+            </form><!-- ./ End of the SIGN UP Form -->
+          
+        </div><!-- ./ End of the gamer form -->
+        <!-- ************************************************************************** -->
+        <!-- ***************            partner form                   **************** -->
+        <!-- ************************************************************************** -->
+        <div class="user-form-partner" ng-show="partner">
+          
+          <hr>
+          <div class="toggle-btn">
+            <!-- sign in toggle buttons -->
+            <a class="btn icon-btn partner-on" href="#" ng-show="SignInOn" ng-click=" SignInOn = false; SignInOff = false; SignUpOn=false; SignUpOff=false; SignUpFormP=false; SignInFormP=false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle partner-on"></span>Sign in</a>
+
+            <a class="btn icon-btn off-btn" href="#" ng-hide="SignInOff" ng-click=" SignInOff = true; SignInOn = true; SignUpOn=true; SignUpOff=true; SignUpFormP=true; SignInFormP=true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Sign in</a>
+
+            <!-- sign up toggle buttons -->
+             <a class="btn icon-btn partner-on" href="#" ng-hide="SignUpOn" ng-click=" SignUpOff = true; SignUpOn = true; SignInOn=true; SignInOff=true; SignUpFormP=true; SignInFormP=true"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle partner-on"></span>Sign up</a>
+
+            <a class="btn icon-btn off-btn" href="#" ng-show="SignUpOff" ng-click=" SignUpOn = false; SignUpOff = false; SignInOn=false; SignInOff=false; SignUpFormP=false; SignInFormP=false"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Sign up</a>            
+          </div> <!-- ./ End of the toggle buttons -->
+
+
+          <!-- SIGN UP -->
+          <div class="alert alert-warning PartnerForm" ng-hide="SignUpFormP">
+            <form role="form">
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address ..." name="username" ng-model="vm.registerForm.username">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Password ..." name="password" ng-model="vm.registerForm.password">
+                <input type="hidden" ng-model="vm.registerForm.usertype">
+              </div>
+              <button class="btn btn-warning btn-block" ng-click="vm.registerForm.usertype='partner'; vm.register(vm.registerForm)">Sign Up as a Partner User</button>
+            </form>
+          </div>
+
+          <!-- SIGN IN -->
+          <div class="alert alert-warning PartnerForm" ng-show="SignInFormP">
+            <form role="form">
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address ..." placeholder="Email Address" name="username" ng-model="vm.loginForm.username">
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Password ..." placeholder="Email Address" name="password" ng-model="vm.loginForm.password">
+                <input type="hidden" ng-model="vm.loginForm.usertype">
+              </div>
+              <button class="btn btn-warning btn-block" ng-click="vm.loginForm.usertype='partner'; vm.login(vm.loginForm)">Sign In as a Partner User</button>
+            </form>
+          </div>
+        </div><!-- ./ End of the partner form -->
+      </div><!-- ./ End of alert-->
+<!-- ***************************************************************** -->
+      <!-- background Map -->
+      <img src="../../img/background.png" class="background">
+    </div><!-- ./ End of col-->
+  </div><!-- ./ End of row-->
+</div><!-- ./ End of Container-->

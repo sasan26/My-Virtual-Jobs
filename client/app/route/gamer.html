@@ -1,0 +1,3124 @@
+<div class="container-fluid gamer">	
+	<!-- the page header -->
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="well well-lg">
+      
+				<table>
+					<tr>
+						<td class="logo">My Virtual Jobs</td>
+						<td class="tdMenu1">
+						<a class="btn icon-btn menu-top" ng-click="map=false; profile=false; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; "><span class="glyphicon btn-glyphicon glyphicon-phone img-circle menu-top2"></span>game console</a>
+						</td>
+						<td class="tdMenu2">
+							<a class="btn icon-btn menu-top" ng-click="vm.profile(); map=true; profile=true; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false;"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle menu-top2"></span>profile</a>
+						</td>
+						<td class="tdMenu3">
+							<a class="btn icon-btn menu-top" ng-click="map=true; profile=false; help=true; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; ""><span class="glyphicon btn-glyphicon glyphicon-question-sign img-circle menu-top2"></span>help</a>
+						</td>
+						<td class="tdMenu4">
+							<a class="btn icon-btn menu-top" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2"></span>sign out</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div> <!-- ./ End of the page header -->
+  <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
+</div>
+<div class="container gamer" ng-hide="map">	
+
+	<div class="row">
+		<div class="col-sm-12">
+			<!-- background image / MAP -->
+			<img src="../../img/back-gamer.png" class="background">
+
+			<!-- *************************** building icons ************************************** -->
+			<a ng-click="map=true; admin=!admin">
+				<img src="../../img/building/admin.png" alt="admin building" class="admin building-icon">
+			</a>
+
+			<a ng-click="map=true; agri=!agri">
+				<img src="../../img/building/agri.png" alt="" class="agri building-icon">
+			</a>
+
+			<a ng-click="map=true; architect=!architect">
+				<img src="../../img/building/architect.png" alt="" class="architect building-icon">
+			</a>
+
+			<a ng-click="map=true; education=!education">
+				<img src="../../img/building/education.png" alt="" class="education building-icon">
+			</a>
+
+			<a ng-click="map=true; finance=!finace">
+				<img src="../../img/building/finance.png" alt="" class="finance building-icon">
+			</a>
+
+			<a ng-click="map=true; science=!science">
+				<img src="../../img/building/science.png" alt="" class="science building-icon">
+			</a>
+
+			<a ng-click="map=true; transportation=!transportation">
+				<img src="../../img/building/transportation.png" alt="" class="transportation building-icon">
+			</a>
+
+			<a ng-click="map=true; school=!school">
+				<img src="../../img/building/school.png" alt="" class="school building-icon">
+			</a>
+
+			<a ng-click="map=true; it=!it">
+				<img src="../../img/building/it.png" alt="" class="it building-icon">
+			</a>
+
+			<a ng-click="map=true; marketing=!marketing">
+				<img src="../../img/building/marketing.png" alt="" class="marketing building-icon">
+			</a>
+
+			<a ng-click="map=true; government=!goverbment">
+				<img src="../../img/building/government.png" alt="" class="government building-icon">
+			</a>
+
+			<a ng-click="map=true; law=!law">
+				<img src="../../img/building/law.png" alt="" class="law building-icon">
+			</a>
+
+			<a ng-click="map=true; manufacture=!manufacture">
+				<img src="../../img/building/manufacture.png" alt="" class="manufacture building-icon">
+			</a>
+
+			<a ng-click="map=true; health=!health">
+				<img src="../../img/building/health.png" alt="" class="health building-icon">
+			</a>
+
+			<a ng-click="map=true; human=!human">
+				<img src="../../img/building/human.png" alt="" class="human building-icon">
+			</a>
+
+			<a ng-click="map=true; hospitality=!hospitality">
+				<img src="../../img/building/hospitality.png" alt="" class="hospitality building-icon">
+			</a>
+
+			<a ng-click="map=true; art=!art">
+				<img src="../../img/building/art.png" alt="" class="art building-icon">
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- ******************************************* profile ******************************************* -->
+<div class="alert alert-success building-back" ng-show="profile">
+  <a class="close" aria-label="close" ng-click="map=false; profile=!profile">&times;</a>
+  <!-- title -->
+  <div  class="building-title">profile</div>
+
+  <!-- Strat of the Gamer user information -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Account ************************************** -->
+        <div class="panel-group">
+            <div class="panel panel-info panel2">
+                <div class="panel-heading">Account <span class="fa fa-user"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">Email:</td>
+                                <td class="result2 data-result">{{vm.username}}
+                                <td class="result3"><button class="btn btn-warning ch-Email" ng-click="changeEmail=!changeEmail">change your Email</button></td>
+                            </tr>
+                            <tr>
+                                <td class="result">Password</td>
+                                <td class="result2 data-result">(hidden)</td>
+                                <td class="result3"><button class="btn btn-warning" ng-click="changePass=!changePass">change your Password</button></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-danger"> delete your account</button>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of the Gamer user information -->
+
+        <!-- Strat of the payments -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** Payment ************************************** -->
+        <div class="panel-group">
+            <div class="panel panel-info panel2">
+                <div class="panel-heading">Payment <span class="fa fa-credit-card"></span></div>
+                  <div class="panel-body">
+
+                    <!-- =========== your payment method ============== -->
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                    Your payment method:
+                                </td>
+                                <td class="result9">none</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- =========== add a payment ============== -->
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Add a payment method
+                                  <br><br>
+                                  <img src="../../img/credit-card-icons.png" class="payment-logo">
+                                  <div class="form-group">
+                                    <label class="payment-label">Credit Card Number</label>
+                                    <input type="text" placeholder="credit card number" class="form-control payment-input" required>
+                                    <label class="payment-label">Cardholder Name</label>
+                                    <input type="text" placeholder="cardholder name" class="form-control payment-input" required>
+                                    <label class="payment-label">CVC</label>
+                                    <input type="number" placeholder="CVC" class="form-control payment-cvc" required>
+                                    <label class="payment-label">Expiration Date</label>
+                                    <input type="date" placeholder="MM/YYYY" class="form-control payment-date" required>
+                                    <button class="btn btn-success plan-on">Register My Card</button>
+                                  </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- =========== payment history ============== -->
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                    Payment History
+                                    <br><br>
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <td class="result9">#</td>
+                                            <td class="result9">date</td>
+                                            <td class="result9">amount $</td>
+                                        </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- =========== income history ============== -->
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Income History
+                                  <br><br>
+                                  <table class="table table-hover">
+                                      <tr>
+                                          <td class="result9">#</td>
+                                          <td class="result9">date</td>
+                                          <td class="result9">amount $</td>
+                                          <td class="result9">Employer-Name</td>
+                                      </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- =========== balance ============== -->
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr ng-repeat="data in vm.theScore | filter:vm.username">
+                                <td class="result">
+                                  Ballance:
+                                  <br><br>
+                                  <span class="data-result">{{data.balance}}</span>
+                                  <img src="../../img/coin.png" class="coin">
+                                  &nbsp;&nbsp;
+                                  <a class="btn icon-btn btn-plus"><span class="glyphicon btn-glyphicon fa fa-plus img-circle"></span>Add More Coins</a>
+									                 &nbsp;&nbsp;
+                                  <a class="btn icon-btn btn-plus"><span class="glyphicon btn-glyphicon fa fa-minus img-circle"></span>Withdraw</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- =========== degree ============== -->
+					          <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td class="result">
+                                  Your Degree(s):                                  
+                                </td>
+                            </tr>
+
+                            <tr >
+                              <td class="result">
+                                <div class="row">
+                                  <div class="col-sm-4" ng-repeat="data in vm.schoolGrade | filter:vm.username">
+                                    <img src="../../img/icon/{{data.degree.slice(0,7)}}.png" class="profile-degree">
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      <!-- End of the payments -->	
+</div>
+
+<!-- ************************************** Help *************************************************** -->
+<div class="alert alert-success building-back" ng-show="help">
+  <a class="close" aria-label="close" ng-click="map=false; help=!help">&times;</a>
+  <!-- title -->
+  <div  class="building-title">HELP</div>
+  <br>
+  <!-- logo -->
+
+  <br>
+	
+	
+	
+	<a data-toggle="pill" data-target="#menu" class="btn icon-btn plan-on" ng-show="menuOn" ng-click="menuOn=false; menuOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>How to play</a>
+
+    <a data-toggle="pill" data-target="#home" class="btn icon-btn off-btn" ng-hide="menuOff" ng-click="menuOn=true; menuOff= true; menuOff1= false; menuOn1= false; menuOff2= false; menuOn2= false; menuOff3= false; menuOn3= false; "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>How to play</a>
+
+    <a data-toggle="pill" data-target="#home" class="btn icon-btn plan-on" ng-show="menuOn1" ng-click="menuOn1=false; menuOff1= false;"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>Buildings</a>
+
+    <a data-toggle="pill" data-target="#menu1" class="btn icon-btn off-btn" ng-hide="menuOff1" ng-click="menuOn1=true; menuOff1= true; menuOn=false; menuOff= false; menuOff2= false; menuOn2= false; menuOff3= false; menuOn3= false; "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Buildings</a>
+
+    <a data-toggle="pill" data-target="#home" class="btn icon-btn plan-on" ng-show="menuOn2" ng-click="menuOn2=false; menuOff2= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>Degrees List</a>
+
+    <a data-toggle="pill" data-target="#menu2" class="btn icon-btn off-btn" ng-hide="menuOff2" ng-click="menuOn2=true; menuOff2= true; menuOn=false; menuOff= false; menuOff1= false; menuOn1= false; menuOff3= false; menuOn3= false; "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Degrees List</a>
+
+    <a data-toggle="pill" data-target="#home" class="btn icon-btn plan-on" ng-show="menuOn3" ng-click="menuOn3=false; menuOff3= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>All Jobs</a>
+
+    <a data-toggle="pill" data-target="#menu3" class="btn icon-btn off-btn" ng-hide="menuOff3" ng-click="menuOn3=true; menuOff3= true; menuOn=false; menuOff=false; menuOff1= false; menuOn1= false; menuOff2= false; menuOn2= false"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>All Jobs</a>
+	
+    
+  
+	  <div class="tab-content">
+	    <!-- ********************** help home ************************* -->
+	  	<div id="menu" class="tab-pane fade in active">
+	      <h3>My Virtual Jobs Guid</h3>
+	      <p>Click on each menu to display guidenss!</p>
+	    </div>
+
+	    <!-- ********************** How to Play *********************** -->
+	    <div id="home" class="tab-pane fade">
+	      <h3>How to Play</h3>
+	      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	    </div>
+
+	    <!-- ************************ Buildings *********************** -->
+	    <div id="menu1" class="tab-pane fade">
+	      <h3>Buildings</h3>
+	      <br>
+
+	      <table>
+	      	<tr>
+	      		<td><img src="../../img/building/admin.png" class="building-help"></td>
+	      		<td><img src="../../img/building/agri.png" class="building-help"></td>
+	      		<td><img src="../../img/building/architect.png" class="building-help"></td>
+	      		<td><img src="../../img/building/art.png" class="building-help"></td>
+	      		<td><img src="../../img/building/education.png" class="building-help"></td>
+	      		<td><img src="../../img/building/finance.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b>Administrtion and Business Managment Building</b></p>
+	      			<p>Total available jobs: 12</p>
+	      			<p>None: 0</p><p>Diploma: 2</p><p>Associate: 1</p>
+	      			<p>Bachelor: 8</p><p>Master: 1</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Agriculture and occupation Building</b></p>
+	      			<p>Total available jobs: 24</p>
+	      			<p>None: 0</p><p>Diploma: 18</p><p>Associate: 0</p>
+	      			<p>Bachelor: 4</p><p>Master: 2</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Architecture and Construction Building</b></p>
+	      			<p>Total available jobs: 7</p>
+	      			<p>None: 1</p><p>Diploma: 3</p><p>Associate: 0</p>
+	      			<p>Bachelor: 2</p><p>Master: 1</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Arts, audio/video technology Building</b></p>
+	      			<p>Total available jobs: 25</p>
+	      			<p>None: 0</p><p>Diploma: 7</p><p>Associate: 6</p>
+	      			<p>Bachelor: 11</p><p>Master: 1</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Education Building</b></p>
+	      			<p>Total available jobs: 30</p>
+	      			<p>None: 0</p><p>Diploma: 0</p><p>Associate: 3</p>
+	      			<p>Bachelor: 5</p><p>Master: 6</p><p>Doctoral: 16</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Finance Building</b></p>
+	      			<p>Total available jobs: 5</p>
+	      			<p>None: 0</p><p>Diploma: 2</p><p>Associate: 0</p>
+	      			<p>Bachelor: 3</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/building/government.png" class="building-help"></td>
+	      		<td><img src="../../img/building/health.png" class="building-help"></td>
+	      		<td><img src="../../img/building/hospitality.png" class="building-help"></td>
+	      		<td><img src="../../img/building/human.png" class="building-help"></td>
+	      		<td><img src="../../img/building/it.png" class="building-help"></td>
+	      		<td><img src="../../img/building/law.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b>Government and public Administration Building</b></p>
+	      			<p>Total available jobs: 5</p>
+	      			<p>None: 0</p><p>Diploma: 1</p><p>Associate: 1</p>
+	      			<p>Bachelor: 3</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Health Science Building</b></p>
+	      			<p>Total available jobs: 20</p>
+	      			<p>None: 0</p><p>Diploma: 2</p><p>Associate: 3</p>
+	      			<p>Bachelor: 2</p><p>Master: 3</p><p>Doctoral: 10</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Hospitality and Turism Building</b></p>
+	      			<p>Total available jobs: 12</p>
+	      			<p>None: 7</p><p>Diploma: 5</p><p>Associate: 0</p>
+	      			<p>Bachelor: 0</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Human Service Building</b></p>
+	      			<p>Total available jobs: 10</p>
+	      			<p>None: 0</p><p>Diploma: 5</p><p>Associate: 0</p>
+	      			<p>Bachelor: 3</p><p>Master: 2</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Information Technology Building</b></p>
+	      			<p>Total available jobs: 11</p>
+	      			<p>None: 0</p><p>Diploma: 0</p><p>Associate: 0</p>
+	      			<p>Bachelor: 9</p><p>Master: 2</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Law, Safety and Security Building</b></p>
+	      			<p>Total available jobs: 11</p>
+	      			<p>None: 1</p><p>Diploma: 4</p><p>Associate: 5</p>
+	      			<p>Bachelor: 0</p><p>Master: 0</p><p>Doctoral: 1</p>
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/building/manufacture.png" class="building-help"></td>
+	      		<td><img src="../../img/building/marketing.png" class="building-help"></td>
+	      		<td><img src="../../img/building/science.png" class="building-help"></td>
+	      		<td><img src="../../img/building/transportation.png" class="building-help"></td>
+	      		<td><img src="../../img/building/school.png" class="building-help"></td>
+	      		<td></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b>Manufacturing Building</b></p>
+	      			<p>Total available jobs: 8</p>
+	      			<p>None: 0</p><p>Diploma: 5</p><p>Associate: 2</p>
+	      			<p>Bachelor: 1</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Marketing and Sales Building</b></p>
+	      			<p>Total available jobs: 7</p>
+	      			<p>None: 2</p><p>Diploma: 3</p><p>Associate: 1</p>
+	      			<p>Bachelor: 1</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Science and Engineering Building</b></p>
+	      			<p>Total available jobs: 22</p>
+	      			<p>None: 0</p><p>Diploma: 0</p><p>Associate: 1</p>
+	      			<p>Bachelor: 16</p><p>Master: 2</p><p>Doctoral: 3</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Transportation and Logistics Building</b></p>
+	      			<p>Total available jobs: 10</p>
+	      			<p>None: 1</p><p>Diploma: 5</p><p>Associate: 0</p>
+	      			<p>Bachelor: 4</p><p>Master: 0</p><p>Doctoral: 0</p>
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>School</b></p>
+	      			<p>Total available courses: </p>
+	      			<p>None: </p><p>Diploma: </p><p>Associate: </p>
+	      			<p>Bachelor: </p><p>Master: </p><p>Doctoral: </p>
+	      		</td>
+	      		<td></td>
+	      	</tr>
+	      </table>
+	    </div>
+
+	    <!-- ************************ Degrees *********************** -->
+	    <div id="menu2" class="tab-pane fade">
+	      <h3>Degrees List</h3>
+	      <br>
+	      <table>
+	      	<tr>
+	      		<td><img src="../../img/icons/admin-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/admin-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/admin-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/agri-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/agri-d.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/agri-m.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b>Administrtion and Business Managment - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Agriculture and occupation Building - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Architecture and Construction Building- Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Agriculture and occupation - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Agriculture and occupation - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Agriculture and occupation - Doctoral Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/architec-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/architec-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/art-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/art-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/art-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/education-a.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Architecture and Construction - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Architecture and Construction - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Arts, audio/video technology - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Arts, audio/video technology - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Arts, audio/video technology - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Education - Associate Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/education-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/education-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/education-d.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/finance-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/gov-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/gov-b.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Education - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Education - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Education - Doctoral Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Finance - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Government and public Administration - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Government and public Administration - bachelor Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/health-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/health-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/health-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/health-d.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/human-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/human-m.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Health Science - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Health Science - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Health Science - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Health Science - Doctoral Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Human Service - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Human Service - Master Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/it-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/it-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/law-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/law-d.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/manufac-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/manufac-b.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Information Technology - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Information Technology - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Law, Safety and Security - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Law, Safety and Security - Doctoral Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Manufacturing - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Manufacturing - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/market-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/market-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/science-a.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/science-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/science-m.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/science-d.png" class="building-help"></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Marketing and Sales - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Marketing and Sales - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b>Science and Engineering - Associate Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Science and Engineering - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Science and Engineering - Master Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> Science and Engineering - Doctoral Degree</b></p>
+	      			
+	      		</td>
+	      	</tr>
+	      	<tr>
+	      		<td><img src="../../img/icons/transportation-b.png" class="building-help"></td>
+	      		<td><img src="../../img/icons/high-school-diploma.png" class="building-help"></td>
+	      		<td></td>
+	      		<td></td>
+	      		<td></td>
+	      		<td></td>
+	      	</tr>
+	      	<tr>
+	      		<td class="help-building-txt">
+	      			<p><b> Transportation and Logistics - Bachelor Degree</b></p>
+	      			
+	      		</td>
+	      		<td class="help-building-txt">
+	      			<p><b> High School Diploma Degree</b></p>	
+	      		</td>
+
+	      		<td></td>
+	      		<td></td>
+	      		<td></td>
+	      		<td></td>
+	      	</tr>
+	      </table>
+	    </div>
+
+	    <!-- *********************** All Jobs ************************ -->
+	    <div id="menu3" class="tab-pane fade">
+	      <h3>All Jobs</h3>
+	      <p>	      	
+	      	<ul class="nav nav-tabs">
+			  <li class="active"><a class="help-a" data-toggle="tab" data-target="#agr">Agriculture and occupation</a></li>
+			  <li><a data-toggle="tab" data-target="#art">Arts, audio/video technology</a></li>
+			  <li><a data-toggle="tab" data-target="#edu">Education</a></li>
+			  <li><a data-toggle="tab" data-target="#gov">Government and public Administration</a></li>
+			  <li><a data-toggle="tab" data-target="#hos">Hospitality and Turism</a></li>
+			  <li><a data-toggle="tab" data-target="#inf">Information Technology</a></li>
+			  <li><a data-toggle="tab" data-target="#man">Manufacturing</a></li>
+			  <li><a data-toggle="tab" data-target="#sci">Science and Engineering</a></li>
+			  <li><a data-toggle="tab" data-target="#arc">Architecture and Construction</a></li>
+			  <li><a data-toggle="tab" data-target="#adm">Business Management and Administration</a></li>
+			  <li><a data-toggle="tab" data-target="#fin">Finance</a></li>
+			  <li><a data-toggle="tab" data-target="#hea">Health Science</a></li>
+			  <li><a data-toggle="tab" data-target="#hum">Human Service</a></li>
+			  <li><a data-toggle="tab" data-target="#law">Law, Safety and Security</a></li>
+			  <li><a data-toggle="tab" data-target="#mar">Marketing and Sales</a></li>
+			  <li><a data-toggle="tab" data-target="#tra">Transportation and Logistics</a></li>
+			</ul>
+
+			<div class="tab-content">
+			  <!-- Agri -->
+			  <div id="agr" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >Diploma</div>
+							<li>Agricultural Equipment Operators</li>  
+							<li>Agriculture Sciences Teacher, Postsecondary</li>
+							<li>Animal Scientist</li>
+							<li>Farm Products Agent</li>  
+							<li>Mining Machine Operator</li>
+							<li>Derrick Operator, oil and gas</li>
+							<li>Environmental Engineer</li>
+							<li>Farm equipment Technician</li>
+							<li>Farmworkers</li> 
+							<li>Fisher</li>
+							<li>Forest Technician</li>
+							<li>Hunter</li>
+							<li>Loading Machine Operator</li>
+							<li>Meat and Fish Cutter</li>
+							<li>Animal Caretaker</li>
+							<li>Pest Control</li>
+							<li>Petroleum Pump Operator</li>
+							<li>Tree Trimmer</li>
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+							<li>Agriculture Inspector</li>
+							<li>Cartographer</li>
+							<li>Fallers</li>
+							<li>Fish Wardens</li>      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+							<li>Farm and home managment advisor</li>
+							<li>Zoologist</li>
+					</ul>
+			    </p>
+			  </div> <!-- ./ Agri -->
+
+			  <!-- Art -->
+			  <div id="art" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >Diploma</div>
+							  <li>Actor</li>
+	                          <li>Choreographer</li>
+	                          <li>Craft Artist</li>
+	                          <li>Dancer</li>
+	                          <li>Mackeup Artist</li>
+	                          <li>Photographer</li>
+	                          <li>Writer( poet, lyricist )</li>
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+							  <li>Audio and video equipment technician</li>
+	                          <li>Camera Operator</li>
+	                          <li>Music Arranger</li>
+	                          <li>Singer</li>
+	                          <li>musician, instrumental</li>
+	                          <li>Sound Engineer</li>
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+							  <li>Broadcasting news analyst</li>
+                              <li>Commercial and industrial designer</li>
+                              <li>Director (tv, radio, stage)</li>
+                              <li>Film editor</li>
+                              <li>Painter Artist</li>
+                              <li>Graphic designer</li>
+                              <li>Animator</li>
+                              <li>Music Composer</li>
+                              <li>Producer</li>
+                              <li>Radio or TV Announcer</li>
+                              <li>Reporter</li>							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+							<li>Art, Drama, music teacher</li>
+						<hr>							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Art -->
+
+			  <!-- Education -->
+			  <div id="edu" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Fitness Coordinator</li>
+						<li>Preschool Teacher</li>
+						<li>Teacher Assistant</li>		
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Education Teacher, middle school</li>
+						<li>Education Teacher, secondary school</li>
+						<li>Coach and Scout</li>
+						<li>Elementary School Teacher</li>
+						<li>Kindergarten Teacher</li>			      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Adult basic teacher</li>
+						<li>Computer Science teacher</li>
+						<li>English language teacher</li>
+						<li>Foreign language teacher</li>
+						<li>Economic Teacher</li>
+						<li><Librarian/li>
+						<hr>
+						<div class="degree-help-ul" >Doctoral</div>
+						<li>Architecture teacher</li>
+						<li>Earth, Marine and Space teacher</li>
+						<li>Biological science teacher</li>
+						<li>Busines Teacher</li>
+						<li>Chemistry teacher</li>
+						<li>Engineering teacher</li>
+						<li>Geography teacher</li>
+						<li>History teacher</li>
+						<li>Law teacher</li>
+						<li>Mathematical science teacher</li>
+						<li>Philosophy teacher</li>
+						<li>Physics Teacher</li>
+						<li>Political Science Teacher</li>
+						<li>Psychology Teacher</li>
+						<li>Social Work teacher</li>
+						<li>Sociology Teacher</li>		
+					</ul>
+			    </p>
+			  </div> <!-- ./ Education -->
+
+			  <!-- Government -->
+			  <div id="gov" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Court Clerk</li>
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Legislator</li>		
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Climate Change Analyst</li>
+						<li>Detective and Criminal Investigator</li>
+						<li>Tax Examiners and Collector</li>		
+					</ul>
+			    </p>
+			  </div> <!-- ./ Government -->
+
+			  <!-- hospitality -->
+			  <div id="hos" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >None</div>
+						<li>Athlete</li>
+						<li>Baggage Porters and Bellhops</li>
+						<li>barista</li>
+						<li>Counter Attendant</li>
+						<li>Dishwasher</li>
+						<li>Food Server</li>
+						<li>Mai and Housekeeping</li>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>baker</li>
+						<li>bartender</li>
+						<li>Chefs and head Cook</li>
+						<li>Travel Agent</li>
+						<li>Waiter and Waitres</li>
+
+					</ul>
+			    </p>
+			  </div> <!-- ./ hospitality -->
+
+			  <!-- IT -->
+			  <div id="inf" class="tab-pane fade in active">
+			    <p>
+					<ul
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Computer Network Specialist</li>
+						<li>Computer System Analyst</li>
+						<li>Computer Engineer</li>
+						<li>Database Architect</li>
+						<li>Information Security Analyst</li>
+						<li>IT project manager</li>
+						<li>Software Developer</li>
+						<li>VideoGame Designer</li>
+						<li>Web developer</li>
+							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Computer and Information Scientist</li>
+						<li>Computer Network Architect</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ IT -->
+
+			  <!-- Manufacturing -->
+			  <div id="man" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Aircraft Structure</li>
+						<li>Chemical Plant and system Operator</li>
+						<li>Cooling and Freezing Equipment Operator</li>
+						<li>Jeweler</li>
+						<li>Machinist</li>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Computer repairer</li>
+						<li>Industrial Engineering Technician</li>
+
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Nuclear Power Reactor Operator</li>
+
+					</ul>
+			    </p>
+			  </div> <!-- ./ Manufacturing -->
+
+			  <!-- Science -->
+			  <div id="sci" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Electrical Technician</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Aerospace Engineer</li>
+						<li>Agricultural Engineer</li>
+						<li>Automotive Engineer</li>
+						<li>Biochemical Engineer</li>
+						<li>Chemical Engineer</li>
+						<li>Chemist</li>
+						<li>Civil Drafter</li>
+						<li>Electrical Engineer</li>
+						<li>Energy Engineer</li>
+						<li>Historian</li>
+						<li>Marine Architect</li>
+						<li>Nanosystem Engineer</li>
+						<li>Nuclear Engineer</li>
+						<li>Petroleum Engineer</li>
+						<li>Robotic Engineer</li>
+						<li>Solar Engineer</li>
+
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Archeologist</li>
+						<li>Geographer</li>
+
+						<hr>
+						<div class="degree-help-ul" >Doctoral</div>
+						<li>Mathematician</li>
+						<li>Microbiologist</li>
+						<li>physicist</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Science -->
+
+			  <!-- Architect -->
+			  <div id="arc" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >None</div>
+						<li>Highway Maintenance Worker</li>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Elevator Installer and Repairer</li>
+						<li>Heating and air conditioning Mechanic</li>
+						<li>Plumber</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Civil Engineer</li>
+						<li>Interior Designer</li>
+							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Architect, Except Landscape and Naval</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Architect -->
+
+			  <!-- Admin -->
+			  <div id="adm" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Data Entry Keyers</li>
+						<li>Telephone Operator</li>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Computer Operator</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Accountant</li>
+						<li>Administrative Service Manager</li>
+						<li>Advertising and Promotion Manager</li>
+						<li>Agent of Artists, Athletes and Performers</li>
+						<li>Financial Manager</li>
+						<li>Marketing Manager</li>
+						<li>Sales Manager</li>
+						<li>Spa Manager</li>
+							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Operation Research Analyst</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Admin -->
+
+			  <!-- Finance -->
+			  <div id="fin" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Bill and Account Collector</li>
+						<li>Tax Preparer</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Actuaries</li>
+						<li>Credit Analyst</li>
+						<li>Credit Authorizer</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Finance -->
+
+			  <!-- Health -->
+			  <div id="hea" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Dental Assistant</li>
+						<li>Medical Assistant</li>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Dental Hygienist</li>
+						<li>medical technician</li>
+						<li>Radiation Therapist</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Athletic Trainer</li>
+						<li>Patient Representative</li>
+							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Acupuncturist</li>
+						<li>Mental Health Technician</li>
+						<li>Physical Therapist</li>
+
+						<hr>
+						<div class="degree-help-ul" >Doctoral</div>
+						<li>Anesthesiologist</li>
+						<li>Chiropractors</li>
+						<li>Dentist</li>
+						<li>Dermatologist</li>
+						<li>Nuclear Medicine Technologist</li>
+						<li>Occupational Therapist</li>
+						<li>Oral Surgeon</li>
+						<li>Orthodontist</li>
+						<li>Surgeon</li>
+						<li>Urologist</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Health -->
+
+			  <!-- Human -->
+			  <div id="hum" class="tab-pane fade in active">
+			    <p>
+					<ul>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>barber</li>
+						<li>childcare workers</li>
+						<li>Funeral Attendants</li>
+						<li>Laundry Worker</li>
+						<li>Nanny</li>
+
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Clergy</li>
+						<li>Fitness an Aerobic Instructor</li>
+						<li>Social and Human Service Assistant</li>
+							      
+						<hr>
+						<div class="degree-help-ul" >Master</div>
+						<li>Director, Religious Activity and Education</li>
+						<li>Marriage and Family Therapist</li>
+
+					</ul>
+			    </p>
+			  </div> <!-- ./ Human -->
+
+			  <!-- Law -->
+			  <div id="law" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >None</div>
+						<li>Security Guard</li>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Bailiffs</li>
+						<li>Officers and jailers</li>
+						<li>Criminal Investigator</li>
+						<li>Police, Fire and Ambulance Dispatcher</li>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Fire Inspector</li>
+						<li>Emmergency Medical Technician</li>
+						<li>Firefighter</li>
+						<li>Forest Firefighter</li>
+						<li>Polic and Sheriff's Patrol Officer</li>
+
+						<hr>
+						<div class="degree-help-ul" >Doctoral</div>
+						<li>Lawyer</li>
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Law -->
+
+			  <!-- Marketing -->
+			  <div id="mar" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >None</div>
+						<li>Cashier</li>
+						<li>Models</li>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Customer Service Representative</li>
+						<li>Real Estate Sales Agent</li>
+						<li>Stock Clerks</li>
+
+						<hr>
+						<div class="degree-help-ul" >Associate</div>
+						<li>Fashion Designer</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>	
+						<li>Appraiser, Real Estate</li>						    
+							
+					</ul>
+			    </p>
+			  </div> <!-- ./ Marketing -->
+
+			  <!-- Transportation -->
+			  <div id="tra" class="tab-pane fade in active">
+			    <p>
+					<ul>
+						<div class="degree-help-ul" >None</div>
+						<li>Taxi Driver</li>
+
+						<hr>
+						<div class="degree-help-ul" >Diploma</div>
+						<li>Air Traffic Controller</li>
+						<li>Aircraft Technician</li>
+						<li>Ambulance Driver</li>
+						<li>Bus Drivers</li>
+						<li>Truck Driver</li>
+							
+						<hr>
+						<div class="degree-help-ul" >Bachelor</div>
+						<li>Pilots</li>
+						<li>Ship Captain</li>
+						<li>Logistician</li>
+						<li>Transportation Manager</li>
+							      
+					</ul>
+			    </p>
+			  </div> <!-- ./ Transportation -->
+			  
+
+			</div><!-- ./ tab-content -->
+
+
+
+
+
+	      </p>
+	    </div>
+	  </div>
+</div>
+<!-- ******************************** buildings hyper links **************************************** -->
+<div class="container-fluid gamer">
+	<div class="row">
+		<div class="col-sm-12">
+
+			<!-- ********************* Admin ************************* -->
+			<div class="alert alert-success building-back" ng-show="admin">
+			  <a class="close" aria-label="close" ng-click="map=false; admin=!admin">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Business Management and Administration Building</div>
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/administration.png" class="building-back2" />
+			  <br>
+				<!-- available jobs table -->
+				<table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'bus' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+    {{vm.sas}}%
+  </div>
+</div>
+
+
+
+                                         <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Agri ************************* -->
+			<div class="alert alert-success building-back" ng-show="agri">
+			  <a class="close" aria-label="close" ng-click="map=false; agri=!agri">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Agriculture and occupation Building</div>
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/agriculture.png" class="building-back2" /> 
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'agr' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table>  
+			</div>
+
+			<!-- ********************* Architect ************************* -->
+			<div class="alert alert-success building-back" ng-show="architect">
+			  <a class="close" aria-label="close" ng-click="map=false; architect=!architect">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Architecture and Construction Building</div>
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/architec.png" class="building-back2" />
+			  <br> 
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'arc' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div> 
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Education ************************* -->
+			<div class="alert alert-success building-back" ng-show="education">
+			  <a class="close" aria-label="close" ng-click="map=false; education=!education">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Education Building</div>
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/education.png" class="building-back2" />
+			  <br> 
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'edu' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+						
+                <!-- ######################## Modal / Video Player  ######################## -->
+                <span>
+                  <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog video-ad">
+
+                      <!-- Modal content-->
+                      <div class="modal-content modal-back">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                        </div>
+                        <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                        <div class="modal-footer">
+                          <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                          Tip: You must watch the whole video to earn coins!
+                          <br>
+                          <span class="fa fa-money modal-sign"></span>&nbsp;
+                          Your Balance:
+                          <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                          <img src="../../img/coin.png" class="wallet-coin">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </span>
+
+            </td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Finance ************************* -->
+			<div class="alert alert-success building-back" ng-show="finance">
+			  <a class="close" aria-label="close" ng-click="map=false; finance=!finance">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Finance Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/finance.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'fin' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+						
+                <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+            </td>
+
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Science ************************* -->
+			<div class="alert alert-success building-back" ng-show="science">
+			  <a class="close" aria-label="close" ng-click="map=false; science=!science">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Science and Engineering Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/science.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'sci' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins">
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Transportation ************************* -->
+			<div class="alert alert-success building-back" ng-show="transportation">
+			  <a class="close" aria-label="close" ng-click="map=false; transportation=!transportation">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Transportation and Logistics Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/transportation.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'tra' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div> 
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* IT ************************* -->
+			<div class="alert alert-success building-back" ng-show="it">
+			  <a class="close" aria-label="close" ng-click="map=false; it=!it">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Information Technology Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/it.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'inf-' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* School ************************* -->
+			<div class="alert alert-danger building-back" ng-show="school">
+			  <a class="close" aria-label="close" ng-click="map=false; school=!school">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">School</div> 
+			  <br>
+			  <div class="school-description">
+			  	Attend these schools to earn your educational degrees:
+			  </div>
+			  <table>
+			  	<tr>
+			  		<td class="td-degree-school">
+			  			Step1 <br>
+						<button class="btn btn-success btn-school" data-toggle="modal" data-target="#diploma">Diploma</button>
+			  		</td>
+			  		<td class="td-degree-school">
+			  			Step2<br>
+						<button class="btn btn-success btn-school" data-toggle="modal" data-target="#associate">Associate</button>
+			  		</td>
+			  		<td class="td-degree-school">
+			  			Step3 <br>
+						<button class="btn btn-success btn-school" data-toggle="modal" data-target="#bachelor">Bachelor</button>
+					</td>
+			  		<td class="td-degree-school">
+			  			Step4<br>
+						<button class="btn btn-success btn-school" data-toggle="modal" data-target="#master">Master</button>
+					</td>
+			  		<td class="td-degree-school">
+			  			Step5 <br>
+						<button class="btn btn-success btn-school" data-toggle="modal" data-target="#doctoral">Doctoral</button>
+			  		</td>
+			  	</tr>
+			  </table>			  
+			</div>
+
+			<!-- ********************* Marketing ************************* -->
+			<div class="alert alert-success building-back" ng-show="marketing">
+			  <a class="close" aria-label="close" ng-click="map=false; marketing=!marketing">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Marketing and Sales Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/marketing.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'mar' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div> 
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+               
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Government ************************* -->
+			<div class="alert alert-success building-back" ng-show="government">
+			  <a class="close" aria-label="close" ng-click="map=false; government=!government">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Government and public Administration Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/government.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'gov' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Manufacture ************************* -->
+			<div class="alert alert-success building-back" ng-show="manufacture">
+			  <a class="close" aria-label="close" ng-click="map=false; manufacture=!manufacture">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Manufacturing Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/manufacture.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'man' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Law ************************* -->
+			<div class="alert alert-success building-back" ng-show="law">
+			  <a class="close" aria-label="close" ng-click="map=false; law=!law">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Law, Safety and Security Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/law.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'law' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div> 
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Health ************************* -->
+			<div class="alert alert-success building-back" ng-show="health">
+			  <a class="close" aria-label="close" ng-click="map=false; health=!health">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Health Science Bulding</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/health.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'hea' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Human ************************* -->
+			<div class="alert alert-success building-back" ng-show="human">
+			  <a class="close" aria-label="close" ng-click="map=false; human=!human">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Human Service Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/human.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'hum' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Hospitality ************************* -->
+			<div class="alert alert-success building-back" ng-show="hospitality">
+			  <a class="close" aria-label="close" ng-click="map=false; hospitality=!hospitality">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Hospitality and Turism Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/hospitality.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'hos' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+            <td class="td-3">{{data.job.slice(11,100)}}</td>
+            <td class="td-4">{{data.job.slice(4,7)}}</td>
+            <td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins"> / min
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div> 
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+			<!-- ********************* Art ************************* -->
+			<div class="alert alert-success building-back" ng-show="art">
+			  <a class="close" aria-label="close" ng-click="map=false; art=!art">&times;</a>
+			  <!-- title -->
+			  <div  class="building-title">Arts, audio/video technology Building</div> 
+			  <br>
+			  <!-- logo -->
+			  <img src="../../img/signs/art.png" class="building-back2" />
+			  <br>
+			  <!-- available jobs table -->
+			  <table class="table-hover building-table">
+					<!-- table caption -->
+					<tr>
+						<td class="td-head">Employer Name</td>
+						<td class="td-head">Job Title</td>
+						<td class="td-head">Degree</td>
+						<td class="td-head">Wage</td>
+						<td class="td-head">Apply</td>
+					</tr>
+					<!-- results -->
+					<tr ng-repeat="data in vm.superheroes | filter: 'art' ">
+						<td class="td-2">{{data.username.slice(0,data.username.indexOf('@'))}}</td>
+						<td class="td-3">{{data.job.slice(11,100)}}</td>
+						<td class="td-4">{{data.job.slice(4,7)}}</td>
+						<td class="td-5">{{data.job.slice(8,10)}}
+							<img src="../../img/coin.png" class="coins">
+						</td>
+						<td class="td-6">
+							<button class="btn btn-danger" data-toggle="modal" data-target="#s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}">
+								<span class="fa fa-youtube-play"></span>&nbsp;watch
+							</button>
+
+              <!-- ######################## Modal / Video Player  ######################## -->
+              <span>
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
+
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+                      <div class="modal-body">
+
+                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                          <div ng-if="record.degree.slice(0,7)">
+                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                          </div>                          
+                        </div>
+
+                        <div>                          
+                            <span class="fa fa-exclamation-triangle">
+                              <span class="requirment">
+                                requirement degree for {{data.job.slice(11,100)}}
+                              </span>
+                              <img src="../../img/icon/{{data.job.slice(0,7)}}.png" class="req-pic">
+                            </span>   
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                        Tip: You must watch the whole video to earn coins!
+                        <br>
+                        <span class="fa fa-money modal-sign"></span>&nbsp;
+                        Your Balance:
+                        <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                        <img src="../../img/coin.png" class="wallet-coin">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </span>
+
+						</td>
+					</tr>
+				</table> 
+			</div>
+
+
+
+			<div>  				
+  				<!-- ################# Modal / Video Player / school / diploma ################# -->
+  				<div id="diploma" class="modal fade" role="dialog">
+  				  <div class="modal-dialog">
+
+  				    <!-- Modal content-->
+  				    <div class="modal-content">
+  				      <div class="modal-header">
+  				        <button type="button" class="close" data-dismiss="modal">&times;</button>
+  				        <h4 class="modal-title">Diploma</h4>
+  				      </div>
+
+
+  				      <div class="modal-body">
+
+  				          <!-- =========== job category ================= --> 
+                    <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#diplomaCourse">Please select your course</button>
+
+                    <div id="diplomaCourse" class="collapse">  
+                      <ul>  
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='agr-dip-20'">Agriculture and occupation</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='art-dip-23'">Arts, audio/video technology</li>
+                        
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='gov-dip-21'">Government and public Administration</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='hos-dip-20'">Hospitality and Turism</li>
+                      
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='man-dip-21'">Manufacturing</li> 
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='arc-dip-21'">Architecture and Construction</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='bus-dip-22'">Business Management and Administration</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='fin-dip-23'">Finance</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='hea-dip-26'">Health Science</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='hum-dip-20'">Human Service</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='law-dip-22'">Law, Safety and Security</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='mar-dip-23'">Marketing and Sales</li>
+
+                        <li class="btn btn-warning" ng-init="vm.diplomaCourse=''" ng-click="vm.diplomaCourse='tra-dip-20'">Transportation and Logistics</li>
+
+                      </ul>
+                    </div>
+                     <!-- ./ job category -->                     
+                     <input type="text" class="form-control selected-course" disabled="disabled" placeholder="diplomaCourse Name . . ." ng-model="vm.diplomaCourse">
+                    <br>
+                    <div class="row">
+                        <div  ng-repeat="data in vm.superheroes">                        
+                          <div class="col-sm-4">
+                            <div class="ad-pics ads-school">
+                            
+                              <img src="{{data.picurl}}" class="img-thumbnail"> 
+                              <div class="pic-Caption">
+                                Like to raise your score
+                                <a ng-click="vm.schoolDip(); unlike1=true; like1=true" ng-hide="like1" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDipN(); unlike1=false; like1=false" ng-show="unlike1" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDip(); unlike2=true; like2=true" ng-hide="like2" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDipN(); unlike2=false; like2=false" ng-show="unlike2" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDip(); unlike3=true; like3=true" ng-hide="like3" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDipN(); unlike3=false; like3=false" ng-show="unlike3" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDip(); unlike4=true; like4=true" ng-hide="like4" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDipN(); unlike4=false; like4=false" ng-show="unlike4" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDip(); unlike5=true; like5=true" ng-hide="like5" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDipN(); unlike5=false; like5=false" ng-show="unlike5" class="fa fa-check-square-o checked-school"></a>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!-- ./ ng-repeat -->  
+                    </div>                      
+
+  				      </div> <!-- ./ modal body-->
+
+
+  				      <div class="modal-footer">
+                  <!-- progress bar -->
+                  <div ng-if="vm.diplomaScore*100/vm.diplomaCourse.slice(8,10)<100">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      style="width:{{vm.diplomaScore*100/vm.diplomaCourse.slice(8,10)}}%; min-width: 2em">
+                        {{vm.diplomaScore}} Likes                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ng-if="vm.diplomaScore*100/vm.diplomaCourse.slice(8,10)==100">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.diploma()">
+                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  </button>
+                  </div>
+                  <hr>
+                  <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                  Tip: You must like images to get degrees!
+                  <br>
+                  <span class="fa fa-money modal-sign"></span>&nbsp;
+                  Your Balance:
+                  <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                  <img src="../../img/coin.png" class="wallet-coin">&nbsp;
+  				      </div>
+  				    </div>
+
+  				  </div>
+  				</div>
+
+  				<!-- ################# Modal / Video Player / school / associate ################# -->
+  				<div id="associate" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Associate</h4>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- =========== job category ================= --> 
+                    <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#associateCourse">Please select your course</button>
+
+                    <div id="associateCourse" class="collapse">  
+                      <ul>  
+                        
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='art-ass-42'">Arts, audio/video technology</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='edu-ass-45'">Education</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='gov-ass-41'">Government and public Administration</li>
+                                                
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='man-ass-41'">Manufacturing</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='sci-ass-46'">Science and Engineering</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='arc-ass-42'">Architecture and Construction</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='bus-ass-42'">Business Management and Administration</li>
+                       
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='hea-ass-48'">Health Science</li>
+                        
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='law-ass-44'">Law, Safety and Security</li>
+
+                        <li class="btn btn-warning" ng-init="vm.associateCourse=''" ng-click="vm.associateCourse='mar-ass-43'">Marketing and Sales</li>                        
+
+                      </ul>
+                    </div>
+                     <!-- ./ job category -->                     
+                     <input type="text" class="form-control selected-course" disabled="disabled" placeholder="associateCourse Name . . ." ng-model="vm.associateCourse">
+                    <br>
+                    <div class="row">
+                        <div  ng-repeat="data in vm.superheroes">                        
+                          <div class="col-sm-4">
+                            <div class="ad-pics ads-school">
+                            
+                              <img src="{{data.picurl}}" class="img-thumbnail"> 
+                              <div class="pic-Caption">
+                                Like to raise your score
+                                <a ng-click="vm.schoolAss(); unlike1=true; like1=true" ng-hide="like1" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolAssN(); unlike1=false; like1=false" ng-show="unlike1" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolAss(); unlike2=true; like2=true" ng-hide="like2" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolAssN(); unlike2=false; like2=false" ng-show="unlike2" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolAss(); unlike3=true; like3=true" ng-hide="like3" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolAssN(); unlike3=false; like3=false" ng-show="unlike3" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolAss(); unlike4=true; like4=true" ng-hide="like4" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolAssN(); unlike4=false; like4=false" ng-show="unlike4" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolAss(); unlike5=true; like5=true" ng-hide="like5" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolAssN(); unlike5=false; like5=false" ng-show="unlike5" class="fa fa-check-square-o checked-school"></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!-- ./ ng-repeat -->    
+                    </div>                      
+
+                </div> <!-- ./ modal body-->
+
+
+                <div class="modal-footer">
+                  <!-- progress bar -->
+                  <div ng-if="vm.associateScore*100/vm.associateCourse.slice(8,10)<100">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      style="width:{{vm.associateScore*100/vm.associateCourse.slice(8,10)}}%; min-width: 2em">
+                        {{vm.associateScore}} Likes                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ng-if="vm.associateScore*100/vm.associateCourse.slice(8,10)==100">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.associate()">
+                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  </button>
+                  </div>
+                  <hr>
+                  <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                  Tip: You must like images to get degrees!
+                  <br>
+                  <span class="fa fa-money modal-sign"></span>&nbsp;
+                  Your Balance:
+                  <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                  <img src="../../img/coin.png" class="wallet-coin">&nbsp;
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+  				<!-- ################# Modal / Video Player / school / bachelor ################# -->
+  				<div id="bachelor" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Bachelor</h4>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- =========== job category ================= --> 
+                    <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#bachelorCourse">Please select your course</button>
+
+                    <div id="bachelorCourse" class="collapse">  
+                      <ul>  
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='agr-bac-72'">Agriculture and occupation</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='art-bac-72'">Arts, audio/video technology</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='edu-bac-74'">Education</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='gov-bac-71'">Government and public Administration</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='inf-bac-75'">Information Technology</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='man-bac-71'">Manufacturing</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='sci-bac-76'">Science and Engineering</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='arc-bac-72'">Architecture and Construction</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='bus-bac-71'">Business Management and Administration</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='fin-bac-73'">Finance</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='hea-bac-77'">Health Science</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='hum-bac-70'">Human Service</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='mar-bac-73'">Marketing and Sales</li>
+
+                        <li class="btn btn-warning" ng-init="vm.bachelorCourse=''" ng-click="vm.bachelorCourse='tra-bac-70'">Transportation and Logistics</li>
+
+                      </ul>
+                    </div>
+                     <!-- ./ job category -->                     
+                     <input type="text" class="form-control selected-course" disabled="disabled" placeholder="bachelorCourse Name . . ." ng-model="vm.bachelorCourse">
+                    <br>
+                    <div class="row">
+                        <div  ng-repeat="data in vm.superheroes">                        
+                          <div class="col-sm-4">
+                            <div class="ad-pics ads-school">
+                            
+                              <img src="{{data.picurl}}" class="img-thumbnail"> 
+                              <div class="pic-Caption">
+                                Like to raise your score
+                                <a ng-click="vm.schoolBac(); unlike1=true; like1=true" ng-hide="like1" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolBacN(); unlike1=false; like1=false" ng-show="unlike1" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolBac(); unlike2=true; like2=true" ng-hide="like2" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolBacN(); unlike2=false; like2=false" ng-show="unlike2" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolBac(); unlike3=true; like3=true" ng-hide="like3" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolBacN(); unlike3=false; like3=false" ng-show="unlike3" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolBac(); unlike4=true; like4=true" ng-hide="like4" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolBacN(); unlike4=false; like4=false" ng-show="unlike4" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolBac(); unlike5=true; like5=true" ng-hide="like5" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolBacN(); unlike5=false; like5=false" ng-show="unlike5" class="fa fa-check-square-o checked-school"></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!-- ./ ng-repeat -->    
+                    </div>                      
+
+                </div> <!-- ./ modal body-->
+
+
+                <div class="modal-footer">
+                  <!-- progress bar -->
+                  <div ng-if="vm.bachelorScore*100/vm.bachelorCourse.slice(8,10)<100">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      style="width:{{vm.bachelorScore*100/vm.bachelorCourse.slice(8,10)}}%; min-width: 2em">
+                        {{vm.bachelorScore}} Likes                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ng-if="vm.bachelorScore*100/vm.bachelorCourse.slice(8,10)==100">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.bachelor()">
+                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  </button>
+                  </div>
+                  <hr>
+                  <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                  Tip: You must like images to get degrees!
+                  <br>
+                  <span class="fa fa-money modal-sign"></span>&nbsp;
+                  Your Balance:
+                  <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                  <img src="../../img/coin.png" class="wallet-coin">&nbsp;
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+  				<!-- ################# Modal / Video Player / school / master ################# -->
+  				<div id="master" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Master</h4>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- =========== job category ================= --> 
+                    <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#masterCourse">Please select your course</button>
+
+                    <div id="masterCourse" class="collapse">  
+                      <ul>  
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='agr-mas-122'">Agriculture and occupation</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='art-mas-121'">Arts, audio/video technology</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='edu-mas-125'">Education</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='inf-mas-125'">Information Technology</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='sci-mas-126'">Science and Engineering</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='arc-mas-121'">Architecture and Construction</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='bus-mas-121'">Business Management and Administration</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='hea-mas-133'">Health Science</li>
+
+                        <li class="btn btn-warning" ng-init="vm.masterCourse=''" ng-click="vm.masterCourse='hum-mas-120'">Human Service</li>
+
+                      </ul>
+                    </div>
+                     <!-- ./ job category -->                     
+                     <input type="text" class="form-control selected-course" disabled="disabled" placeholder="masterCourse Name . . ." ng-model="vm.masterCourse">
+                    <br>
+                    <div class="row">
+                        <div  ng-repeat="data in vm.superheroes">                        
+                          <div class="col-sm-4">
+                            <div class="ad-pics ads-school">
+                            
+                              <img src="{{data.picurl}}" class="img-thumbnail"> 
+                              <div class="pic-Caption">
+                                Like to raise your score
+                                <a ng-click="vm.schoolMas(); unlike1=true; like1=true" ng-hide="like1" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolMasN(); unlike1=false; like1=false" ng-show="unlike1" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolMas(); unlike2=true; like2=true" ng-hide="like2" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolMasN(); unlike2=false; like2=false" ng-show="unlike2" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolMas(); unlike3=true; like3=true" ng-hide="like3" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolMasN(); unlike3=false; like3=false" ng-show="unlike3" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolMas(); unlike4=true; like4=true" ng-hide="like4" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolMasN(); unlike4=false; like4=false" ng-show="unlike4" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolMas(); unlike5=true; like5=true" ng-hide="like5" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolMasN(); unlike5=false; like5=false" ng-show="unlike5" class="fa fa-check-square-o checked-school"></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!-- ./ ng-repeat -->    
+                    </div>                      
+
+                </div> <!-- ./ modal body-->
+
+
+                <div class="modal-footer">
+                  <!-- progress bar -->
+                  <div ng-if="vm.masterScore*100/vm.masterCourse.slice(8,10)<100">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      style="width:{{vm.masterScore*10/vm.masterCourse.slice(8,10)}}%; min-width: 2em">
+                        {{vm.masterScore}} Likes                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ng-if="vm.masterScore*100/vm.masterCourse.slice(8,10)==100">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.master()">
+                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  </button>
+                  </div>
+                  <hr>
+                  <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                  Tip: You must like images to get degrees!
+                  <br>
+                  <span class="fa fa-money modal-sign"></span>&nbsp;
+                  Your Balance:
+                  <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                  <img src="../../img/coin.png" class="wallet-coin">&nbsp;
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+  				<!-- ################# Modal / Video Player / school / doctoral ################# -->
+  				<div id="doctoral" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Doctoral</h4>
+                </div>
+
+
+                <div class="modal-body">
+
+                    <!-- =========== job category ================= --> 
+                    <button class="btn btn-info btn-block" data-toggle="collapse" data-target="#doctoralCourse">Please select your course</button>
+
+                    <div id="doctoralCourse" class="collapse">  
+                      <ul>  
+                        <li class="btn btn-warning" ng-init="vm.doctoralCourse=''" ng-click="vm.doctoralCourse='agr-doc-150'">Agriculture and occupation</li>
+
+                        <li class="btn btn-warning" ng-init="vm.doctoralCourse=''" ng-click="vm.doctoralCourse='edu-doc-160'">Education</li>
+
+                        <li class="btn btn-warning" ng-init="vm.doctoralCourse=''" ng-click="vm.doctoralCourse='sci-doc-165'">Science and Engineering</li>
+
+                        <li class="btn btn-warning" ng-init="vm.doctoralCourse=''" ng-click="vm.doctoralCourse='hea-doc-260'">Health Science</li>
+
+                        <li class="btn btn-warning" ng-init="vm.doctoralCourse=''" ng-click="vm.doctoralCourse='law-doc-180'">Law, Safety and Security</li>
+
+                      </ul>
+                    </div>
+                     <!-- ./ job category -->                     
+                     <input type="text" class="form-control selected-course" disabled="disabled" placeholder="doctoralCourse Name . . ." ng-model="vm.doctoralCourse">
+                    <br>
+                    <div class="row">
+                        <div  ng-repeat="data in vm.superheroes">                        
+                          <div class="col-sm-4">
+                            <div class="ad-pics ads-school">
+                            
+                              <img src="{{data.picurl}}" class="img-thumbnail"> 
+                              <div class="pic-Caption">
+                                Like to raise your score
+                                <a ng-click="vm.schoolDoc(); unlike1=true; like1=true" ng-hide="like1" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDocN(); unlike1=false; like1=false" ng-show="unlike1" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDoc(); unlike2=true; like2=true" ng-hide="like2" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDocN(); unlike2=false; like2=false" ng-show="unlike2" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDoc(); unlike3=true; like3=true" ng-hide="like3" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDocN(); unlike3=false; like3=false" ng-show="unlike3" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDoc(); unlike4=true; like4=true" ng-hide="like4" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDocN(); unlike4=false; like4=false" ng-show="unlike4" class="fa fa-check-square-o checked-school"></a>
+
+                                <a ng-click="vm.schoolDoc(); unlike5=true; like5=true" ng-hide="like5" class="fa fa-thumbs-up like-school"></a>
+                                <a ng-click="vm.schoolDocN(); unlike5=false; like5=false" ng-show="unlike5" class="fa fa-check-square-o checked-school"></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div> <!-- ./ ng-repeat -->    
+                    </div>                      
+
+                </div> <!-- ./ modal body-->
+
+
+                <div class="modal-footer">
+                  <!-- progress bar -->
+                  <div ng-if="vm.doctoralScore*100/vm.doctoralCourse.slice(8,10)<100">
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      style="width:{{vm.doctoralScore*10/vm.doctoralCourse.slice(8,10)}}%; min-width: 2em">
+                        {{vm.doctoralScore}} Likes                          
+                      </div>
+                    </div>
+                  </div>
+
+                  <div ng-if="vm.doctoralScore*100/vm.doctoralCourse.slice(8,10)==100">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.doctoral()">
+                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  </button>
+                  </div>
+                  <hr>
+                  <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
+                  Tip: You must like images to get degrees!
+                  <br>
+                  <span class="fa fa-money modal-sign"></span>&nbsp;
+                  Your Balance:
+                  <span class="data-result" ng-repeat="data in vm.theScore | filter:vm.username">{{data.balance}}</span>
+                  <img src="../../img/coin.png" class="wallet-coin">&nbsp;
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+			</div><!-- ./ Modal -->
+		</div>
+	</div>
+</div> <!-- /. container-fluid gamer -->
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
