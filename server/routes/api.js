@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var mongoose = require('mongoose');
 
 var User = require('../models/user.js');
 var Pic = require('../models/pic.js');
@@ -11,7 +12,8 @@ var School = require('../models/school.js');
 router.post('/register', function(req, res) {
     User.register(new User({
             username: req.body.username,
-            usertype: req.body.usertype
+            usertype: req.body.usertype,
+            balance: 100
         }),
         req.body.password,
         function(err, account) {
@@ -98,6 +100,16 @@ router.post('/login', function(req, res, next) {
             });
         });
     })(req, res, next);
+});
+
+router.put('/login/:id', function(req, res) {  
+   var id = req.params.id;
+    User.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { balance: req.body.balance, username: req.body.username}
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
 });
 
 
@@ -203,7 +215,8 @@ router.get('/score', function(req, res) {
 
         }
         //If no errors, send them back to the client
-        res.json(superheroes);});
+        res.json(superheroes);
+    });
 });
 
 
@@ -228,6 +241,24 @@ router.get('/school', function(req, res) {
         }
         //If no errors, send them back to the client
         res.json(superheroes);});
+});
+
+router.put('/score/:id', function(req, res) {  
+   var id = req.params.id;
+    UserScores.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { balance: req.body.balance, username: req.body.username }
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
+});
+
+router.delete('/score/:id', function(req, res) {  
+   var id = req.params.id;
+    UserScores.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Deleted!' });            
+        });
 });
 
 
