@@ -21,7 +21,8 @@
             getscores: getscores,
             scores: scores,
             getSchoolGrades: getSchoolGrades,
-            schoolGrades: schoolGrades   
+            schoolGrades: schoolGrades,
+            updateScore: updateScore   
         };
 
         return service;
@@ -39,7 +40,7 @@
             $http.post('/user/register', {
                     username: username,
                     password: password,
-                    usertype: usertype
+                    usertype: usertype,
                 })
                 // handle success
                 .success(function(data, status) {
@@ -231,14 +232,12 @@
 
        
        // Start of score function
-        function scores(balance, degree, score, username) {
+        function scores(balance, username) {
             // create a new instance of deferred
             var deferred = $q.defer();
             // send a post request to the server
             $http.post('/user/score', {
                     balance: balance,
-                    degree: degree,
-                    score: score,
                     username: username
                 })
                 // handle success
@@ -315,7 +314,7 @@
         } // End of score function
 
 
-        // // Start of getpic function
+        // Start of getpic function
         function getSchoolGrades(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -343,6 +342,31 @@
             // return promise object
             return deferred.promise;
         }  // End of getpic function
+
+
+        // Start of update score function
+        function updateScore(id, username, balance){
+            var defer = $q.defer();
+            var data = {username: username, balance: balance};
+            $http({
+                method: 'PUT',
+                url: '/user/score/' + id,
+                // headers: {
+                //         'Content-Type': 'application/json; charset=utf-8'
+                // },
+                data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
 
 
     }   

@@ -11,7 +11,7 @@
 						<a class="btn icon-btn menu-top" ng-click="map=false; profile=false; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; "><span class="glyphicon btn-glyphicon glyphicon-phone img-circle menu-top2"></span>game console</a>
 						</td>
 						<td class="tdMenu2">
-							<a class="btn icon-btn menu-top" ng-click="vm.profile(); map=true; profile=true; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false;"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle menu-top2"></span>profile</a>
+							<a class="btn icon-btn menu-top" ng-click="vm.profile(); vm.getscores(); vm.getSchoolGrades(); map=true; profile=true; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false;"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle menu-top2"></span>profile</a>
 						</td>
 						<td class="tdMenu3">
 							<a class="btn icon-btn menu-top" ng-click="map=true; profile=false; help=true; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; ""><span class="glyphicon btn-glyphicon glyphicon-question-sign img-circle menu-top2"></span>help</a>
@@ -26,79 +26,80 @@
 	</div> <!-- ./ End of the page header -->
   <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
 </div>
-<div class="container gamer" ng-hide="map">	
 
+<!-- =================== MAP ==================== -->
+<div class="container gamer" ng-hide="map">	
 	<div class="row">
 		<div class="col-sm-12">
 			<!-- background image / MAP -->
 			<img src="../../img/back-gamer.png" class="background">
 
 			<!-- *************************** building icons ************************************** -->
-			<a ng-click="map=true; admin=!admin">
+			<a ng-click="map=true; admin=!admin; vm.profile(); vm.getscores()">
 				<img src="../../img/building/admin.png" alt="admin building" class="admin building-icon">
 			</a>
 
-			<a ng-click="map=true; agri=!agri">
+			<a ng-click="map=true; agri=!agri; vm.profile(); vm.getscores()">
 				<img src="../../img/building/agri.png" alt="" class="agri building-icon">
 			</a>
 
-			<a ng-click="map=true; architect=!architect">
+			<a ng-click="map=true; architect=!architect; vm.profile(); vm.getscores()">
 				<img src="../../img/building/architect.png" alt="" class="architect building-icon">
 			</a>
 
-			<a ng-click="map=true; education=!education">
+			<a ng-click="map=true; education=!education; vm.profile(); vm.getscores()">
 				<img src="../../img/building/education.png" alt="" class="education building-icon">
 			</a>
 
-			<a ng-click="map=true; finance=!finace">
+			<a ng-click="map=true; finance=!finace; vm.profile(); vm.getscores()">
 				<img src="../../img/building/finance.png" alt="" class="finance building-icon">
 			</a>
 
-			<a ng-click="map=true; science=!science">
+			<a ng-click="map=true; science=!science; vm.profile(); vm.getscores()">
 				<img src="../../img/building/science.png" alt="" class="science building-icon">
 			</a>
 
-			<a ng-click="map=true; transportation=!transportation">
+			<a ng-click="map=true; transportation=!transportation; vm.profile(); vm.getscores()">
 				<img src="../../img/building/transportation.png" alt="" class="transportation building-icon">
 			</a>
 
-			<a ng-click="map=true; school=!school">
+			<a ng-click="map=true; school=!school; vm.profile(); vm.getscores()">
 				<img src="../../img/building/school.png" alt="" class="school building-icon">
 			</a>
 
-			<a ng-click="map=true; it=!it">
+			<a ng-click="map=true; it=!it; vm.profile(); vm.getscores()">
 				<img src="../../img/building/it.png" alt="" class="it building-icon">
 			</a>
 
-			<a ng-click="map=true; marketing=!marketing">
+			<a ng-click="map=true; marketing=!marketing; vm.profile(); vm.getscores()">
 				<img src="../../img/building/marketing.png" alt="" class="marketing building-icon">
 			</a>
 
-			<a ng-click="map=true; government=!goverbment">
+			<a ng-click="map=true; government=!goverbment; vm.profile(); vm.getscores()">
 				<img src="../../img/building/government.png" alt="" class="government building-icon">
 			</a>
 
-			<a ng-click="map=true; law=!law">
+			<a ng-click="map=true; law=!law; vm.profile(); vm.getscores()">
 				<img src="../../img/building/law.png" alt="" class="law building-icon">
 			</a>
 
-			<a ng-click="map=true; manufacture=!manufacture">
+			<a ng-click="map=true; manufacture=!manufacture; vm.profile(); vm.getscores()">
 				<img src="../../img/building/manufacture.png" alt="" class="manufacture building-icon">
 			</a>
 
-			<a ng-click="map=true; health=!health">
+			<a ng-click="map=true; health=!health; vm.profile(); vm.getscores()">
 				<img src="../../img/building/health.png" alt="" class="health building-icon">
 			</a>
 
-			<a ng-click="map=true; human=!human">
+			<a ng-click="map=true; human=!human; vm.profile(); vm.getscores()">
 				<img src="../../img/building/human.png" alt="" class="human building-icon">
 			</a>
 
-			<a ng-click="map=true; hospitality=!hospitality">
+			<a ng-click="map=true; hospitality=!hospitality; vm.profile(); vm.getscores()">
 				<img src="../../img/building/hospitality.png" alt="" class="hospitality building-icon">
 			</a>
 
-			<a ng-click="map=true; art=!art">
+			<a ng-click="map=true; art=!art; vm.profile(); vm.getscores()">
 				<img src="../../img/building/art.png" alt="" class="art building-icon">
 			</a>
 		</div>
@@ -1255,16 +1256,7 @@
                 <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
                   <div class="modal-dialog video-ad">
 
- <div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
-    {{vm.sas}}%
-  </div>
-</div>
-
-
-
-                                         <!-- Modal content-->
+                    <!-- Modal content-->
                     <div class="modal-content modal-back">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1272,14 +1264,33 @@
                       </div>
 
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1353,15 +1364,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1434,15 +1465,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div> 
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1506,24 +1557,44 @@
 						
                 <!-- ######################## Modal / Video Player  ######################## -->
                 <span>
-                  <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
-                    <div class="modal-dialog video-ad">
+                <div id="s{{data.picurl.slice(data.picurl.search('e/')+2,100)}}" class="modal fade" role="dialog">
+                  <div class="modal-dialog video-ad">
 
-                      <!-- Modal content-->
-                      <div class="modal-content modal-back">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                    <!-- Modal content-->
+                    <div class="modal-content modal-back">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
+                      </div>
+
+                      <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
+
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-                        <div class="modal-body">
-
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
-                        </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1596,15 +1667,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1677,15 +1768,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1758,15 +1869,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div> 
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1839,15 +1970,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -1955,15 +2106,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div> 
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2036,15 +2207,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2117,15 +2308,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2135,7 +2346,6 @@
                         </div>
 
                       </div>
-
                       <div class="modal-footer">
                         <span class="fa fa-exclamation-triangle modal-sign"></span>&nbsp;
                         Tip: You must watch the whole video to earn coins!
@@ -2199,15 +2409,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div> 
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2280,15 +2510,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2361,15 +2611,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2442,15 +2712,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div> 
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
+
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2523,15 +2813,35 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">{{data.job.slice(11,100)}}</h4>
                       </div>
+
                       <div class="modal-body">
+                        <div>  
+                          <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
+                            <div ng-if="record.degree.slice(0,7)">
+                              <div class="video-caption">
+                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                              </div>
+                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <br>
+                              
+                              <button ng-hide="btnCoin" class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true;"></button>
+                        
+                              <button ng-hide="btnCoin2" class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.coin();" ng-disabled="vm.time != 100"></button>
+                        
+                              <br><br>
 
-                        <div ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
-                          <div ng-if="record.degree.slice(0,7)">
-                            <iframe class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
-                          </div>                          
+                              <!-- video progress bar -->
+                              <div class="progress" ng-show="bar">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{vm.sas}}%">
+                                </div>
+                              </div>
+
+                            </div>                          
+                          </div>
                         </div>
-
-                        <div>                          
+                                                    
+                        <div ng-if="vm.time != 100">                          
                             <span class="fa fa-exclamation-triangle">
                               <span class="requirment">
                                 requirement degree for {{data.job.slice(11,100)}}
@@ -2658,7 +2968,7 @@
                   </div>
 
                   <div ng-if="vm.diplomaScore*100/vm.diplomaCourse.slice(8,10)==100">
-                  <button class="btn btn-success btn-block pay" ng-click="vm.diploma()">
+                  <button class="btn btn-success btn-block pay" ng-click="vm.diploma(); vm.updateScore(); vm.getscores()">
                      pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
                   </button>
                   </div>
@@ -2764,8 +3074,8 @@
                   </div>
 
                   <div ng-if="vm.associateScore*100/vm.associateCourse.slice(8,10)==100">
-                  <button class="btn btn-success btn-block pay" ng-click="vm.associate()">
-                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  <button class="btn btn-success btn-block pay" ng-click="vm.associate(); vm.updateScore(); vm.getscores()">
+                     pay 81 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
                   </button>
                   </div>
                   <hr>
@@ -2877,8 +3187,8 @@
                   </div>
 
                   <div ng-if="vm.bachelorScore*100/vm.bachelorCourse.slice(8,10)==100">
-                  <button class="btn btn-success btn-block pay" ng-click="vm.bachelor()">
-                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  <button class="btn btn-success btn-block pay" ng-click="vm.bachelor(); vm.updateScore(); vm.getscores()">
+                     pay 126 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
                   </button>
                   </div>
                   <hr>
@@ -2980,8 +3290,8 @@
                   </div>
 
                   <div ng-if="vm.masterScore*100/vm.masterCourse.slice(8,10)==100">
-                  <button class="btn btn-success btn-block pay" ng-click="vm.master()">
-                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  <button class="btn btn-success btn-block pay" ng-click="vm.master(); vm.updateScore(); vm.getscores()">
+                     pay 260 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
                   </button>
                   </div>
                   <hr>
@@ -3075,8 +3385,8 @@
                   </div>
 
                   <div ng-if="vm.doctoralScore*100/vm.doctoralCourse.slice(8,10)==100">
-                  <button class="btn btn-success btn-block pay" ng-click="vm.doctoral()">
-                     pay 26 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
+                  <button class="btn btn-success btn-block pay" ng-click="vm.doctoral(); vm.updateScore(); vm.getscores()">
+                     pay 620 <img src="../../img/coin.png" class="pay-coin"> to submit your score!
                   </button>
                   </div>
                   <hr>

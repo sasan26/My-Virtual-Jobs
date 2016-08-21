@@ -814,6 +814,11 @@ li {
 .profile-degree {
 	width: 50%;
 }
+/* gamer video caption */
+.video-caption {
+	font-size: 0.9em;
+	color: #669999;
+}
 
 
 

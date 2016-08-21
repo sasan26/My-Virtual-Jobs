@@ -8,9 +8,6 @@ var UserScore = new mongoose.Schema({
     balance: {
       type: Number
     },
-    degree: {
-      type: String
-    },
     username: {
       type: String
     }

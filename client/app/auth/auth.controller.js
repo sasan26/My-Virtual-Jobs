@@ -14,8 +14,8 @@
 
 
         $timeout(function() {
-                            p2.style.display = 'none';
-                        }, 4000);
+                p2.style.display = 'none';
+        }, 4000);
         
 
 
@@ -30,37 +30,27 @@
         // Start of register function
        vm.register = function(registerForm) {
 
-            // initial values
-            vm.error = false;
-            vm.success = false;
-            vm.disabled = true;
-
             // call register from service
             authService.register(vm.registerForm.username, vm.registerForm.password, vm.registerForm.usertype)
                 // handle success
                 .then(function() {
-                    vm.success = true;
-                    vm.successMessage = "Registration Complete!"
-                    vm.disabled = false;
-                    //vm.registerForm = {};
+                    $rootScope.username = vm.registerForm.username;
+                    vm.scores();
                     toastr.success('Registration Complete!');
-                    if ( vm.registerForm.usertype === 'gamer'){
-                        $timeout(function() {
-                            $location.path('/gamer');
-                        }, 1000);
-                    }
-                    else if ( vm.registerForm.usertype === 'partner'){
-                        $timeout(function() {
-                            $location.path('/partner');
-                        }, 1000);
-                    }
+                    // if ( vm.registerForm.usertype === 'gamer'){
+                    //     $timeout(function() {
+                    //         $location.path('/gamer');
+                    //     }, 1000);
+                    // }
+                    // else if ( vm.registerForm.usertype === 'partner'){
+                    //     $timeout(function() {
+                    //         $location.path('/partner');
+                    //     }, 1000);
+                    // }
 
                 })
                 // handle error
                 .catch(function(loginForm) {
-                    vm.error = true;
-                    vm.errorMessage = "Something went wrong!";
-                    vm.disabled = false;
                     toastr.error('An error has occurred!');
                     vm.registerForm = {};
                 });
@@ -196,7 +186,14 @@
                         return $sce.trustAsResourceUrl(src);
                     }
                     $scope.movie = {src: "https://www.youtube.com/embed/"};
-                    vm.superheroes = res;  
+                    vm.superheroes = res;
+
+                    for (var i=0; i<= res.length; i++){
+                                vm.jobUser = res[i].username;
+                                if (vm.jobUser === $rootScope.username){
+                                    $rootScope.jobUser = res[i].job.slice(8,10);    
+                                    }
+                            } 
 
                 })
                 // handle error
@@ -205,16 +202,14 @@
                 });           
         }; 
 
-        vm.balance = 0;
-        vm.degree = "None";
-        vm.score = 0;
+        
 
         // Start of scores function
         vm.scores = function() {
-            authService.scores(vm.balance, vm.degree, vm.score, $rootScope.username)
+            authService.scores(100, $rootScope.username)
                 // handle success
                 .then(function() { 
-                    toastr.success('Complete!');
+                    toastr.info('Wellcome, ' + $rootScope.username + '! You got 100 Coins!');
                                       
                 })
                 // handle error 
@@ -225,17 +220,46 @@
 
 
         // Start of getpic function
-        vm.getscores = function() {       
-            // call the getSettings from service
-            authService.getscores($rootScope.id)
-                //handle success
-                .then(function(res) {
-                    vm.theScore = res;
-                })
-                // handle error
-                .catch(function() {
-                    toastr.error("Couldn't access the datebase");
-                });           
+        vm.getscores = function() {
+            $timeout(function() {       
+                    // call the getSettings from service
+                    authService.getscores($rootScope.id)
+                        //handle success
+                        .then(function(res) {
+                            vm.theScore = res;
+                            for (var i=0; i<= res.length; i++){
+                                vm.scoreUser = res[i].username;
+                                if (vm.scoreUser === $rootScope.username){
+                                    $rootScope.scoreUser = $rootScope.username;    
+                                    $rootScope.scoreBalance = res[i].balance;
+                                    $rootScope.scoreID =res[i]._id;
+                                    }
+                            }
+                        })
+                        // handle error
+                        .catch(function() {
+                            toastr.error("Couldn't access the datebase");
+                        }); 
+            }, 1000);          
+        };
+
+
+        // Start of scores function
+        vm.updateScore = function() {
+            $timeout(function() {
+                            
+                    vm.balance = $rootScope.scoreBalance - $rootScope.school ;
+                    authService.updateScore($rootScope.scoreID, $rootScope.username, vm.balance)
+                        // handle success
+                        .then(function() { 
+                            toastr.success('Complete!');
+                                              
+                        })
+                    // handle error 
+                    .catch(function() {
+                        toastr.error("Couldn't access the datebase");
+                    });
+            }, 1000);                          
         }; 
 
 
@@ -279,8 +303,9 @@
             authService.getSchoolGrades($rootScope.id)
                 //handle success
                 .then(function(res) {
+                    $rootScope.school = 26;
                     for (var i=0; i< res.length; i++){
-                        if (res[i].degree === vm.diplomaCourse){
+                        if (res[i].degree === vm.diplomaCourse && res[i].username === $rootScope.username){
                             toastr.warning("you already got this degree. Try another one!");
                             vm.diplomaCourse = "";                       
                         }                                                               
@@ -298,8 +323,9 @@
             authService.getSchoolGrades($rootScope.id)
                 //handle success
                 .then(function(res) {
+                    $rootScope.school = 81;
                     for (var i=0; i< res.length; i++){
-                        if (res[i].degree === vm.associateCourse){
+                        if (res[i].degree === vm.associateCourse && res[i].username === $rootScope.username){
                             toastr.warning("you already got this degree. Try another one!");
                             vm.associateCourse = "";                       
                         }                                                               
@@ -317,8 +343,9 @@
             authService.getSchoolGrades($rootScope.id)
                 //handle success
                 .then(function(res) {
+                    $rootScope.school = 126;
                     for (var i=0; i< res.length; i++){
-                        if (res[i].degree === vm.bachelorCourse){
+                        if (res[i].degree === vm.bachelorCourse && res[i].username === $rootScope.username){
                             toastr.warning("you already got this degree. Try another one!");
                             vm.bachelorCourse = "";                       
                         }                                                               
@@ -336,8 +363,9 @@
             authService.getSchoolGrades($rootScope.id)
                 //handle success
                 .then(function(res) {
+                    $rootScope.school = 260;
                     for (var i=0; i< res.length; i++){
-                        if (res[i].degree === vm.masterCourse){
+                        if (res[i].degree === vm.masterCourse && res[i].username === $rootScope.username){
                             toastr.warning("you already got this degree. Try another one!");
                             vm.masterCourse = "";                       
                         }                                                               
@@ -355,8 +383,9 @@
             authService.getSchoolGrades($rootScope.id)
                 //handle success
                 .then(function(res) {
+                    $rootScope.school = 620;
                     for (var i=0; i< res.length; i++){
-                        if (res[i].degree === vm.doctoralCourse){
+                        if (res[i].degree === vm.doctoralCourse && res[i].username === $rootScope.username){
                             toastr.warning("you already got this degree. Try another one!");
                             vm.doctoralCourse = "";                       
                         }                                                               
@@ -409,28 +438,50 @@
             vm.doctoralScore -= 1;
         }
 
-        vm.sas=0;
-
-            
-              
-
-                for (var i = 0; i< 10000; i++){
-                $timeout(function() {
-                    
-                    vm.sas += 0.01;
-                    i ++ ;
-                }, 13000);}
                 
-        
+        vm.sas=0;
+        vm.timer = function(){
+            if( vm.sas <= 100){       
+                $timeout(function() {
+                    vm.sas += 0.1*(10/6);
+                    vm.time = Math.round(vm.sas);
+                    vm.timer();
+                }, 100);
+            }
+        }
+
+        vm.coin = function(){
+            vm.sas=0;
+        }
+
+
+        // Start of scores function
+        vm.earnCoin = function() {
+            $timeout(function() {
+                            
+                    vm.coins = $rootScope.scoreBalance + $rootScope.income ;
+                    authService.updateScore($rootScope.scoreID, $rootScope.username, vm.coins)
+                        // handle success
+                        .then(function() { 
+                            toastr.success('Complete!');
+                                              
+                        })
+                    // handle error 
+                    .catch(function() {
+                        toastr.error("Couldn't access the datebase");
+                    });
+            }, 1000);                          
+        }; 
+
 
 
 
 
         //vm.status();
         vm.getpic();
-        vm.profile();
+        //vm.profile();
         vm.getSchoolGrades();
-        vm.getscores();
+        //vm.getscores();
 
 
 
