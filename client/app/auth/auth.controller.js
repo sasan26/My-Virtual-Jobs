@@ -176,34 +176,26 @@
 
 
         // Start of getpic function
-        vm.getpic = function() {       
-            // call the getSettings from service
-            authService.getpic($rootScope.id)
-                //handle success
-                .then(function(res) {
+        vm.getpic = function() {                                   
+                // call the getSettings from service
+                authService.getpic($rootScope.id)
+                    //handle success
+                    .then(function(res) {
 
-                    $scope.trustSrc = function(src) {
-                        return $sce.trustAsResourceUrl(src);
-                    }
-                    $scope.movie = {src: "https://www.youtube.com/embed/"};
-                    vm.superheroes = res;
-
-                    for (var i=0; i<= res.length; i++){
-                                vm.jobUser = res[i].username;
-                                if (vm.jobUser === $rootScope.username){
-                                    $rootScope.jobUser = res[i].job.slice(8,10);    
-                                    }
-                            } 
-
-                })
-                // handle error
-                .catch(function() {
-                    toastr.error("Couldn't access the datebase");
-                });           
+                        $scope.trustSrc = function(src) {
+                            return $sce.trustAsResourceUrl(src);
+                        }
+                        $scope.movie = {src: "https://www.youtube.com/embed/"};
+                        vm.superheroes = res;
+                        $rootScope.job = res;
+                    })
+                    // handle error
+                    .catch(function() {
+                        toastr.error("Couldn't access the datebase");
+                    });           
         }; 
 
         
-
         // Start of scores function
         vm.scores = function() {
             authService.scores(100, $rootScope.username)
@@ -227,14 +219,15 @@
                         //handle success
                         .then(function(res) {
                             vm.theScore = res;
-                            for (var i=0; i<= res.length; i++){
+                            for (var i=0; i< res.length; i++){
                                 vm.scoreUser = res[i].username;
                                 if (vm.scoreUser === $rootScope.username){
                                     $rootScope.scoreUser = $rootScope.username;    
                                     $rootScope.scoreBalance = res[i].balance;
                                     $rootScope.scoreID =res[i]._id;
-                                    }
+                                }                                                                                                             
                             }
+                            $rootScope.score = res;
                         })
                         // handle error
                         .catch(function() {
@@ -285,6 +278,7 @@
                 //handle success
                 .then(function(res) {
                     vm.schoolGrade = res;
+                    $rootScope.grade = res;
                 })
                 // handle error
                 .catch(function() {
@@ -448,40 +442,44 @@
                     vm.timer();
                 }, 100);
             }
-        }
 
-        vm.coin = function(){
-            vm.sas=0;
         }
 
 
         // Start of scores function
         vm.earnCoin = function() {
-            $timeout(function() {
-                            
-                    vm.coins = $rootScope.scoreBalance + $rootScope.income ;
-                    authService.updateScore($rootScope.scoreID, $rootScope.username, vm.coins)
-                        // handle success
-                        .then(function() { 
-                            toastr.success('Complete!');
-                                              
-                        })
-                    // handle error 
-                    .catch(function() {
-                        toastr.error("Couldn't access the datebase");
-                    });
-            }, 1000);                          
-        }; 
+                       
+            vm.sas=0;
+            vm.time=0;
+            for (var i=0; i<$rootScope.score.length; i++){
+                if ( vm.pUser === $rootScope.score[i].username){
+                    $rootScope.partnerID = $rootScope.score[i]._id;
+                    $rootScope.partnerBalance = $rootScope.score[i].balance;
 
+                }
+            }
+
+            if ( $rootScope.partnerBalance < vm.currentjob.slice(8,10) ){
+                    toastr.error("Sorry! The employer doesn't have enough fund to pay you. Try another job.")
+            }
+            else if ( $rootScope.partnerBalance >= vm.currentjob.slice(8,10) ){
+
+                    vm.coins = $rootScope.scoreBalance + parseInt(vm.currentjob.slice(8,10));
+                    authService.updateScore($rootScope.scoreID, $rootScope.username, vm.coins)
+
+                    vm.expense = $rootScope.partnerBalance - parseInt(vm.currentjob.slice(8,10));
+                    authService.updateScore($rootScope.partnerID, vm.pUser, vm.expense)
+
+                    toastr.info(' Your employer paid '+vm.currentjob.slice(8,10)+' coins!');
+            }
+        }; 
 
 
 
 
         //vm.status();
         vm.getpic();
-        //vm.profile();
         vm.getSchoolGrades();
-        //vm.getscores();
 
 
 

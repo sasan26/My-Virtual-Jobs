@@ -1,6 +1,7 @@
 <div class="container-fluid gamer">
     <!-- the page header -->
     <div class="row">
+        <!-- ===== menu ====== -->
         <div class="col-sm-12">
             <div class="well well-lg well-partner">
                 <table>
@@ -13,23 +14,23 @@
                         </td>
                         <!-- account info button -->
                         <td class="tdMenu1-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
                         </td>
                         <!-- plan button -->
                         <td class="tdMenu2-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=true; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-map-o img-circle menu-top2-partner"></span>Plan</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=true; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-map-o img-circle menu-top2-partner"></span>Plan</a>
                         </td>
                         <!-- ads button -->
                         <td class="tdMenu3-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=true; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=false; plan=false; ads=true; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
                         </td>
                         <!-- analyse button -->
                         <td class="tdMenu5-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=false; analyse=true; payment=true"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
                         </td>
                         <!-- payment button -->
                         <td class="tdMenu6-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=false; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
                         </td>
                         <!-- sign out button -->
                         <td class="tdMenu4-partner">
@@ -155,7 +156,7 @@
                                     <img ng-src="{{vm.superhero.picture.url | fpConvert: {filter:'sharpen'} }}">
                                     </a>
                                     <input type="text" class="form-control" name="videoId" ng-model="vm.videoId" placeholder="youtube video id">
-                                    <button type="submit" class="btn btn-danger btn-block"  ng-click="vm.pic()" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture">Submit</button> 
+                                    <button type="submit" class="btn btn-danger btn-block"  ng-click="vm.pic(); vm.getpic; vm.profile();" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture">Submit</button> 
                                 </td>
                             </tr>
                             <!-- select menu (job categories) -->
@@ -729,7 +730,7 @@
         <!-- Strat of the payments -->
         <!-- *************************************************************************************** -->
         <!-- **************************************** Payment ************************************** -->
-        <div class="panel-group" ng-hide="payment">
+        <div class="panel-group" ng-show="payment">
             <div class="panel panel-info">
                 <div class="panel-heading">Payment <span class="fa fa-credit-card"></span></div>
                 <div class="panel-body">
@@ -803,10 +804,10 @@
                     <div class="alert alert-warning">
                         <table>
                             <tr>
-                                <td class="result">
+                                <td class="result" ng-repeat="data in vm.theScore | filter: vm.username">
                                   Ballance:
                                   <br><br>
-                                  <input type="text" disabled="disabled" class="form-inline balance result9" value= "0 Coins">
+                                  {{data.balance}}
                                   <a class="btn icon-btn btn-plus"><span class="glyphicon btn-glyphicon fa fa-plus img-circle"></span>Add More Coins</a>
                                   <img src="../../img/coin.png" class="coin">
                                 </td>
