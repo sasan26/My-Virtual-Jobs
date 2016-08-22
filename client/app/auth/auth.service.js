@@ -22,7 +22,10 @@
             scores: scores,
             getSchoolGrades: getSchoolGrades,
             schoolGrades: schoolGrades,
-            updateScore: updateScore   
+            updateScore: updateScore,
+            deletePic: deletePic,
+            deleteScore: deleteScore,
+            changeEmail: changeEmail    
         };
 
         return service;
@@ -146,11 +149,8 @@
             var deferred = $q.defer();  // create a new instance of deferred   
             $http({     // send a delete request to the server
                 method: 'DELETE',
-                url: '/user/delete?' + id
+                url: '/user/register/' + id
             })
-
-
-         
                 // handle success
                 .success(function(data, status) {
                     if (status === 200 && data.status) {
@@ -170,6 +170,28 @@
             // return promise object
             return deferred.promise;
         }  // End of profile function
+
+
+        // Start of change Email function
+        function changeEmail(id, username){
+            var defer = $q.defer();
+            var data = {username: username};
+            $http({
+                method: 'PUT',
+                url: '/user/register/' + id,
+                data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
 
 
         // Start of ad function
@@ -229,6 +251,26 @@
             // return promise object
             return deferred.promise;
         }  // End of getpic function
+
+
+        // Start of delete ad function
+        function deletePic(id){
+            var defer = $q.defer();
+            $http({
+                method: 'DELETE',
+                url: '/user/superhero/' + id
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
 
        
        // Start of score function
@@ -355,6 +397,26 @@
                 //         'Content-Type': 'application/json; charset=utf-8'
                 // },
                 data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
+
+        // Start of delete ad function
+        function deleteScore(id){
+            var defer = $q.defer();
+            $http({
+                method: 'DELETE',
+                url: '/user/score/' + id
             }).then(function(response) {
                     if (response.status === 204) {
                         defer.resolve(response);

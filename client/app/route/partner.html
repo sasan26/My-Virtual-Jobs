@@ -14,7 +14,7 @@
                         </td>
                         <!-- account info button -->
                         <td class="tdMenu1-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores()"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
                         </td>
                         <!-- plan button -->
                         <td class="tdMenu2-partner">
@@ -63,7 +63,7 @@
                             </tr>
                         </table>
                     </div>
-                    <button class="btn btn-danger" ng-click="vm.deleteAccount()"> delete your account2</button>
+                    <button class="btn btn-danger" ng-click="vm.deleteAccount()"> delete your account</button>
                 </div>
             </div>
         </div>
@@ -144,19 +144,19 @@
                             <tr>
                                 <td class="result6">
                                   <!-- upload button -->
-                                  <button type="button" class="btn btn-default" ng-click="vm.upload()">
-                                      Upload <span class="caret"></span>
+                                  <button type="button" class="btn btn-default btn-upload " ng-click="vm.upload()">
+                                      Upload an image ad <span class="caret"></span>
                                   </button>
                                 </td>
 
                                 <td class="result7">                                  
                                   <!-- Show the thumbnail only when the picture is uploaded -->
-                                    <a href="{{vm.superhero.picture.url}}" class="thumbnail" ng-if="vm.superhero.picture">
+                                    <a href="{{vm.superhero.picture.url}}"  ng-if="vm.superhero.picture" target="_blank">
                                     <!-- the picture is rendered with width: 500 and sharpened -->
-                                    <img ng-src="{{vm.superhero.picture.url | fpConvert: {filter:'sharpen'} }}">
+                                    <img ng-src="{{vm.superhero.picture.url | fpConvert: {filter:'sharpen'} }}" class="uploaded-pic">
                                     </a>
-                                    <input type="text" class="form-control" name="videoId" ng-model="vm.videoId" placeholder="youtube video id">
-                                    <button type="submit" class="btn btn-danger btn-block"  ng-click="vm.pic(); vm.getpic; vm.profile();" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture">Submit</button> 
+                                    <!-- <a class="btn icon-btn plan-on"><span class="glyphicon btn-glyphicon fa fa-upload img-circle" ng-click="vm.pic(); vm.getpic; vm.profile();" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture"></span>upload</a> -->
+
                                 </td>
                             </tr>
                             <!-- select menu (job categories) -->
@@ -632,9 +632,18 @@
                                   </select>
                                </td>
                             </tr>
+                            <tr>
+                                <td class="result">
+                                    <input type="text" class="form-control youtube-id" name="videoId" ng-model="vm.videoId" placeholder="youtube video id">
+
+                                    <button type="submit" class="btn btn-danger btn-submit" ng-click="vm.pic(); vm.getpic(); vm.profile();" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture || !vm.videoId || !vm.job">
+                                        <span class=" fa fa-upload"></span>    
+                                     Submit </button> 
+                                </td>
+                            </tr>
                         </table>
 
-                  <a class="btn icon-btn plan-on"><span class="glyphicon btn-glyphicon fa fa-upload img-circle"></span>upload</a>
+                        
 
                     </div>
 
@@ -647,12 +656,13 @@
                             <td class="result">
                                 <div class="row"> <!-- print the image ads from the server -->
                                     <div class="col-md-4" ng-repeat="data in vm.superheroes | filter:vm.username">
-                                        <a class="close fa fa-trash-o" aria-label="close"></a>
+                                        <a class="close fa fa-trash-o" aria-label="close" ng-click="vm.delete=data._id; vm.deletePic(); vm.getpic()">
+                                        </a>
                                         <div class="alert alert-warning pic-alert">
                                           <div class="job-details">
                                             <h5>{{data.job.slice(11, 100)}}</h5>
                                             <h6>{{data.job.slice(8, 10)}}
-                                            <img src="../../img/coin.png" class="ad-details"> /min</h6>
+                                            <img src="../../img/coin.png" class="ad-details"></h6>
                                           </div>
                                           <img class="pic-ad" src="{{data.picurl}}">
                                           <iframe class="ad-video" type="text/html" width="250" height="150" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe><br></div>
@@ -830,11 +840,11 @@
                         <table>
                             <tr>
                                 <td class="result">New Email:</td>
-                                <td><input type="text" class="form-control" placeholder="your new email . . ."></td>
+                                <td><input type="text" class="form-control" ng-model="vm.changeE" placeholder="your new email . . ."></td>
                             </tr>
                         </table>
                     </div>
-                    <button class="btn btn-success">change</button>
+                    <button class="btn btn-success" ng-click="vm.changeEmail(); vm.profile(); changeEmail=false;" ng-disabled="!vm.changeE">change</button>
                 </div>
             </div>
         </div>
@@ -857,11 +867,11 @@
                             </tr>
                             <tr>
                                 <td class="result">new password confirmation</td>
-                                <td><input type="text" class="form-control" placeholder="your new password confirmation. . ."></td>
+                                <td><input type="text" class="form-control" ng-model="vm.changeP" placeholder="your new password confirmation. . ."></td>
                             </tr>
                         </table>
                     </div>
-                    <button class="btn btn-success">change</button>
+                    <button class="btn btn-success" ng-click="vm.changePas(); vm.profile(); changePass=false;" ng-disabled="!vm.changeP">change</button>
                 </div>
             </div>
         </div>

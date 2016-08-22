@@ -49,6 +49,26 @@ router.post('/getSettings', function(req, res) {
 });
 
 
+router.delete('/register/:id', function(req, res) {  
+   var id = req.params.id;
+    User.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Deleted!' });            
+        });
+});
+
+
+router.put('/register/:id', function(req, res) {  
+   var id = req.params.id;
+    User.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { username: req.body.username }
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
+});
+
+
 router.post('/updateSettings', function(req, res) {
     User.findOneAndUpdate({
         _id: req.body.id
@@ -102,16 +122,6 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-router.put('/login/:id', function(req, res) {  
-   var id = req.params.id;
-    User.update({ _id: mongoose.Types.ObjectId(id) }, {
-        $set: { balance: req.body.balance, username: req.body.username}
-    }, function(err) {
-        if (err) { console.log(err); }
-                res.json({ message: 'Updated' });            
-        });
-});
-
 
 router.get('/logout', function(req, res) {
     req.logout();
@@ -153,24 +163,6 @@ router.get('/profile', function(req, res) {
 });
 
 
-router.delete('/delete', function(req, res) {
-   User.remove({
-        _id: req.body.id
-    }, function(err, data) {
-        if (err) {
-            return res.status(500).json({
-                err: err
-            });
-        } else {
-            return res.status(200).json({
-                status: 'profile found!',
-                data: data
-            });
-        }
-    });
-});
-
-
 router.post('/superhero', function(req, res) {
    
     var picture = new Pic(req.body);
@@ -192,6 +184,15 @@ router.get('/superhero', function(req, res) {
         }
         //If no errors, send them back to the client
         res.json(superheroes);});
+});
+
+
+router.delete('/superhero/:id', function(req, res) {  
+   var id = req.params.id;
+    Pic.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Deleted!' });            
+        });
 });
 
 

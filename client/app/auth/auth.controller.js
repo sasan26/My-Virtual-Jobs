@@ -19,7 +19,6 @@
         
 
 
-
         vm.status = function (){
             if ( !$rootScope.logged ){
                 $location.path('/home');        
@@ -127,15 +126,32 @@
         vm.deleteAccount = function() {       
             // call the getSettings from service
             authService.deleteAccount($rootScope.id)
+
+            for ( var i=0; i<$rootScope.score.length; i++){
+                if ( $rootScope.score[i].username === $rootScope.username ){
+                    vm.scoreDeleteId = $rootScope.score[i]._id;
+                     authService.deleteScore(vm.scoreDeleteId)
+                }
+            }
                 //handle success
-                .then(function(res) {
-                    toastr.success("Your account has been deleted!");
-                })
-                // handle error
-                .catch(function() {
-                    toastr.error("Couldn't access the datebase");
-                });           
+                toastr.info("Your account has been deleted!");
+                $timeout(function() {
+                                $location.path('/home');
+                            }, 1000);
         };
+
+        // Start of change Email function
+        vm.changeEmail = function() {
+
+                    authService.changeEmail($rootScope.id, vm.changeE)
+                    $rootScope.username = vm.changeE;
+
+                    authService.updateScore($rootScope.scoreID, vm.changeE, $rootScope.scoreBalance)
+                        // handle success
+                            toastr.success('Your Email has been successfully changed!');
+                                              
+                    
+        }; 
 
         // Start of upload images function
         vm.superhero = [];
@@ -194,6 +210,14 @@
                         toastr.error("Couldn't access the datebase");
                     });           
         }; 
+
+
+        // Start of scores function
+        vm.deletePic = function() {
+                    authService.deletePic(vm.delete)
+                        // handle success
+                        toastr.warning('Deleted!');                                                               
+        };
 
         
         // Start of scores function

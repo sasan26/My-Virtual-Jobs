@@ -582,6 +582,8 @@ li {
 .result7 {
 	color: black;
 	width: 50%;
+	text-align: left;
+	padding: 0;
 }
 /* result table/ analyse 1st row */
 .result9 {
@@ -740,10 +742,6 @@ li {
  	padding: 20px;
  	margin: 5px;
  }
-/* partner - ad - upload pic */
- .thumbnail {
- 	width: 100%;
- }
  /* partner- ad - close icon */
  .close {
  	margin: 10px 10px auto auto;
@@ -818,6 +816,28 @@ li {
 .video-caption {
 	font-size: 0.9em;
 	color: #669999;
+}
+
+/*partner youtube video-id text box */
+.youtube-id {
+	width: 180px;
+	margin: 10px auto 5px 0;
+}
+/*partner - ad uploaded pic */
+.uploaded-pic {
+	width: 10%;
+	border: 1px solid #669999;
+	margin: 0;
+}
+/* partner -ad upload button */
+.btn-upload {
+	width: 180px;
+}
+/* partner ad submit button */
+.btn-submit {
+	background-color: #669999;
+	border: none;
+	width: 180px;
 }
 
 

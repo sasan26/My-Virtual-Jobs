@@ -10,7 +10,7 @@
         .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'filepickerProvider', function($stateProvider, $urlRouterProvider, $httpProvider, filepickerProvider){
         	//$httpProvider.interceptors.push('authInterceptor'); 
             $urlRouterProvider.otherwise('home'); // redirection
-            filepickerProvider.setKey('ARALkO2yATFGnmPrh8wqYz');
+            filepickerProvider.setKey('AHJOdoEgQ9OJkRjndz7Jkz');
 
 
             //start router
