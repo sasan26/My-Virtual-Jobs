@@ -83,7 +83,7 @@
                         $rootScope.username = res.username;
                         vm.username = $rootScope.username;
 
-                        toastr.success('Successfully loged in!');
+                        toastr.success('Successfully logged in!');
                     }
                 })
                 // handle error
