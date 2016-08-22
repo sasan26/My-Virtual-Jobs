@@ -82,9 +82,9 @@
                         $rootScope.id = res.user;
                         $rootScope.username = res.username;
                         vm.username = $rootScope.username;
-
                         toastr.success('Successfully logged in!');
                     }
+                    
                 })
                 // handle error
                 .catch(function() {
@@ -104,7 +104,9 @@
                 .then(function() {
                     $rootScope.logged = false;
                     $location.path('/home');
-                    toastr.success('Successfully loged out!');
+                    $rootScope.id = "";
+                    $rootScope.username = "";
+                    toastr.info('Successfully loged out!');
                 });
         };
 

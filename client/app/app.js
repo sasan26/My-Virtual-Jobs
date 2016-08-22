@@ -13,6 +13,7 @@
             filepickerProvider.setKey('AHJOdoEgQ9OJkRjndz7Jkz');
 
 
+
             //start router
         	$stateProvider
             .state('home', {    //first state for home.html
