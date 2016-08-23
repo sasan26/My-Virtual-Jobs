@@ -5,10 +5,10 @@
         .module('jobApp')
         .controller('authControllers', authControllers);
 
-    authControllers.$inject = ['$sce', 'authService', '$timeout', '$location', '$rootScope', '$http', 'filepickerService', '$scope'];
+    authControllers.$inject = ['$window', '$sce', 'authService', '$timeout', '$location', '$rootScope', '$http', 'filepickerService', '$scope'];
 
     /* @ngInject */
-    function authControllers($sce, authService, $timeout, $location, $rootScope, $http, filepickerService, $scope) {
+    function authControllers($window, $sce, authService, $timeout, $location, $rootScope, $http, filepickerService, $scope) {
         var vm = this;
         vm.title = 'authControllers';
 
@@ -83,8 +83,7 @@
                         $rootScope.username = res.username;
                         vm.username = $rootScope.username;
                         toastr.success('Successfully logged in!');
-                    }
-                    
+                    }                    
                 })
                 // handle error
                 .catch(function() {
@@ -501,8 +500,53 @@
         }; 
 
 
+        // success payment
+        vm.success = function() {
+            
+            // call from service
+            authService.getpayment()
+                //handle success
+                .then(function(res) {                            
+                    authService.updatepayment(res[0]._id, "SUCCESS")
+                })
+            $window.close();
+        }
+
+        vm.collect = function() {
+            // call from service
+            authService.getpayment()
+            //handle success
+                .then(function(res) {                            
+                    if (res[0].status === "SUCCESS"){
+                        // Start of scores function
+                            vm.pos = vm.pay.indexOf(" Coins");              
+                            vm.balance = $rootScope.scoreBalance + parseInt(vm.pay.slice(0,vm.pos));
+                            authService.updateScore($rootScope.scoreID, $rootScope.username, vm.balance)
+                                toastr.success('You got your coins!');
+                                vm.pay = '';
+                                authService.updatepayment(res[0]._id, "none")
+                                                                                                      
+                    }
+                    else{
+                        toastr.error('Sorry! your payment was not successfull.');
+                    }
+                })
+        }
 
 
+        
+
+        
+
+
+
+
+
+
+
+
+
+        
         //vm.status();
         vm.getpic();
         vm.getSchoolGrades();

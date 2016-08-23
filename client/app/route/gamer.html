@@ -148,38 +148,48 @@
                 <div class="panel-heading">Payment <span class="fa fa-credit-card"></span></div>
                   <div class="panel-body">
 
-                    <!-- =========== your payment method ============== -->
-                    <div class="alert alert-warning">
-                        <table>
-                            <tr>
-                                <td class="result">
-                                    Your payment method:
-                                </td>
-                                <td class="result9">none</td>
-                            </tr>
-                        </table>
-                    </div>
-
                     <!-- =========== add a payment ============== -->
                     <div class="alert alert-warning">
                         <table>
                             <tr>
-                                <td class="result">
-                                  Add a payment method
-                                  <br><br>
-                                  <img src="../../img/credit-card-icons.png" class="payment-logo">
-                                  <div class="form-group">
-                                    <label class="payment-label">Credit Card Number</label>
-                                    <input type="text" placeholder="credit card number" class="form-control payment-input" required>
-                                    <label class="payment-label">Cardholder Name</label>
-                                    <input type="text" placeholder="cardholder name" class="form-control payment-input" required>
-                                    <label class="payment-label">CVC</label>
-                                    <input type="number" placeholder="CVC" class="form-control payment-cvc" required>
-                                    <label class="payment-label">Expiration Date</label>
-                                    <input type="date" placeholder="MM/YYYY" class="form-control payment-date" required>
-                                    <button class="btn btn-success plan-on">Register My Card</button>
-                                  </div>
-                                </td>
+                              <td class="result">                                
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                                  <input type="hidden" name="cmd" value="_s-xclick">
+                                  <input type="hidden" name="hosted_button_id" value="M5T746LP8GP4W">
+                                  <table>
+                                    <tr>
+                                      <td class="result">
+                                        <input type="hidden" name="on0" value="Buy Coins">
+                                        Buy Coins
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <select name="os0" ng-model="vm.pay">
+                                          <option value="10 Coins">10 Coins $0.99 USD</option>
+                                          <option value="20 Coins">20 Coins $1.89 USD</option>
+                                          <option value="50 Coins">50 Coins $4.79 USD</option>
+                                          <option value="100 Coins">100 Coins $9.69 USD</option>
+                                          <option value="200 Coins">200 Coins $19.59 USD</option>
+                                          <option value="500 Coins">500 Coins $49.49 USD</option>
+                                          <option value="1000 Coins">1000 Coins $99.39 USD</option>
+                                          <option value="10000 Coins">10000 Coins $999.29 USD</option>
+                                        </select>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <input type="hidden" name="currency_code" value="USD">
+                                  <input type="hidden" name="currency_code" value="USD">
+                                  <button name="submit" ng-click="collect=true" class="btn btn-success">
+                                    <span class="fa fa-usd"></span>
+                                      Buy Coins
+                                  </button>                                  
+                                </form>
+                                <button ng-show="collect" ng-click="vm.collect()" class="btn btn-info btn-block collect">
+                                  <span class="fa fa-cart-plus"></span>
+                                    Collect Coins
+                                  </button>
+                              </td>
                             </tr>
                         </table>
                     </div>

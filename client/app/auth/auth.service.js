@@ -25,7 +25,9 @@
             updateScore: updateScore,
             deletePic: deletePic,
             deleteScore: deleteScore,
-            changeEmail: changeEmail    
+            changeEmail: changeEmail,
+            updatepayment: updatepayment,
+            getpayment: getpayment    
         };
 
         return service;
@@ -429,6 +431,64 @@
                 });
             return defer.promise;      
         }
+
+
+        // // Start of getpic function
+        function getpayment(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.get('/user/payments', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
+        } 
+
+
+        // Start of updatepayment function
+        function updatepayment(id, status){
+            var defer = $q.defer();
+            var data = {status: status};
+            $http({
+                method: 'PUT',
+                url: '/user/payments/' + id,
+                // headers: {
+                //         'Content-Type': 'application/json; charset=utf-8'
+                // },
+                data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
+
+        
 
 
     }   

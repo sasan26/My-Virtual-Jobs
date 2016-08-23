@@ -32,6 +32,12 @@
                 url: '/partner', 
                 templateUrl: 'app/route/partner.html', 
                 controller: 'authControllers as vm',
+            })
+
+            .state('success', {   //2nd state for partner.html
+                url: '/success', 
+                templateUrl: 'app/route/success.html', 
+                controller: 'authControllers as vm',
             });
         }])  // end router
 

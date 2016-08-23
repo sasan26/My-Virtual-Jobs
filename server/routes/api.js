@@ -7,6 +7,7 @@ var User = require('../models/user.js');
 var Pic = require('../models/pic.js');
 var UserScores = require('../models/score.js');
 var School = require('../models/school.js');
+var Payment = require('../models/pay.js');
 
 
 router.post('/register', function(req, res) {
@@ -244,6 +245,7 @@ router.get('/school', function(req, res) {
         res.json(superheroes);});
 });
 
+
 router.put('/score/:id', function(req, res) {  
    var id = req.params.id;
     UserScores.update({ _id: mongoose.Types.ObjectId(id) }, {
@@ -254,6 +256,7 @@ router.put('/score/:id', function(req, res) {
         });
 });
 
+
 router.delete('/score/:id', function(req, res) {  
    var id = req.params.id;
     UserScores.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
@@ -261,6 +264,42 @@ router.delete('/score/:id', function(req, res) {
                 res.json({ message: 'Deleted!' });            
         });
 });
+
+
+router.post('/payments', function(req, res) {
+   
+    var paymentVal = new Payment(req.body);
+    // add to db
+    paymentVal.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/payments', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = Payment.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
+});
+
+router.put('/payments/:id', function(req, res) {  
+   var id = req.params.id;
+    Payment.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { status: req.body.status }
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
+});
+
+
+
 
 
 

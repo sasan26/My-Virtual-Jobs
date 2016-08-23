@@ -839,6 +839,16 @@ li {
 	border: none;
 	width: 180px;
 }
+/* success page */
+.success {
+	margin: 5% 15%;
+	width: 70%;
+}
+
+/* gamer collect payment btn */
+.collect {
+	margin-top: 10px;
+}
 
 
 
