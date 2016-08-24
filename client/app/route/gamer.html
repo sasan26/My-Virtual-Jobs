@@ -11,7 +11,7 @@
 						<a class="btn icon-btn menu-top" ng-click="map=false; profile=false; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; "><span class="glyphicon btn-glyphicon glyphicon-phone img-circle menu-top2"></span>game console</a>
 						</td>
 						<td class="tdMenu2">
-							<a class="btn icon-btn menu-top" ng-click="vm.profile(); vm.getscores(); vm.getSchoolGrades(); map=true; profile=true; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false;"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle menu-top2"></span>profile</a>
+							<a class="btn icon-btn menu-top" ng-click="vm.getPayHistory(); vm.getIncome(); vm.profile(); vm.getscores(); vm.getSchoolGrades(); map=true; profile=true; help=false; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false;"><span class="glyphicon btn-glyphicon glyphicon-info-sign img-circle menu-top2"></span>profile</a>
 						</td>
 						<td class="tdMenu3">
 							<a class="btn icon-btn menu-top" ng-click="map=true; profile=false; help=true; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; ""><span class="glyphicon btn-glyphicon glyphicon-question-sign img-circle menu-top2"></span>help</a>
@@ -124,12 +124,12 @@
                         <table>
                             <tr>
                                 <td class="result">Email:</td>
-                                <td class="result2 data-result">{{vm.username}}
+                                <td class="result2">{{vm.username}}</td>
                                 <td class="result3"><button class="btn btn-warning ch-Email" ng-click="changeEmail=!changeEmail">change your Email</button></td>
                             </tr>
                             <tr>
                                 <td class="result">Password</td>
-                                <td class="result2 data-result">(hidden)</td>
+                                <td class="result2">(hidden)</td>
                                 <td class="result3"><button class="btn btn-warning" ng-click="changePass=!changePass">change your Password</button></td>
                             </tr>
                         </table>
@@ -139,6 +139,28 @@
             </div>
         </div>
         <!-- ./ End of the Gamer user information -->
+
+
+        <!-- Strat of partner user Change Email -->
+        <div class="panel-group" ng-show="changeEmail">
+            <div class="panel panel-info panel-chEmail">
+                <div class="panel-heading">Change your Email Address <span class="fa fa-user"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-success">
+                        <table>
+                            <tr>
+                                <td class="result">New Email:</td>
+                                <td><input type="text" class="form-control" ng-model="vm.changeE" placeholder="your new email . . ."></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="btn btn-success" ng-click="vm.changeEmail(); vm.profile(); changeEmail=false;" ng-disabled="!vm.changeE">change</button>
+                </div>
+            </div>
+        </div>
+
+
+        
 
         <!-- Strat of the payments -->
         <!-- *************************************************************************************** -->
@@ -203,9 +225,14 @@
                                     <br><br>
                                     <table class="table table-hover">
                                         <tr>
-                                            <td class="result9">#</td>
                                             <td class="result9">date</td>
+                                            <td class="result9">coins</td>
                                             <td class="result9">amount $</td>
+                                        </tr>
+                                        <tr ng-repeat="datas in vm.payHis| filter:vm.username">
+                                            <td class="result9">{{datas.date}}</td>
+                                            <td class="result9">{{datas.coins}}</td>
+                                            <td class="result9">{{datas.amount}}</td>
                                         </tr>
                                   </table>
                                 </td>
@@ -222,10 +249,14 @@
                                   <br><br>
                                   <table class="table table-hover">
                                       <tr>
-                                          <td class="result9">#</td>
                                           <td class="result9">date</td>
-                                          <td class="result9">amount $</td>
+                                          <td class="result9">coins</td>
                                           <td class="result9">Employer-Name</td>
+                                      </tr>
+                                      <tr ng-repeat="datas in vm.theIncome| filter:vm.username">
+                                          <td class="result9">{{datas.date}}</td>
+                                          <td class="result9">{{datas.coins}}</td>
+                                          <td class="result9">{{datas.employer}}</td>
                                       </tr>
                                   </table>
                                 </td>

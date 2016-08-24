@@ -3,13 +3,17 @@ var router = express.Router();
 var passport = require('passport');
 var mongoose = require('mongoose');
 
+// database models
 var User = require('../models/user.js');
 var Pic = require('../models/pic.js');
 var UserScores = require('../models/score.js');
 var School = require('../models/school.js');
 var Payment = require('../models/pay.js');
+var PaymentHis = require('../models/payhistory.js');
+var incomeHis = require('../models/income.js');
+var payoutHis = require('../models/payout.js');
 
-
+// register new account route
 router.post('/register', function(req, res) {
     User.register(new User({
             username: req.body.username,
@@ -31,25 +35,7 @@ router.post('/register', function(req, res) {
         });
 });
 
-
-router.post('/getSettings', function(req, res) {
-    User.findOne({
-        _id: req.body.id
-    }, function(err, data) {
-        if (err) {
-            return res.status(500).json({
-                err: err
-            });
-        } else {
-            return res.status(200).json({
-                status: 'Retrieved Settings!',
-                data: data
-            });
-        }
-    });
-});
-
-
+// delete an account route
 router.delete('/register/:id', function(req, res) {  
    var id = req.params.id;
     User.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
@@ -58,7 +44,7 @@ router.delete('/register/:id', function(req, res) {
         });
 });
 
-
+// update an email route
 router.put('/register/:id', function(req, res) {  
    var id = req.params.id;
     User.update({ _id: mongoose.Types.ObjectId(id) }, {
@@ -69,34 +55,7 @@ router.put('/register/:id', function(req, res) {
         });
 });
 
-
-router.post('/updateSettings', function(req, res) {
-    User.findOneAndUpdate({
-        _id: req.body.id
-    }, {
-        $set: {
-            first: req.body.first,
-            last: req.body.last,
-            city: req.body.city,
-            state: req.body.state
-        }
-    }, {
-        new: true
-    }, function(err, data) {
-        if (err) {
-            return res.status(500).json({
-                err: err
-            });
-        } else {
-            return res.status(200).json({
-                status: 'Updated Settings!',
-                data: data
-            });
-        }
-    });
-});
-
-
+// login user route
 router.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
         if (err) {
@@ -123,7 +82,7 @@ router.post('/login', function(req, res, next) {
     })(req, res, next);
 });
 
-
+// logout route
 router.get('/logout', function(req, res) {
     req.logout();
     res.status(200).json({
@@ -163,7 +122,7 @@ router.get('/profile', function(req, res) {
     });
 });
 
-
+// add a new job route
 router.post('/superhero', function(req, res) {
    
     var picture = new Pic(req.body);
@@ -175,7 +134,7 @@ router.post('/superhero', function(req, res) {
     });                         
 });
 
-
+// get all jobs route
 router.get('/superhero', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = Pic.find({});
@@ -187,7 +146,7 @@ router.get('/superhero', function(req, res) {
         res.json(superheroes);});
 });
 
-
+// delete a job route
 router.delete('/superhero/:id', function(req, res) {  
    var id = req.params.id;
     Pic.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
@@ -196,7 +155,7 @@ router.delete('/superhero/:id', function(req, res) {
         });
 });
 
-
+// add balance route
 router.post('/score', function(req, res) {
    
     var userScore = new UserScores(req.body);
@@ -208,7 +167,27 @@ router.post('/score', function(req, res) {
     });                         
 });
 
+// update a balance route
+router.put('/score/:id', function(req, res) {  
+   var id = req.params.id;
+    UserScores.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { balance: req.body.balance, username: req.body.username }
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
+});
 
+// delete a user balance route
+router.delete('/score/:id', function(req, res) {  
+   var id = req.params.id;
+    UserScores.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Deleted!' });            
+        });
+});
+
+// get a user balance route
 router.get('/score', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = UserScores.find({});
@@ -246,26 +225,6 @@ router.get('/school', function(req, res) {
 });
 
 
-router.put('/score/:id', function(req, res) {  
-   var id = req.params.id;
-    UserScores.update({ _id: mongoose.Types.ObjectId(id) }, {
-        $set: { balance: req.body.balance, username: req.body.username }
-    }, function(err) {
-        if (err) { console.log(err); }
-                res.json({ message: 'Updated' });            
-        });
-});
-
-
-router.delete('/score/:id', function(req, res) {  
-   var id = req.params.id;
-    UserScores.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
-        if (err) { console.log(err); }
-                res.json({ message: 'Deleted!' });            
-        });
-});
-
-
 router.post('/payments', function(req, res) {
    
     var paymentVal = new Payment(req.body);
@@ -296,6 +255,72 @@ router.put('/payments/:id', function(req, res) {
         if (err) { console.log(err); }
                 res.json({ message: 'Updated' });            
         });
+});
+
+router.post('/paymenthistory', function(req, res) {
+   
+    var sas = new PaymentHis(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/paymenthistory', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = PaymentHis.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
+});
+
+router.post('/income', function(req, res) {
+   
+    var sas = new incomeHis(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/income', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = incomeHis.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
+});
+
+router.post('/payout', function(req, res) {
+   
+    var sas = new payoutHis(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/payout', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = payoutHis.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
 });
 
 

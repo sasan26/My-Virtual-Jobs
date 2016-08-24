@@ -8,17 +8,9 @@
                     <tr>
                         <!-- pahe logo -->
                         <td class="logo-partner">Partner Console</td>
-                        <!-- start button -->
-                        <td class="tdMenu7-partner">
-                            <a class="btn icon-btn menu-top-partner enable" ng-click=""><span class="glyphicon btn-glyphicon fa fa-check img-circle menu-top2-partner enable2"></span>Enable your business</a>
-                        </td>
                         <!-- account info button -->
                         <td class="tdMenu1-partner">
                             <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores()"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
-                        </td>
-                        <!-- plan button -->
-                        <td class="tdMenu2-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="partnerInfo=false; plan=true; ads=false; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-map-o img-circle menu-top2-partner"></span>Plan</a>
                         </td>
                         <!-- ads button -->
                         <td class="tdMenu3-partner">
@@ -30,7 +22,7 @@
                         </td>
                         <!-- payment button -->
                         <td class="tdMenu6-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getPayHistory(); vm.getPayout(); vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
                         </td>
                         <!-- sign out button -->
                         <td class="tdMenu4-partner">
@@ -68,67 +60,6 @@
             </div>
         </div>
         <!-- ./ End of partner user information -->
-
-        <!-- Strat of partner plan -->
-        <!-- *************************************************************************************** -->
-        <!-- ******************************************* Plan ************************************** -->
-        <div class="panel-group" ng-show="plan">
-            <div class="panel panel-info">
-                <div class="panel-heading">Plan <span class="fa fa-map-o"></span></div>
-                <div class="panel-body">
-                    <div class="alert alert-warning">
-                        <table>
-                            <tr>
-                                <td class="result">Current Plan:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-                      </div>
-                      <div class="alert alert-warning">
-                        <table>
-                            <tr>
-                                <td class="result">Change your plan</td>
-                            </tr>
-                            <tr>
-                                <td class="result5">Top Degrees For Getting Hired:</td>
-                                <td class="result4">
-                                  <!-- start of toggle buttons -->
-
-                                  <!-- diploma button -->
-                                  <a class="btn icon-btn plan-on" ng-show="diplomaOn" ng-click="diplomaOn=false; diplomaOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>diploma</a>
-
-                                  <a class="btn icon-btn off-btn" ng-hide="diplomaOff" ng-click="diplomaOn=true; diplomaOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>diploma</a>
-
-                                  <!-- associate button -->
-                                  <a class="btn icon-btn plan-on" ng-show="associateOn" ng-click="associateOn=false; associateOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>associate</a>
-
-                                  <a class="btn icon-btn off-btn" ng-hide="associateOff" ng-click="associateOn=true; associateOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>associate</a>
-
-                                  <!-- bachelor button -->
-                                  <a class="btn icon-btn plan-on" ng-show="bachelorOn" ng-click="bachelorOn=false; bachelorOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>bachelor</a>
-
-                                  <a class="btn icon-btn off-btn" ng-hide="bachelorOff" ng-click="bachelorOn=true; bachelorOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>bachelor</a>
-
-                                  <!-- master button -->
-                                  <a class="btn icon-btn plan-on" ng-show="masterOn" ng-click="masterOn=false; masterOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>master</a>
-
-                                  <a class="btn icon-btn off-btn" ng-hide="masterOff" ng-click="masterOn=true; masterOff= true"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>master</a>
-
-                                  <!-- doctoral button -->
-                                  <a class="btn icon-btn plan-on" ng-show="doctoralOn" ng-click="doctoralOn=false; doctoralOff= false; doctoralText='' "><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>doctoral</a>
-
-                                  <a class="btn icon-btn off-btn" ng-hide="doctoralOff" ng-click="doctoralOn=true; doctoralOff= true; doctoralText='doctoral' "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>doctoral</a>
-
-                                  <!-- ./ End of the toggle buttons -->
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <button class="btn btn-warning">change</button>
-                </div>
-            </div>
-        </div>
-        <!-- ./ End of partner plan -->
 
         <!-- Strat of partner video ads -->
         <!-- *************************************************************************************** -->
@@ -692,40 +623,11 @@
                                 <td>
                                   <table class="table table-hover">
                                     <tr>
-                                      <td class="result9">#</td>
+                                      <td class="result9">date</td>
                                       <td class="result9">ad-Id</td>
                                       <td class="result9"># of views</td>
                                       <td class="result9">total paid</td>
                                       <td class="result9">status</td>
-                                    </tr>
-                                  </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="alert alert-warning">
-                        <table>
-                            <tr>
-                                <td>
-                                  <table class="table table-hover">
-                                    <tr>
-                                      <td class="result9">#</td>
-                                      <td class="result9">employee-Id</td>
-                                      <td class="result9">total paid</td>
-                                      <td class="result9">employye-Degree</td>
-                                      <td class="result10">
-                                        <span class=" fa fa-exclamation-triangle"></span>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td class="result9"></td>
-                                      <td class="result9"></td>
-                                      <td class="result9"></td>
-                                      <td class="result9"></td>
-                                      <td class="result11">
-                                        <button class="btn btn-danger btn-sm">fire</button>
-                                      </td>
                                     </tr>
                                   </table>
                                 </td>
@@ -781,7 +683,7 @@
                                       Buy Coins
                                   </button>                                  
                                 </form>
-                                <button ng-show="collect" ng-click="vm.collect()" class="btn btn-info btn-block collect">
+                                <button ng-show="collect" ng-click="vm.collect(); vm.getPayHistory()" class="btn btn-info btn-block collect">
                                   <span class="fa fa-cart-plus"></span>
                                     Collect Coins
                                   </button>
@@ -789,7 +691,7 @@
                             </tr>
                         </table>
                     </div>
-                    
+                    <!-- ============= payment history ================ -->
                     <div class="alert alert-warning">
                         <table>
                             <tr>
@@ -798,33 +700,44 @@
                                     <br><br>
                                     <table class="table table-hover">
                                         <tr>
-                                            <td class="result9">#</td>
                                             <td class="result9">date</td>
+                                            <td class="result9">coins</td>
                                             <td class="result9">amount $</td>
+                                        </tr>
+                                        <tr ng-repeat="datas in vm.payHis| filter:vm.username">
+                                            <td class="result9">{{datas.date}}</td>
+                                            <td class="result9">{{datas.coins}}</td>
+                                            <td class="result9">{{datas.amount}}</td>
                                         </tr>
                                   </table>
                                 </td>
                             </tr>
                         </table>
                     </div>
+                    <!-- ============== payout history =================== -->
                     <div class="alert alert-warning">
                         <table>
                             <tr>
                                 <td class="result">
-                                  Video Ad Payment Method
+                                  Payout History
                                   <br><br>
                                   <table class="table table-hover">
                                       <tr>
-                                          <td class="result9">#</td>
                                           <td class="result9">date</td>
-                                          <td class="result9">amount $</td>
-                                          <td class="result9">user-Id</td>
+                                          <td class="result9">coins</td>
+                                          <td class="result9">emploee-name</td>
+                                      </tr>
+                                      <tr ng-repeat=" datas in vm.thePayout | filter: vm.username">
+                                          <td class="result9">{{datas.date}}</td>
+                                          <td class="result9">{{datas.coins}}</td>
+                                          <td class="result9">{{datas.emploee}}</td>
                                       </tr>
                                   </table>
                                 </td>
                             </tr>
                         </table>
                     </div>
+                    <!-- ============== balance =================== -->
                     <div class="alert alert-warning">
                         <table>
                             <tr>

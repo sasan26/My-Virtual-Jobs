@@ -467,11 +467,10 @@
                     vm.timer();
                 }, 100);
             }
-
         }
 
 
-        // Start of scores function
+        // Start of earning function
         vm.earnCoin = function() {
                        
             vm.sas=0;
@@ -496,6 +495,11 @@
                     authService.updateScore($rootScope.partnerID, vm.pUser, vm.expense)
 
                     toastr.info(' Your employer paid '+vm.currentjob.slice(8,10)+' coins!');
+
+                    vm.currentDate();
+                    authService.income(vm.date, $rootScope.username, vm.currentjob.slice(8,10), vm.pUser)
+
+                    authService.payout(vm.date, vm.pUser, vm.currentjob.slice(8,10), $rootScope.username )  
             }
         }; 
 
@@ -512,6 +516,17 @@
             $window.close();
         }
 
+        vm.currentDate = function(){
+            // current date and time
+                                var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];  
+                                var date = new Date(); 
+                                var ampm="";
+                                (date.getHours() > 12) ? ampm ="PM" : ampm="AM"; 
+
+                                vm.date =  week[date.getDay()]+" "+date.getMonth()+"/"+date.getDate()+"/"+date.getFullYear()+" "+date.getHours()+":"+ date.getMinutes() +":"+ date.getSeconds()+" "+ampm;
+        }
+
+        // collect coins
         vm.collect = function() {
             // call from service
             authService.getpayment()
@@ -523,8 +538,21 @@
                             vm.balance = $rootScope.scoreBalance + parseInt(vm.pay.slice(0,vm.pos));
                             authService.updateScore($rootScope.scoreID, $rootScope.username, vm.balance)
                                 toastr.success('You got your coins!');
-                                vm.pay = '';
+                                
                                 authService.updatepayment(res[0]._id, "none")
+                                vm.theAmount = {
+                                                10: 0.99, 20: 1.89, 50: 4.79, 100: 9.69,
+                                                200: 19.59, 500: 49.49, 1000: 99.39, 10000: 999.29
+                                }
+                                for ( var j in vm.theAmount){
+                                    if ( vm.pay.slice(0,vm.pos) === j){
+                                        vm.amount = vm.theAmount[j];
+                                    }                                
+                                }
+
+                                vm.currentDate();
+                                authService.payHistory(vm.date, $rootScope.username, vm.pay, vm.amount)
+                                vm.pay = '';
                                                                                                       
                     }
                     else{
@@ -532,6 +560,68 @@
                     }
                 })
         }
+
+
+// =========================================
+
+
+
+
+        // Start of get payment history function
+        vm.getPayHistory = function() {
+            $timeout(function() {       
+                    // call the getSettings from service
+                    authService.getPayHistory($rootScope.id)
+                        //handle success
+                        .then(function(res) {
+                            vm.payHis = res;
+                        })
+                        // handle error
+                        .catch(function() {
+                            toastr.error("Couldn't access the datebase");
+                        }); 
+            }, 1000);          
+        };
+
+
+        
+
+
+        // Start of get income history function
+        vm.getIncome = function() {
+            $timeout(function() {       
+                    // call the getSettings from service
+                    authService.getIncome($rootScope.id)
+                        //handle success
+                        .then(function(res) {
+                            vm.theIncome = res;                            
+                        })
+                        // handle error
+                        .catch(function() {
+                            toastr.error("Couldn't access the datebase");
+                        }); 
+            }, 1000);          
+        };
+
+
+        
+
+
+        // Start of get payout history function
+        vm.getPayout = function() {
+            $timeout(function() {       
+                    // call the getSettings from service
+                    authService.getPayout($rootScope.id)
+                        //handle success
+                        .then(function(res) {
+                            vm.thePayout = res;                            
+                        })
+                        // handle error
+                        .catch(function() {
+                            toastr.error("Couldn't access the datebase");
+                        }); 
+            }, 1000);          
+        };
 
 
         

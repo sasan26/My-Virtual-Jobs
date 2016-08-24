@@ -27,7 +27,15 @@
             deleteScore: deleteScore,
             changeEmail: changeEmail,
             updatepayment: updatepayment,
-            getpayment: getpayment    
+            getpayment: getpayment,
+            payHistory: payHistory,
+            income: income,
+            payout: payout,
+            getPayHistory: getPayHistory,
+            getIncome: getIncome,
+            getPayout: getPayout
+
+
         };
 
         return service;
@@ -485,6 +493,174 @@
                     defer.reject(error);
                 });
             return defer.promise;      
+        }
+
+// =========================
+        // Start of payment history function
+        function payHistory(date, username, coins, amount) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.post('/user/paymenthistory', {
+                    date: date,
+                    username: username,
+                    coins: coins,
+                    amount: amount
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {
+                        deferred.resolve();
+                    } else {
+                            deferred.reject();
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    deferred.reject();
+                });
+            // return promise object
+            return deferred.promise;
+        } 
+
+        // // Start of getpic function
+        function getPayHistory(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.get('/user/paymenthistory', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
+        }
+
+        // Start of payment history function
+        function income(date, username, coins, employer) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.post('/user/income', {
+                    date: date,
+                    username: username,
+                    coins: coins,
+                    employer: employer
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {
+                        deferred.resolve();
+                    } else {
+                            deferred.reject();
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    deferred.reject();
+                });
+            // return promise object
+            return deferred.promise;
+        }
+
+        // // Start of getpic function
+        function getIncome(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.get('/user/income', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
+        }
+
+        // Start of payment history function
+        function payout(date, username, coins, employee) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.post('/user/payout', {
+                    date: date,
+                    username: username,
+                    coins: coins,
+                    employee: employee
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {
+                        deferred.resolve();
+                    } else {
+                            deferred.reject();
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    deferred.reject();
+                });
+            // return promise object
+            return deferred.promise;
+        }
+
+        function getPayout(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.get('/user/payout', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
         }
 
 
