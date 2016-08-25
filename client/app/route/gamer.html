@@ -15,6 +15,14 @@
 						</td>
 						<td class="tdMenu3">
 							<a class="btn icon-btn menu-top" ng-click="map=true; profile=false; help=true; admin=false; agri= false; architect=false; education=false; finance=false; it=false; science=false; school=false; transportation=false; marketing=false; manufacture=false; law=false; government=false; human=false; health=false; hospitality=false; art=false; ""><span class="glyphicon btn-glyphicon glyphicon-question-sign img-circle menu-top2"></span>help</a>
+
+              <a class="btn icon-btn menu-top" ng-hide="mute" ng-click="unmute=false; mute=true" onclick="document.getElementById('loop').muted = true;">
+                <span class="glyphicon btn-glyphicon glyphicon-volume-up img-circle menu-top2"></span>mute
+              </a>
+              <a class="btn icon-btn menu-top" ng-show="mute" ng-click="mute=false; unmute=true" onclick="document.getElementById('loop').muted = false;">
+                <span class="glyphicon btn-glyphicon glyphicon-volume-off img-circle menu-top2"></span>unmute
+              </a>
+
 						</td>
 						<td class="tdMenu4">
 							<a class="btn icon-btn menu-top" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2"></span>sign out</a>
@@ -24,6 +32,7 @@
 			</div>
 		</div>
 	</div> <!-- ./ End of the page header -->
+      
   <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
 </div>
 
@@ -33,7 +42,12 @@
 		<div class="col-sm-12">
 			<!-- background image / MAP -->
 			<img src="../../img/back-gamer.png" class="background">
+
+      <!-- mouseover buildings sounds -->
       <audio id="sound" src="../../sound/hover.mp3"></audio>
+      
+      <!-- background loop sound -->
+      <audio id="loop" src="../../sound/loop.mp3" controls autoplay="autoplay" loop="loop"></audio>
 
 			<!-- *************************** building icons ************************************** -->
 			<a ng-click="map=true; admin=!admin; vm.profile(); vm.getscores()" onmouseover="document.getElementById('sound').play()">
