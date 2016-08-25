@@ -8,8 +8,14 @@
                     <tr>
                         <!-- pahe logo -->
                         <td class="logo-partner">Partner Console</td>
-                        <!-- account info button -->
+                        
                         <td class="tdMenu1-partner">
+                            <!-- help button -->
+                            <a ng-click="help=!help; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-question-circle-o" aria-hidden="true"></span>
+                            </a>    
+                            
+                            <!-- account info button -->
                             <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores()"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
                         </td>
                         <!-- ads button -->
@@ -86,7 +92,6 @@
                                     <!-- the picture is rendered with width: 500 and sharpened -->
                                     <img ng-src="{{vm.superhero.picture.url | fpConvert: {filter:'sharpen'} }}" class="uploaded-pic">
                                     </a>
-                                    <!-- <a class="btn icon-btn plan-on"><span class="glyphicon btn-glyphicon fa fa-upload img-circle" ng-click="vm.pic(); vm.getpic; vm.profile();" ng-disabled="vm.superhero.$invalid || !vm.superhero.picture"></span>upload</a> -->
 
                                 </td>
                             </tr>
@@ -140,7 +145,7 @@
                                         <option value="agr-dip-06-Farm Products Agent">Farm Products Agent</option>  
                                         <option value="agr-dip-05-Mining Machine Operator">Mining Machine Operator</option>
                                         <option value="agr-dip-04-Derrick Operator, oil and gas">Derrick Operator, oil and gas</option>
-                                        <option value="agr-dip-09-Environmental Engineer">Environmental Engineer</option>                        <option value="">Farm equipment Technician</option>
+                                        <option value="agr-dip-09-Environmental Engineer">Environmental Engineer</option>
                                         <option value="agr-dip-06-Farmworkers">Farmworkers</option> 
                                         <option value="agr-dip-03-Fisher">Fisher</option>
                                         <option value="agr-dip-04-Forest Technician">Forest Technician</option>
@@ -230,7 +235,6 @@
                                       <option value="edu-mas-07-English language teacher">English language teacher</option>
                                       <option value="edu-mas-06-Foreign language teacher">Foreign language teacher</option>
                                       <option value="edu-mas-07-Economic Teacher">Economic Teacher</option>
-                                      <option value="edu-mas-06-Librarian">Librarian</option>
                                     </optgroup>
                                     <optgroup label="Doctoral">   
                                       <option value="edu-doc-10-Earth, Marine and Space teacher">Earth, Marine and Space teacher</option>
@@ -384,7 +388,6 @@
                                       <option value="arc-bac-05-Interior Designer">Interior Designer</option>
                                     </optgroup>
                                     <optgroup label="Master">
-                                      <option value="arc-mas-05-Archeologist">Archeologist</option>  
                                       <option value="arc-mas-08-Architect, Except Landscape and Naval">Architect, Except Landscape and Naval</option>
                                     </optgroup>
                                   </select>
@@ -760,8 +763,555 @@
             </div>
         </div>
         <!-- End of the payments -->
+        
+        <!-- Start of Help -->
+        <!-- *************************************************************************************** -->
+        <!-- ****************************************** HELP *************************************** -->
+        <div class="alert alert-success building-back" ng-show="help">
+          <a class="close" aria-label="close" ng-click="map=false; help=!help">&times;</a>
+          <!-- title -->
+          <div  class="building-title">HELP</div>
+          <br>
+          <!-- logo -->
+
+          <br>
+            
+            
+            
+            <a data-toggle="pill" data-target="#menu" class="btn icon-btn plan-on" ng-show="menuOn" ng-click="menuOn=false; menuOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>How to play</a>
+
+            <a data-toggle="pill" data-target="#home" class="btn icon-btn off-btn" ng-hide="menuOff" ng-click="menuOn=true; menuOff= true; menuOff1= false; menuOn1= false; menuOff2= false; menuOn2= false; menuOff3= false; menuOn3= false; "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>How to play</a>
+
+            <a data-toggle="pill" data-target="#home" class="btn icon-btn plan-on" ng-show="menuOn3" ng-click="menuOn3=false; menuOff3= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>All Jobs</a>
+
+            <a data-toggle="pill" data-target="#menu3" class="btn icon-btn off-btn" ng-hide="menuOff3" ng-click="menuOn3=true; menuOff3= true; menuOn=false; menuOff=false; menuOff1= false; menuOn1= false; menuOff2= false; menuOn2= false"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>All Jobs</a>
+            
+            
+          
+              <div class="tab-content">
+                <!-- ********************** help home ************************* -->
+                <div id="menu" class="tab-pane fade in active">
+                  <h3>My Virtual Jobs Guid</h3>
+                  <p>Click on each menu to display guidenss!</p>
+                </div>
+
+                <!-- ********************** How to Play *********************** -->
+                <div id="home" class="tab-pane fade">
+                  <h3>How to Play</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+
+                <!-- *********************** All Jobs ************************ -->
+                <div id="menu3" class="tab-pane fade">
+                  <h3>All Jobs</h3>
+                  <p>           
+                    <ul class="nav nav-tabs">
+                      <li class="active"><a class="help-a" data-toggle="tab" data-target="#agr">Agriculture and occupation</a></li>
+                      <li><a data-toggle="tab" data-target="#art">Arts, audio/video technology</a></li>
+                      <li><a data-toggle="tab" data-target="#edu">Education</a></li>
+                      <li><a data-toggle="tab" data-target="#gov">Government and public Administration</a></li>
+                      <li><a data-toggle="tab" data-target="#hos">Hospitality and Turism</a></li>
+                      <li><a data-toggle="tab" data-target="#inf">Information Technology</a></li>
+                      <li><a data-toggle="tab" data-target="#man">Manufacturing</a></li>
+                      <li><a data-toggle="tab" data-target="#sci">Science and Engineering</a></li>
+                      <li><a data-toggle="tab" data-target="#arc">Architecture and Construction</a></li>
+                      <li><a data-toggle="tab" data-target="#adm">Business Management and Administration</a></li>
+                      <li><a data-toggle="tab" data-target="#fin">Finance</a></li>
+                      <li><a data-toggle="tab" data-target="#hea">Health Science</a></li>
+                      <li><a data-toggle="tab" data-target="#hum">Human Service</a></li>
+                      <li><a data-toggle="tab" data-target="#law">Law, Safety and Security</a></li>
+                      <li><a data-toggle="tab" data-target="#mar">Marketing and Sales</a></li>
+                      <li><a data-toggle="tab" data-target="#tra">Transportation and Logistics</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                      <!-- Agri -->
+                      <div id="agr" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Diploma</div>
+                                    <li>Agricultural Equipment Operators &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>  
+                                    <li>Agriculture Sciences Teacher, Postsecondary &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Animal Scientist &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Farm Products Agent &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>  
+                                    <li>Mining Machine Operator &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Derrick Operator, oil and gas &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Environmental Engineer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Farmworkers &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li> 
+                                    <li>Fisher &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Forest Technician &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Hunter &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Loading Machine Operator &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Meat and Fish Cutter &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Animal Caretaker &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Pest Control &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Petroleum Pump Operator &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Tree Trimmer &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                    <li>Agriculture Inspector &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Cartographer &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Fallers &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    <li>Fish Wardens &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                      <li>Agricultural Engineer &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>      
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                    <li>Farm and home managment advisor &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+
+                                    <li>Zoologist &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Agri -->
+
+                      <!-- Art -->
+                      <div id="art" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Diploma</div>
+                                      <li>Actor &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Choreographer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Craft Artist &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                        <li>Dancer &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                        <li>Mackeup Artist &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Photographer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Writer( poet, lyricist ) &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                      <li>Audio and video equipment technician &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Camera Operator &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Music Arranger &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Singer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>musician, instrumental &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Sound Engineer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                      <li>Broadcasting news analyst &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                        <li>Commercial and industrial designer &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                        <li>Director (tv, radio, stage) &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                        <li>Film editor &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                        <li>Painter Artist &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Graphic designer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Animator &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                        <li>Music Composer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                        <li>Producer &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                        <li>Radio or TV Announcer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                        <li>Reporter &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>                               
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                    <li>Art, Drama, music teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <hr>                            
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Art -->
+
+                      <!-- Education -->
+                      <div id="edu" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Fitness Coordinator &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Preschool Teacher &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Teacher Assistant &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>        
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Education Teacher, middle school &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Education Teacher, secondary school &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Coach and Scout &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Elementary School Teacher &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Kindergarten Teacher &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>               
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Adult basic teacher &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Computer Science teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>English language teacher &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                <li>Foreign language teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Economic Teacher &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                <li><Librarian/li>
+                                <hr>
+                                <div class="degree-help-ul" >Doctoral</div>
+                                <li>Earth, Marine and Space teacher &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Biological science teacher &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Chemistry teacher &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Geography teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>History teacher &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Mathematical science teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Philosophy teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Physics Teacher &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Political Science Teacher &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Psychology Teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Social Work teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Sociology Teacher &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>        
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Education -->
+
+                      <!-- Government -->
+                      <div id="gov" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <hr>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Court Clerk &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Legislator &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>       
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Climate Change Analyst &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Detective and Criminal Investigator &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Tax Examiners and Collector &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>      
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Government -->
+
+                      <!-- hospitality -->
+                      <div id="hos" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Baggage Porters and Bellhops &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>barista &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Counter Attendant &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Dishwasher &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Food Server &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Mai and Housekeeping &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>baker &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>bartender &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Travel Agent &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Waiter and Waitres &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+
+                            </ul>
+                        </p>
+                      </div> <!-- ./ hospitality -->
+
+                      <!-- IT -->
+                      <div id="inf" class="tab-pane fade in active">
+                        <p>
+                            <ul
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Computer Network Specialist &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Computer System Analyst &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Computer Engineer &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Database Architect &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Information Security Analyst &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>IT project manager &nbsp;&nbsp;11<img src="../../img/coin.png" class="coin"></li>
+                                <li>Software Developer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>VideoGame Designer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Web developer &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                          
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Computer and Information Scientist &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Computer Network Architect &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ IT -->
+
+                      <!-- Manufacturing -->
+                      <div id="man" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <hr>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Aircraft Structure &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Chemical Plant and system Operator &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Cooling and Freezing Equipment Operator &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Jeweler &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Machinist &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Computer repairer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Industrial Engineering Technician &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Nuclear Power Reactor Operator &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Manufacturing -->
+
+                      <!-- Science -->
+                      <div id="sci" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Electrical Technician &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Aerospace Engineer &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Automotive Engineer &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Biochemical Engineer &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Chemical Engineer &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Chemist &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Civil Drafter &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Electrical Engineer &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                <li>Energy Engineer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Historian &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                <li>Marine Architect &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Nanosystem Engineer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Nuclear Engineer &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Petroleum Engineer &nbsp;&nbsp;13<img src="../../img/coin.png" class="coin"></li>
+                                <li>Robotic Engineer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Solar Engineer &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Geographer &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Doctoral</div>
+                                <li>Mathematician &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Microbiologist &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>physicist &nbsp;&nbsp;12<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Science -->
+
+                      <!-- Architect -->
+                      <div id="arc" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Elevator Installer and Repairer &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Heating and air conditioning Mechanic &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Plumber &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Civil Engineer &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Interior Designer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                          
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Architect, Except Landscape and Naval &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Architect -->
+
+                      <!-- Admin -->
+                      <div id="adm" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <hr>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Data Entry Keyers &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Telephone Operator &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Computer Operator &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Accountant &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Administrative Service Manager &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Advertising and Promotion Manager &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Agent of Artists, Athletes and Performers &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                <li>Financial Manager &nbsp;&nbsp;12<img src="../../img/coin.png" class="coin"></li>
+                                <li>Marketing Manager &nbsp;&nbsp;12<img src="../../img/coin.png" class="coin"></li>
+                                <li>Sales Manager &nbsp;&nbsp;11<img src="../../img/coin.png" class="coin"></li>
+                                <li>Spa Manager &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                          
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Operation Research Analyst &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Admin -->
+
+                      <!-- Finance -->
+                      <div id="fin" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Bill and Account Collector &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Tax Preparer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Actuaries &nbsp;&nbsp;10<img src="../../img/coin.png" class="coin"></li>
+                                <li>Credit Analyst &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Credit Authorizer &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Finance -->
+
+                      <!-- Health -->
+                      <div id="hea" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Dental Assistant &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Medical Assistant &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Dental Hygienist &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>medical technician &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Radiation Therapist &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Athletic Trainer &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Patient Representative &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                          
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Acupuncturist &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Mental Health Technician &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Physical Therapist &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Doctoral</div>
+                                <li>Anesthesiologist &nbsp;&nbsp;22<img src="../../img/coin.png" class="coin"></li>
+                                <li>Chiropractors &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Dentist &nbsp;&nbsp;16<img src="../../img/coin.png" class="coin"></li>
+                                <li>Dermatologist &nbsp;&nbsp;19<img src="../../img/coin.png" class="coin"></li>
+                                <li>Nuclear Medicine Technologist &nbsp;&nbsp;19<img src="../../img/coin.png" class="coin"></li>
+                                <li>Occupational Therapist &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Oral Surgeon &nbsp;&nbsp;22<img src="../../img/coin.png" class="coin"></li>
+                                <li>Orthodontist &nbsp;&nbsp;20<img src="../../img/coin.png" class="coin"></li>
+                                <li>Surgeon &nbsp;&nbsp;23<img src="../../img/coin.png" class="coin"></li>
+                                <li>Urologist &nbsp;&nbsp;19<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Health -->
+
+                      <!-- Human -->
+                      <div id="hum" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+
+                                <hr>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>barber &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>childcare workers &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Funeral Attendants &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Laundry Worker &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Nanny &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Clergy &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Fitness an Aerobic Instructor &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Social and Human Service Assistant &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                          
+                                <hr>
+                                <div class="degree-help-ul" >Master</div>
+                                <li>Director, Religious Activity and Education &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Marriage and Family Therapist &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Human -->
+
+                      <!-- Law -->
+                      <div id="law" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Bailiffs &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                <li>Officers and jailers &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Criminal Investigator &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Police, Fire and Ambulance Dispatcher &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Fire Inspector &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>
+                                <li>Emmergency Medical Technician &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Firefighter &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Forest Firefighter &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Polic and Sheriff's Patrol Officer &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Doctoral</div>
+                                <li>Lawyer &nbsp;&nbsp;14<img src="../../img/coin.png" class="coin"></li>
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Law -->
+
+                      <!-- Marketing -->
+                      <div id="mar" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Customer Service Representative &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Real Estate Sales Agent &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Stock Clerks &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                    <li>Cashier &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                    <li>Models &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+
+                                <hr>
+                                <div class="degree-help-ul" >Associate</div>
+                                <li>Fashion Designer &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div> 
+                                <li>Appraiser, Real Estate &nbsp;&nbsp;06<img src="../../img/coin.png" class="coin"></li>                           
+                                    
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Marketing -->
+
+                      <!-- Transportation -->
+                      <div id="tra" class="tab-pane fade in active">
+                        <p>
+                            <ul>
+                                <div class="degree-help-ul" >Diploma</div>
+                                <li>Air Traffic Controller &nbsp;&nbsp;08<img src="../../img/coin.png" class="coin"></li>
+                                <li>Aircraft Technician &nbsp;&nbsp;05<img src="../../img/coin.png" class="coin"></li>
+                                <li>Ambulance Driver &nbsp;&nbsp;02<img src="../../img/coin.png" class="coin"></li>
+                                <li>Bus Drivers &nbsp;&nbsp;03<img src="../../img/coin.png" class="coin"></li>
+                                <li>Truck Driver &nbsp;&nbsp;04<img src="../../img/coin.png" class="coin"></li>
+                                    
+                                <hr>
+                                <div class="degree-help-ul" >Bachelor</div>
+                                <li>Pilots &nbsp;&nbsp;12<img src="../../img/coin.png" class="coin"></li>
+                                <li>Ship Captain &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Logistician &nbsp;&nbsp;07<img src="../../img/coin.png" class="coin"></li>
+                                <li>Transportation Manager &nbsp;&nbsp;09<img src="../../img/coin.png" class="coin"></li>
+                                          
+                            </ul>
+                        </p>
+                      </div> <!-- ./ Transportation -->
+
+                    </div><!-- ./ tab-content -->
+
+
+
+
+
+                  </p>
+                </div>
+              </div>
         </div>
-        <!-- ./ End of the panel group -->
+
+
+
+        
+
+
+
 
         <!-- Strat of partner user Change Email -->
         <div class="panel-group" ng-show="changeEmail">

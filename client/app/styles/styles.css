@@ -477,7 +477,7 @@ li {
 }
 /* account info td */
 .tdMenu1-partner {
-	width: 5%;
+	width: 10%;
 }
 /* sign out td */
 .tdMenu4-partner {
@@ -859,8 +859,10 @@ li {
 	width: 50%;
 	height: 60%;
 }
-
-
+audio {
+	display: none;
+}
+li { cursor: pointer; }
 
 
 
