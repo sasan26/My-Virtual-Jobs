@@ -6,7 +6,6 @@ var Schema = mongoose.Schema;
 var UserSchema = new mongoose.Schema({
     picurl: {
       type: String,
-      unique: true,
       required: true,
     },
     filename: {
@@ -15,7 +14,6 @@ var UserSchema = new mongoose.Schema({
     },
     username: {
       type: String,
-      unique: true,
       trim: true
     },
     videoId: {

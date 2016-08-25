@@ -33,7 +33,10 @@
             payout: payout,
             getPayHistory: getPayHistory,
             getIncome: getIncome,
-            getPayout: getPayout
+            getPayout: getPayout,
+            analys: analys,
+            getAnalys: getAnalys,
+            updateAnalys: updateAnalys
 
 
         };
@@ -255,7 +258,7 @@
                 .error(function(data) {
                     //user = false;
                     deferred.reject();
-                    console.log('Error2: ' + data);
+                    console.log('Error: ' + data);
                 });
 
             // return promise object
@@ -339,6 +342,51 @@
         }  // End of getpic function
 
 
+            // Start of update score function
+        function updateScore(id, username, balance){
+            var defer = $q.defer();
+            var data = {username: username, balance: balance};
+            $http({
+                method: 'PUT',
+                url: '/user/score/' + id,
+                // headers: {
+                //         'Content-Type': 'application/json; charset=utf-8'
+                // },
+                data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
+
+        // Start of delete ad function
+        function deleteScore(id){
+            var defer = $q.defer();
+            $http({
+                method: 'DELETE',
+                url: '/user/score/' + id
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
+
         // Start of score function
         function schoolGrades(userScore, degree, username) {
             // create a new instance of deferred
@@ -396,51 +444,6 @@
         }  // End of getpic function
 
 
-        // Start of update score function
-        function updateScore(id, username, balance){
-            var defer = $q.defer();
-            var data = {username: username, balance: balance};
-            $http({
-                method: 'PUT',
-                url: '/user/score/' + id,
-                // headers: {
-                //         'Content-Type': 'application/json; charset=utf-8'
-                // },
-                data: data
-            }).then(function(response) {
-                    if (response.status === 204) {
-                        defer.resolve(response);
-                    } else {
-                        defer.reject("No data found!");
-                    }
-                },
-                function(error) {
-                    defer.reject(error);
-                });
-            return defer.promise;      
-        }
-
-
-        // Start of delete ad function
-        function deleteScore(id){
-            var defer = $q.defer();
-            $http({
-                method: 'DELETE',
-                url: '/user/score/' + id
-            }).then(function(response) {
-                    if (response.status === 204) {
-                        defer.resolve(response);
-                    } else {
-                        defer.reject("No data found!");
-                    }
-                },
-                function(error) {
-                    defer.reject(error);
-                });
-            return defer.promise;      
-        }
-
-
         // // Start of getpic function
         function getpayment(data) {
             // create a new instance of deferred
@@ -495,7 +498,6 @@
             return defer.promise;      
         }
 
-// =========================
         // Start of payment history function
         function payHistory(date, username, coins, amount) {
             // create a new instance of deferred
@@ -664,14 +666,94 @@
         }
 
 
+// ====================
+        // Start of analys function
+        function analys(username, ad, views, paid) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.post('/user/analys', {
+                    username: username,
+                    ad: ad,
+                    views: views,
+                    paid: paid
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {
+                        deferred.resolve();
+                    } else {
+                            deferred.reject();
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    deferred.reject();
+                });
+            // return promise object
+            return deferred.promise;
+        } 
+
+
+        // Start of get analys  function
+        function getAnalys(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.get('/user/analys/', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
+        }  
+
+
+        // Start of update analys function
+        function updateAnalys(id, views, paid){
+            var defer = $q.defer();
+            var data = {views: views, paid: paid};
+            $http({
+                method: 'PUT',
+                url: '/user/analys/' + id,
+                // headers: {
+                //         'Content-Type': 'application/json; charset=utf-8'
+                // },
+                data: data
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
         
 
 
     }   
 })();
-
-
-
 
 
 

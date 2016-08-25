@@ -585,21 +585,26 @@ li {
 	text-align: left;
 	padding: 0;
 }
-/* result table/ analyse 1st row */
+/* result table/ analyse 1st td */
 .result9 {
 	text-align: left;
 	color: #669999;
 	font-size: 0.9em;
+	width: 20%;
 }
-/* result table/ analyse fire td */
+/* result table/ analyse 2nd td */
 .result10 {
-	text-align: center;
-	color: #669999;
-	font-size: 1.5em;
+	color: #669909;
+	width: 10%;
 }
-/* result table/ analyse (button) fire td */
+/* result table/ analyse 2nd and 3rd td/ content */
+.res10-1 {
+	margin-top: 10%;
+}
+/* result table/ analyse 3rd td */
 .result11 {
-	text-align: center;
+	color: #669909;
+	width: 10%;
 }
 /* button change change Email */
 .ch-Email {
@@ -848,6 +853,11 @@ li {
 /* gamer collect payment btn */
 .collect {
 	margin-top: 10px;
+}
+/* partner- analys video ad */
+.analys-video {
+	width: 50%;
+	height: 60%;
 }
 
 

@@ -149,14 +149,14 @@
 
                     authService.updateScore($rootScope.scoreID, vm.changeE, $rootScope.scoreBalance)
                         // handle success
-                            toastr.success('Your Email has been successfully changed!');
-                                              
-                    
+                            toastr.success('Your Email has been successfully changed!');                                                            
         }; 
 
         // Start of upload images function
         vm.superhero = [];
         vm.pic = function() {
+            $timeout(function() {
+                            
             authService.pic(vm.superhero.picture.url, vm.superhero.picture.filename, $rootScope.username, vm.videoId, vm.job)
                 // handle success
                 .then(function() { 
@@ -167,12 +167,15 @@
                     $scope.trustSrc = function(src) {
                         return $sce.trustAsResourceUrl(src);
                     }
-                    $scope.movie = {src: "https://www.youtube.com/embed/" + vm.videoId, title:"Egghead.io AngularJS Binding"}; 
-                })
+                    $scope.movie = {src: "https://www.youtube.com/embed/" + vm.videoId, title:"Egghead.io AngularJS Binding"};
+                
+                    authService.analys($rootScope.username, vm.videoId, 0, 0)                    
+                })                
                 // handle error 
                 .catch(function() {
                     toastr.error("Couldn't access the datebase");
-                });                      
+                }); 
+            }, 1000);                 
         };
    
         //Single file upload, you can take a look at the options
@@ -193,7 +196,8 @@
 
 
         // Start of getpic function
-        vm.getpic = function() {                                   
+        vm.getpic = function() {
+            $timeout(function() {                                   
                 // call the getSettings from service
                 authService.getpic($rootScope.id)
                     //handle success
@@ -209,7 +213,13 @@
                     // handle error
                     .catch(function() {
                         toastr.error("Couldn't access the datebase");
-                    });           
+                    });
+                    authService.getAnalys()
+                        //handle success
+                        .then(function(res) {
+                            $rootScope.Analys =res;
+                        }) 
+            }, 3000);          
         }; 
 
 
@@ -228,11 +238,7 @@
                 .then(function() { 
                     toastr.info('Wellcome, ' + $rootScope.username + '! You got 100 Coins!');
                                       
-                })
-                // handle error 
-                .catch(function() {
-                    toastr.error("Couldn't access the datebase");
-                });                      
+                })                     
         };
 
 
@@ -253,11 +259,7 @@
                                 }                                                                                                             
                             }
                             $rootScope.score = res;
-                        })
-                        // handle error
-                        .catch(function() {
-                            toastr.error("Couldn't access the datebase");
-                        }); 
+                        }) 
             }, 1000);          
         };
 
@@ -273,10 +275,6 @@
                             toastr.success('Complete!');
                                               
                         })
-                    // handle error 
-                    .catch(function() {
-                        toastr.error("Couldn't access the datebase");
-                    });
             }, 1000);                          
         }; 
 
@@ -288,11 +286,7 @@
                 .then(function() { 
                     toastr.success('Complete!');
                                       
-                })
-                // handle error 
-                .catch(function() {
-                    toastr.error("Couldn't access the datebase");
-                });                      
+                })                      
         };
 
 
@@ -562,11 +556,6 @@
         }
 
 
-// =========================================
-
-
-
-
         // Start of get payment history function
         vm.getPayHistory = function() {
             $timeout(function() {       
@@ -582,9 +571,6 @@
                         }); 
             }, 1000);          
         };
-
-
-        
 
 
         // Start of get income history function
@@ -604,9 +590,6 @@
         };
 
 
-        
-
-
         // Start of get payout history function
         vm.getPayout = function() {
             $timeout(function() {       
@@ -624,10 +607,36 @@
         };
 
 
-        
+        // Start of get analys function
+        vm.getAnalys = function() {
+            $timeout(function() {       
+                    // call the getSettings from service
+                    authService.getAnalys()
+                        //handle success
+                        .then(function(res) {
+                            vm.theAnalys = res;
+                        })
+                        // handle error
+                        .catch(function() {
+                            toastr.error("Couldn't access the datebase");
+                        }); 
+            }, 1000);          
+        };
 
-        
-
+        // Start of scores function
+        vm.updateAnalys = function() {
+            $timeout(function() {
+                    for(var i=0; i<$rootScope.Analys.length; i++){
+                        if ( $rootScope.Analys[i].ad === vm.videoId){
+                            $rootScope.Analys[i].views ++ ;
+                            vm.paid = parseInt(vm.currentjob.slice(8,10)) * $rootScope.Analys[i].views;
+                            authService.updateAnalys($rootScope.Analys[i]._id, $rootScope.Analys[i].views, vm.paid)
+                        }
+                    }        
+                    
+                        
+            }, 1000);                          
+        }; 
 
 
 

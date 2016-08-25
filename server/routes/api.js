@@ -12,6 +12,7 @@ var Payment = require('../models/pay.js');
 var PaymentHis = require('../models/payhistory.js');
 var incomeHis = require('../models/income.js');
 var payoutHis = require('../models/payout.js');
+var analys = require('../models/analys.js');
 
 // register new account route
 router.post('/register', function(req, res) {
@@ -321,6 +322,38 @@ router.get('/payout', function(req, res) {
         }
         //If no errors, send them back to the client
         res.json(superheroes);});
+});
+
+router.post('/analys', function(req, res) {
+   
+    var sas = new analys(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/analys', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = analys.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
+});
+
+router.put('/analys/:id', function(req, res) {  
+   var id = req.params.id;
+    analys.update({ _id: mongoose.Types.ObjectId(id) }, {
+        $set: { views: req.body.views,  paid: req.body.paid}
+    }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Updated' });            
+        });
 });
 
 

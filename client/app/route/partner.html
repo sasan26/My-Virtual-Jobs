@@ -18,7 +18,7 @@
                         </td>
                         <!-- analyse button -->
                         <td class="tdMenu5-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
                         </td>
                         <!-- payment button -->
                         <td class="tdMenu6-partner">
@@ -623,11 +623,16 @@
                                 <td>
                                   <table class="table table-hover">
                                     <tr>
-                                      <td class="result9">date</td>
-                                      <td class="result9">ad-Id</td>
+                                      <td class="result9">ad</td>
                                       <td class="result9"># of views</td>
-                                      <td class="result9">total paid</td>
-                                      <td class="result9">status</td>
+                                      <td class="result9">total paid $</td>
+                                    </tr>
+                                    <tr ng-repeat="datas in vm.theAnalys | filter: vm.username">
+                                      <td class="result9">
+                                            <iframe class="analys-video" type="text/html" ng-src="{{trustSrc(movie.src + datas.ad)}}"></iframe>
+                                      </td>
+                                      <td class="result10"><div class="res10-1">{{datas.views}}</div></td>
+                                      <td class="result11"><div class="res10-1">$ {{datas.paid}}</div></td>
                                     </tr>
                                   </table>
                                 </td>
@@ -725,12 +730,12 @@
                                       <tr>
                                           <td class="result9">date</td>
                                           <td class="result9">coins</td>
-                                          <td class="result9">emploee-name</td>
+                                          <td class="result9">employee-name</td>
                                       </tr>
                                       <tr ng-repeat=" datas in vm.thePayout | filter: vm.username">
                                           <td class="result9">{{datas.date}}</td>
                                           <td class="result9">{{datas.coins}}</td>
-                                          <td class="result9">{{datas.emploee}}</td>
+                                          <td class="result9">{{datas.employee}}</td>
                                       </tr>
                                   </table>
                                 </td>

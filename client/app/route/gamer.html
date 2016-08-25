@@ -207,7 +207,7 @@
                                       Buy Coins
                                   </button>                                  
                                 </form>
-                                <button ng-show="collect" ng-click="vm.collect()" class="btn btn-info btn-block collect">
+                                <button ng-show="collect" ng-click="vm.collect(); vm.getPayHistory();" class="btn btn-info btn-block collect">
                                   <span class="fa fa-cart-plus"></span>
                                     Collect Coins
                                   </button>
@@ -1315,9 +1315,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1417,9 +1417,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1518,9 +1518,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1619,9 +1619,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1720,9 +1720,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1821,9 +1821,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -1922,9 +1922,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2023,9 +2023,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2159,9 +2159,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2260,9 +2260,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2361,9 +2361,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                             <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2462,9 +2462,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2563,9 +2563,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2664,9 +2664,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2765,9 +2765,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
 
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
@@ -2866,9 +2866,9 @@
                               <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username;"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
                         
-                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores();" ng-disabled="vm.time != 100"></button>
+                              <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
                               <br><br>
 
