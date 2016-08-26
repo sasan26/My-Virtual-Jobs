@@ -1,7 +1,8 @@
 <div class="container-fluid gamer">
     <!-- the page header -->
     <div class="row">
-        <!-- ===== menu ====== -->
+
+        <!-- ========================= menu ========================== -->
         <div class="col-sm-12">
             <div class="well well-lg well-partner">
                 <table>
@@ -12,7 +13,7 @@
                         <td class="tdMenu1-partner">
                             <!-- help button -->
                             <a ng-click="help=!help; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
-                                <span class="fa fa-question-circle-o" aria-hidden="true"></span>
+                                <span class="fa fa-question-circle help-sign" aria-hidden="true"></span>
                             </a>    
                             
                             <!-- account info button -->
@@ -24,7 +25,7 @@
                         </td>
                         <!-- analyse button -->
                         <td class="tdMenu5-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyse</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyze</a>
                         </td>
                         <!-- payment button -->
                         <td class="tdMenu6-partner">
@@ -39,6 +40,7 @@
             </div>
         </div>
         <!-- ./ End of the page header -->
+
         <!-- Strat of partner user information -->
         <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
         <!-- *************************************************************************************** -->
@@ -775,9 +777,7 @@
           <!-- logo -->
 
           <br>
-            
-            
-            
+                        
             <a data-toggle="pill" data-target="#menu" class="btn icon-btn plan-on" ng-show="menuOn" ng-click="menuOn=false; menuOff= false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle"></span>How to play</a>
 
             <a data-toggle="pill" data-target="#home" class="btn icon-btn off-btn" ng-hide="menuOff" ng-click="menuOn=true; menuOff= true; menuOff1= false; menuOn1= false; menuOff2= false; menuOn2= false; menuOff3= false; menuOn3= false; "><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>How to play</a>
@@ -797,8 +797,300 @@
 
                 <!-- ********************** How to Play *********************** -->
                 <div id="home" class="tab-pane fade">
-                  <h3>How to Play</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <h3>How to Play</h3>
+                      
+                      When you start playing this game, you begin with 100 coins, as a gamer or partner user.
+
+                    <br><br>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/home1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          There are 2 different type of users : the Gamer and Partner.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/home2.png" class="img-help"/>
+                          <div class="desc upslide">
+                          On the home page both users can signup and login into their account as shown.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+                    <br> 
+                    
+                    <hr>
+                    <h3>Gamer user:</h3>      
+                    <br>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/gamer1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          The gamer page has 3 different subpages: Game console, Profile and Help.
+                          </div>
+                        </div>
+                      </div>
+                    </div> <!-- ./ row -->
+
+                    <br><br>
+                    <div class="row">  
+                      <h4>Profile:</h4>
+                        There are 4 different sections in the profile page.
+                        <br><br>
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/profile1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Account
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/profile5.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Account : here user can change the email or delete the account.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+                                    
+                    <br><br>
+                    <div class="row">  
+                      <h4>Payment:</h4>          
+                      <br>
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/profile2.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Here user can buy more coins, see the payment and income history.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/buycoins.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Users can buy more coins by selecting the available coin packages.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->      
+                                        
+                    <br><br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/paypal.png" class="img-help"/>
+                          <div class="desc upslide">
+                          There are 2 way to pay, paypal and credit card. You can follow the instruction on the pictures.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/success.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Success paypent statuse.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->    
+                        
+                    <br><br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/collectbutton.png" class="img-help"/>
+                          <div class="desc upslide">
+                          User must click on the “collect button” to save the purchased coins.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/profile4.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Balance: this is the user wallet.<br>
+                          Your degree: here user can see all of the educational degrees that has been achieved from the school.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row --> 
+
+                    <br><br>
+                    <h4>Help:</h4>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/help1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          There are 4 different pages here also: 
+                          All Job: there are whole list of the available jobs and their salary.
+                          Degree lists: all the available educational degrees are here.
+                          Buildings: all the buildings and their detailed information.
+                          How to play: (current page).
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/gamer1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Game console: This is the main page for the gamer users. There are 16 business buildings and 1 school.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+
+                    <br><br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/degree.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Users need a degree to find a job and make money. Each building needs different type of degrees for each job.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/school.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          Users can achieve their degrees by attending to school. 
+                          There are 5 different degrees at school: diploma, associate, bachelor, master and doctoral.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+
+                    <br><br>
+                    <h4>School:</h4>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/schoollike.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Users must like each image and pay the amount to get their degrees.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/v.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          At every business building users can get coins by watching videos. 
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+
+                    <br><br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/schoollike.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Users must like each image and pay the amount to get their degrees.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/v1.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          Videos are available only for those users that have the requirement degree. 
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+
+                    <br><br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/v1.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Videos are available only for those users that have the requirement degree.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/v2.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          At the video page users must click on the “green $ button” to start the earning coins process.  And after 1 minute the “orange visa button” will be enabled. Users need to click on the visa button to get their coins.
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+                   
+                    <hr>
+                    <br><br>
+                    <h4>Partner users:</h4>
+                    There are 5 different subpages: help, account, ads, analyze and payment page. <br>
+                    Help: has 2 parts: how to play and the job list.
+                    On the all jobs page users can see all jobs and their payout rates.
+                    <br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/profileaccount.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Account: here users can change their email or delete their account.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/payment.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          Payment: here users can buy more coins using their paypal account or credit cards.
+                          Also they can see their payment and payout history. 
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+
+                    <br><br>
+                    <br>
+                    <div class="row">  
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/analyze.png" class="img-help"/>
+                          <div class="desc upslide">
+                          Analyze: here users can see their status of the video ads.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <div class="imagepluscontainer img-help">
+                          <img src="../../img/help/ads.png" class="img-help"/>
+                          <div class="desc upslide">           
+                          Ads: here user can see their ads, delete them and also add the new ads. Follow the instruction on images. 
+                          </div>
+                        </div>
+                      </div>
+                    </div>  <!-- ./ row -->
+                    <br>
+                        Gamer users will be paid by their employers, partner users.
                 </div>
 
                 <!-- *********************** All Jobs ************************ -->
@@ -1305,12 +1597,6 @@
                 </div>
               </div>
         </div>
-
-
-
-        
-
-
 
 
         <!-- Strat of partner user Change Email -->
