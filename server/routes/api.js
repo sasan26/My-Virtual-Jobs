@@ -13,6 +13,7 @@ var PaymentHis = require('../models/payhistory.js');
 var incomeHis = require('../models/income.js');
 var payoutHis = require('../models/payout.js');
 var analys = require('../models/analys.js');
+var mesage = require('../models/msg.js');
 
 // register new account route
 router.post('/register', function(req, res) {
@@ -354,6 +355,28 @@ router.put('/analys/:id', function(req, res) {
         if (err) { console.log(err); }
                 res.json({ message: 'Updated' });            
         });
+});
+
+router.post('/msg', function(req, res) {
+   
+    var sas = new mesage(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
+
+router.get('/msg', function(req, res) {
+   //Query the DB and if no errors, send all the sas
+    var query = mesage.find({});
+    query.exec(function(err, sas){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(sas);});
 });
 
 

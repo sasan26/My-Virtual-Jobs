@@ -451,16 +451,45 @@
             vm.doctoralScore -= 1;
         }
 
+
+        vm.checkbalance = function(){
+            for (var i=0; i<$rootScope.score.length; i++){
+                if ( vm.pUser === $rootScope.score[i].username){
+                    $rootScope.partnerID = $rootScope.score[i]._id;
+                    $rootScope.partnerBalance = $rootScope.score[i].balance;
+
+                }
+            }
+
+            if ( $rootScope.partnerBalance < vm.currentjob.slice(8,10) ){
+                    toastr.error("Sorry! The employer doesn't have enough fund to pay you. Try another job.")
+            }
+        }
                 
         vm.sas=0;
         vm.timer = function(){
+            vm.currentDate();
+            for (var i=0; i<$rootScope.score.length; i++){
+                if ( vm.pUser === $rootScope.score[i].username){
+                    $rootScope.partnerID = $rootScope.score[i]._id;
+                    $rootScope.partnerBalance = $rootScope.score[i].balance;
+
+                }
+            }
+
+            if ( $rootScope.partnerBalance < vm.currentjob.slice(8,10) ){
+                    toastr.error("Sorry! The employer doesn't have enough fund to pay you. Try another job.")
+                    authService.sendMsg(vm.date, vm.pUser, "Low Fund", "Alert: Check your ballance, there is not enough coins available. You need to add more coins!")
+            }
+            else {
+
             if( vm.sas <= 100){       
                 $timeout(function() {
                     vm.sas += 0.1*(10/6);
                     vm.time = Math.round(vm.sas);
                     vm.timer();
                 }, 100);
-            }
+            }}
         }
 
 
@@ -640,6 +669,26 @@
 
 
 
+        // Start of getpic function
+        vm.getMsg = function() {
+                    // call the getSettings from service
+                    authService.getMsg()
+                        //handle success
+                        .then(function(res) {
+                            vm.messages = res;
+                            for (var i=0; i<res.length; i++){
+                                if ($rootScope.username === res[i].username){
+                                    vm.msgLength = res.length;
+                                }
+                                else{
+                                    vm.msgLength = 0;
+                                }
+                            }
+                        }) 
+        };
+
+
+
 
 
 
@@ -648,6 +697,8 @@
         
         //vm.status();
         vm.getpic();
+        vm.getMsg();
+        vm.profile();
         vm.getSchoolGrades();
 
 

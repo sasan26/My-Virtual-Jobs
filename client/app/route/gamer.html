@@ -1586,12 +1586,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -1688,12 +1690,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -1789,12 +1793,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -1890,12 +1896,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -1991,12 +1999,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2092,12 +2102,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2193,12 +2205,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2294,12 +2308,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2430,12 +2446,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2531,12 +2549,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2632,12 +2652,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                             <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                             <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2733,12 +2755,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2834,12 +2858,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -2935,12 +2961,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -3036,12 +3064,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
 
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         
@@ -3137,12 +3167,14 @@
                           <div ng-hide="video" ng-repeat="record in vm.schoolGrade | filter:vm.username | filter:data.job.slice(0,7)">
                             <div ng-if="record.degree.slice(0,7)">
                               <div class="video-caption">
-                                 To earn coins please play the video and then click on the 'Earn' button! After 1 minute you can click on the 'save' button collect the coins.
+                                 To earn coins please play the video and then click on the '$' button! After 1 minute you can click on the 'visa' button to collect the coins.
                               </div>
-                              <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId)}}"></iframe>
+                              <div ng-if="vm.time != 100"> 
+                                <iframe id="player" class="ad-video2" type="text/html" ng-src="{{trustSrc(movie.src + data.videoId )}}"></iframe>
+                              </div>
                               <br>
                               
-                              <button class="btn btn-success btn-sm fa fa-usd" ng-click="vm.timer(); bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId"></button>
+                              <button class="btn btn-success btn-sm fa fa-usd" ng-click=" bar=true; vm.currentjob=data.job.slice(0,10); vm.pUser=data.username; vm.videoId=data.videoId; vm.timer();"></button>
                         
                               <button class="btn btn-warning btn-sm fa fa-cc-visa" ng-click="vm.earnCoin(); vm.profile(); vm.getscores(); vm.updateAnalys()" ng-disabled="vm.time != 100"></button>
                         

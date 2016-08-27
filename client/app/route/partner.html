@@ -11,25 +11,31 @@
                         <td class="logo-partner">Partner Console</td>
                         
                         <td class="tdMenu1-partner">
+                            <!-- msg button -->
+                            <span class="msgCount">{{vm.msgLength}}</span>
+                            <a ng-click="vm.profile(); vm.getMsg(); msg=false; help=false; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-envelope help-sign" aria-hidden="true"></span>
+                            </a>&nbsp;&nbsp;                            
+
                             <!-- help button -->
-                            <a ng-click="help=!help; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                            <a ng-click="msg=true; help=true; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
                                 <span class="fa fa-question-circle help-sign" aria-hidden="true"></span>
                             </a>    
                             
                             <!-- account info button -->
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores()"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores(); help=false;"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
                         </td>
                         <!-- ads button -->
                         <td class="tdMenu3-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.profile(); partnerInfo=false; plan=false; ads=true; analyse=false; payment=false"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=false; plan=false; ads=true; analyse=false; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
                         </td>
                         <!-- analyse button -->
                         <td class="tdMenu5-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyze</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyze</a>
                         </td>
                         <!-- payment button -->
                         <td class="tdMenu6-partner">
-                            <a class="btn icon-btn menu-top-partner" ng-click="vm.getPayHistory(); vm.getPayout(); vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getPayHistory(); vm.getPayout(); vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true; help=false;"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
                         </td>
                         <!-- sign out button -->
                         <td class="tdMenu4-partner">
@@ -1597,6 +1603,41 @@
                 </div>
               </div>
         </div>
+        <!-- ./ End of help -->
+
+         <!-- Strat of the message -->
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** MSG ************************************** -->
+        <div class="panel-group" ng-hide="msg">
+            <div class="panel panel-info">
+                <div class="panel-heading">Message box <span class="fa fa-line-chart"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">
+                        <table>
+                            <tr>
+                                <td>
+                                  <table class="table table-hover">
+                                    <tr>
+                                      <td class="result9">date</td>
+                                      <td class="result9">subject</td>
+                                      <td class="result9">message</td>
+                                    </tr>
+                                    <tr ng-repeat="datas in vm.messages | filter: vm.username">
+                                      <td class="result9">{{datas.date}}</td>
+                                      <td class="result9">{{datas.subject}}</td>
+                                      <td class="result9">{{datas.msg}}</td>
+                                    </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./ End of message -->
+
+
 
 
         <!-- Strat of partner user Change Email -->

@@ -477,7 +477,8 @@ li {
 }
 /* account info td */
 .tdMenu1-partner {
-	width: 10%;
+	width: 15%;
+	text-align: right;
 }
 /* sign out td */
 .tdMenu4-partner {
@@ -882,6 +883,14 @@ li { cursor: pointer; }
 	height: 300px;
 }
 
+/*partner msg */
+.msgCount {
+	font-size: 0.7em;
+	color: white;
+	background-color: red;
+	border-radius: 20%;
+	padding: 1%;
+}
 
 
 
