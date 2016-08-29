@@ -65,7 +65,7 @@
                             <tr>
                                 <td class="result">Password</td>
                                 <td class="result2">(hidden)</td>
-                                <td class="result3"><button class="btn btn-warning" ng-click="changePass=!changePass">change your Password</button></td>
+                                <td class="result3"></td>
                             </tr>
                         </table>
                     </div>
@@ -761,7 +761,6 @@
                                   Ballance:
                                   <br><br>
                                   {{data.balance}}
-                                  <a class="btn icon-btn btn-plus"><span class="glyphicon btn-glyphicon fa fa-plus img-circle"></span>Add More Coins</a>
                                   <img src="../../img/coin.png" class="coin">
                                 </td>
                             </tr>
@@ -1638,8 +1637,6 @@
         <!-- ./ End of message -->
 
 
-
-
         <!-- Strat of partner user Change Email -->
         <div class="panel-group" ng-show="changeEmail">
             <div class="panel panel-info panel-chEmail">
@@ -1658,33 +1655,6 @@
             </div>
         </div>
         <!-- ./ End of partner user change Email -->
-
-        <!-- Strat of partner user Change Password -->
-        <div class="panel-group" ng-show="changePass">
-            <div class="panel panel-info panel-chEmail">
-                <div class="panel-heading">Change your password <span class="fa fa-key"></span></div>
-                <div class="panel-body">
-                    <div class="alert alert-success">
-                        <table>
-                            <tr>
-                                <td class="result">current password</td>
-                                <td><input type="text" class="form-control" placeholder="your old password . . ."></td>
-                            </tr>
-                            <tr>
-                                <td class="result">new password</td>
-                                <td><input type="text" class="form-control" placeholder="your new password . . ."></td>
-                            </tr>
-                            <tr>
-                                <td class="result">new password confirmation</td>
-                                <td><input type="text" class="form-control" ng-model="vm.changeP" placeholder="your new password confirmation. . ."></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <button class="btn btn-success" ng-click="vm.changePas(); vm.profile(); changePass=false;" ng-disabled="!vm.changeP">change</button>
-                </div>
-            </div>
-        </div>
-        <!-- ./ End of partner user change password -->
 
 
     </div>

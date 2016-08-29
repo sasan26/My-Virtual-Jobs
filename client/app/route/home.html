@@ -1,9 +1,6 @@
-
 <div class="container text-center">
   <div class="row content">    
     <div class="col-sm-12">
-
-<!-- ************************************************************************************ -->
       <div class="alert alert-success login">
         <!-- <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> -->
         <span class="title">My Virtual Jobs</span>
@@ -14,11 +11,16 @@
 
         <button type="button" class="btn btn-default btntop partner-on glyphicon glyphicon-user
 " ng-click = " partner=!partner; gamer=false "><span class="t-btn2">Partner User</span></button>
-        <!-- gamer form *************************************************************** -->
+
+        <!-- =============================================================================== -->
+        <!-- =                                                                             = -->
+        <!-- =                                 Gamer Form                                  = -->
+        <!-- =                                                                             = -->
+        <!-- =============================================================================== -->
         <div class="user-form-gamer" ng-show="gamer">
           <!-- SIGN IN / UP toggle buttons -->
           <hr>
-          <div class="toggle-btn">
+          <div class="toggle-btn PartnerForm">
             <!-- sign in toggle buttons -->
             <a class="btn icon-btn gamer-on" href="#" ng-show="SignInOn" ng-click=" SignInOn = false; SignInOff = false; SignUpOn=false; SignUpOff=false; SignUpForm=false; SignInForm=false"><span class="glyphicon btn-glyphicon glyphicon-ok img-circle gamer-on"></span>Sign in</a>
 
@@ -30,22 +32,12 @@
             <a class="btn icon-btn off-btn" href="#" ng-show="SignUpOff" ng-click=" SignUpOn = false; SignUpOff = false; SignInOn=false; SignInOff=false; SignUpForm=false; SignInForm=false"><span class="glyphicon btn-glyphicon glyphicon-remove img-circle off-btn"></span>Sign up</a>            
           </div> <!-- ./ End of the toggle buttons -->
 
-            <!-- GAMER SIGN UP Form-->          
-            <form role="form" ng-hide="SignUpForm">
-              <div class="col-sm-6 social-btn">
-                <button class="btn btn-social btn-facebook social">
-                <span class="fa fa-facebook"></span>
-                Sign Up with Facebook</button>
-                <button class="btn btn-social btn-twitter social">
-                <span class="fa fa-twitter"></span>
-                Sign Up with Twitter</button>
-                <button class="btn btn-social btn-google social">
-                <span class="fa fa-google"></span>
-                Sign Up with Google+</button>
-              </div> 
-              <div class="col-sm-6 alert alert-info">
+            <!-- =============================================================================== -->
+            <!-- =                                 Gamer /Sign up                              = -->
+            <!-- =============================================================================== -->          
+            <form role="form" ng-hide="SignUpForm"> 
+              <div class="col-sm-12 alert alert-info">
                 <div class="form-group">
-
                   <label for="email">Sign Up</label>
                   <input type="email" class="form-control" id="email" placeholder="Email Address" name="username" ng-model="vm.registerForm.username">
                 </div>
@@ -57,20 +49,12 @@
               </div>               
             </form> <!-- ./ End of the SIGN IN Form -->
 
-            <!--GAMER SIGN IN Form-->
+            <!-- =============================================================================== -->
+            <!-- =                                 Gamer /Signin                               = -->
+            <!-- =============================================================================== -->  
             <form role="form" ng-show="SignInForm">
-              <div class="col-sm-6 social-btn">
-                <button class="btn btn-social btn-facebook social">
-                <span class="fa fa-facebook"></span>
-                Sign In with Facebook</button>
-                <button class="btn btn-social btn-twitter social">
-                <span class="fa fa-twitter"></span>
-                Sign In with Twitter</button>
-                <button class="btn btn-social btn-google social">
-                <span class="fa fa-google"></span>
-                Sign In with Google+</button>
-              </div> 
-              <div class="col-sm-6 alert alert-info">
+              
+              <div class="col-sm-12 alert alert-info">
                 <div class="form-group">
 
                   <label for="email">Sign In</label>
@@ -82,12 +66,14 @@
                 </div>
                 <button class="btn btn-info btn-block" ng-click="vm.loginForm.usertype='gamer'; vm.login(vm.loginForm)">Sign In as a Gamer User</button>
               </div>               
-            </form><!-- ./ End of the SIGN UP Form -->
-          
+            </form><!-- ./ End of the SIGN UP Form -->          
         </div><!-- ./ End of the gamer form -->
-        <!-- ************************************************************************** -->
-        <!-- ***************            partner form                   **************** -->
-        <!-- ************************************************************************** -->
+
+        <!-- =============================================================================== -->
+        <!-- =                                                                             = -->
+        <!-- =                                 Partner Form                                = -->
+        <!-- =                                                                             = -->
+        <!-- =============================================================================== -->
         <div class="user-form-partner" ng-show="partner">
           
           <hr>
@@ -104,7 +90,9 @@
           </div> <!-- ./ End of the toggle buttons -->
 
 
-          <!-- SIGN UP -->
+          <!-- =============================================================================== -->
+          <!-- =                                 Partner /Sign up                            = -->
+          <!-- =============================================================================== -->  
           <div class="alert alert-warning PartnerForm" ng-hide="SignUpFormP">
             <form role="form">
               <div class="form-group">
@@ -120,7 +108,9 @@
             </form>
           </div>
 
-          <!-- SIGN IN -->
+          <!-- =============================================================================== -->
+          <!-- =                                 Gamer /Sign in                              = -->
+          <!-- =============================================================================== -->  
           <div class="alert alert-warning PartnerForm" ng-show="SignInFormP">
             <form role="form">
               <div class="form-group">
@@ -136,8 +126,9 @@
             </form>
           </div>
         </div><!-- ./ End of the partner form -->
+
       </div><!-- ./ End of alert-->
-<!-- ***************************************************************** -->
+
       <!-- background Map -->
       <img src="../../img/background.png" class="background">
     </div><!-- ./ End of col-->

@@ -695,7 +695,7 @@
 
 
         
-        //vm.status();
+        vm.status();
         vm.getpic();
         vm.getMsg();
         vm.profile();

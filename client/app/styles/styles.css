@@ -58,18 +58,6 @@ hr {
 	margin-top: 5%;
 	text-align: left;
 }
-/*social buttons */
-.social {
-	display: block;
-	margin-top: 4px;
-}
-.social-btn {
-	margin-top: 10%;
-}
-.btn-facebook, .btn-google, .btn-twitter {
-	width: 100%;
-	margin-bottom: 5px;
-}
 /* radio button */
 .toggle-btn {
 	margin-left: 20px;
@@ -100,6 +88,7 @@ hr {
 /* partner form */
 .PartnerForm {
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* ********************************************** GAMER ******************************************* */

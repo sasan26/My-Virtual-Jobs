@@ -13,11 +13,6 @@ require('dotenv').config();
 var port     = process.env.PORT || 8080;
 
 
-
-
-
-
-
 // DB configuration
 mongoose.connect("mongodb://localhost:27017/virtual");
 var db = mongoose.connection;
@@ -76,11 +71,6 @@ app.use(function(err, req, res) {
     error: {}
   }));
 });
-
-
-
-
-
 
 
 // launch ======================================================================
