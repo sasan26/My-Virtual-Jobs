@@ -598,7 +598,7 @@
                             <td class="result">
                                 <div class="row"> <!-- print the image ads from the server -->
                                     <div class="col-md-4" ng-repeat="data in vm.superheroes | filter:vm.username">
-                                        <a class="close fa fa-trash-o" aria-label="close" ng-click="vm.delete=data._id; vm.deletePic(); vm.getpic()">
+                                        <a class="close fa fa-trash" aria-label="close" ng-click="vm.delete=data._id; vm.deletePic(); vm.getpic()">
                                         </a>
                                         <div class="alert alert-warning pic-alert">
                                           <div class="job-details">
@@ -1604,7 +1604,7 @@
         </div>
         <!-- ./ End of help -->
 
-         <!-- Strat of the message -->
+        <!-- Strat of the message -->
         <!-- *************************************************************************************** -->
         <!-- **************************************** MSG ************************************** -->
         <div class="panel-group" ng-hide="msg">

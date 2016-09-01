@@ -466,7 +466,7 @@ li {
 }
 /* account info td */
 .tdMenu1-partner {
-	width: 15%;
+	width: 35%;
 	text-align: right;
 }
 /* sign out td */
@@ -880,7 +880,26 @@ li { cursor: pointer; }
 	border-radius: 20%;
 	padding: 1%;
 }
-
+/* admin - nav bar */
+.well-admin {
+	background-color: #996633;
+	padding: 5px 10px 5px 20px;
+}
+/* admin header menu buttons */
+.menu-top-admin {
+	background-color: #996633;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+}
+.menu-top-admin:hover {
+	background-color: #FFF;
+	color: #000;
+}
+/* header menu icons */
+.menu-top2-admin {
+	background-color: #996633;
+	color: #ffffff;
+}
 
 
 

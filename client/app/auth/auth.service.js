@@ -38,7 +38,10 @@
             getAnalys: getAnalys,
             updateAnalys: updateAnalys,
             sendMsg: sendMsg,
-            getMsg: getMsg
+            getMsg: getMsg,
+            sendWithdraw: sendWithdraw,
+            getWithdraw: getWithdraw,
+            delWithdraw: delWithdraw
 
 
         };
@@ -805,6 +808,90 @@
             // return promise object
             return deferred.promise;
         }
+
+
+
+
+
+
+        // Start of post withdraw function
+        function sendWithdraw(date, username) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a post request to the server
+            $http.post('/user/admin', {
+                    date: date,
+                    username: username
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {
+                        deferred.resolve();
+                    } else {
+                            deferred.reject();
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    deferred.reject();
+                });
+            // return promise object
+            return deferred.promise;
+        } 
+
+
+        // // Start of getpic function
+        function getWithdraw(data) {
+            // create a new instance of deferred
+            var deferred = $q.defer();
+            // send a get request to the server
+            $http.get('/user/admin', {
+                          data: data             
+                })
+                // handle success
+                .success(function(data, status) {
+                    if (status === 200) {                        
+                        deferred.resolve(data);
+                    } else {
+                        //user = false;
+                        deferred.reject();
+                        console.log('Error1: ' + data);
+                    }
+                })
+                // handle error
+                .error(function(data) {
+                    //user = false;
+                    deferred.reject();
+                    console.log('Error2: ' + data);
+                });
+
+            // return promise object
+            return deferred.promise;
+        }  // End of getpic function
+
+
+        // Start of delete withdraw function
+        function delWithdraw(id){
+            var defer = $q.defer();
+            $http({
+                method: 'DELETE',
+                url: '/user/admin/' + id
+            }).then(function(response) {
+                    if (response.status === 204) {
+                        defer.resolve(response);
+                    } else {
+                        defer.reject("No data found!");
+                    }
+                },
+                function(error) {
+                    defer.reject(error);
+                });
+            return defer.promise;      
+        }
+
+
+
+
 
 
 

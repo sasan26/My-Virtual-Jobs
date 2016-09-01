@@ -20,7 +20,14 @@
 
 
         vm.status = function (){
-            if ( !$rootScope.logged ){
+            
+            if ( document.location.href.includes("success")) {
+                $location.path('/success');
+            }
+            else if ( document.location.href.includes("admin")) {
+                $location.path('/admin');
+            }
+            else if ( !$rootScope.logged ){
                 $location.path('/home');        
             }
         }
@@ -667,8 +674,6 @@
             }, 1000);                          
         }; 
 
-
-
         // Start of getpic function
         vm.getMsg = function() {
                     // call the getSettings from service
@@ -686,6 +691,44 @@
                             }
                         }) 
         };
+
+
+        vm.withdraw = function() {
+            if ( $rootScope.scoreBalance < 1000) {
+                toastr.error(' You are not able to withdraw from us! You need more than 1000 coins.')
+            }
+            else {
+                vm.currentDate();
+                authService.sendWithdraw(vm.date, $rootScope.username)
+
+                vm.balance = $rootScope.scoreBalance - 1000 ;
+                authService.updateScore($rootScope.scoreID, $rootScope.username, vm.balance)
+                vm.getscores();
+
+            }
+        }
+
+
+        // Start of get withdraw function
+        vm.getWithdraw = function() {
+                // call the getSettings from service
+                authService.getWithdraw()
+                    //handle success
+                    .then(function(res) {                        
+                        vm.admin = res;
+                    })                        
+        }; 
+
+
+        // Start of delete withdraw function
+        vm.delWithdraw = function() {
+            authService.delWithdraw(vm.id)
+                // handle success
+                toastr.warning('Checked!'); 
+                console.log(vm.id);                                                              
+        };
+
+       
 
 
 

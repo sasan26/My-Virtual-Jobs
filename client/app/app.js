@@ -8,7 +8,7 @@
             
         ])
         .config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'filepickerProvider', function($stateProvider, $urlRouterProvider, $httpProvider, filepickerProvider){
-        	//$httpProvider.interceptors.push('authInterceptor'); 
+
             $urlRouterProvider.otherwise('home'); // redirection
             filepickerProvider.setKey('AHJOdoEgQ9OJkRjndz7Jkz');
 
@@ -38,10 +38,15 @@
                 url: '/success', 
                 templateUrl: 'app/route/success.html', 
                 controller: 'authControllers as vm',
+            })
+
+            .state('admin', {   //2nd state for partner.html
+                url: '/admin', 
+                templateUrl: 'app/route/admin.html', 
+                controller: 'authControllers as vm',
             });
         }])  // end router
 
-        //.value('apiUrl', 'http://localhost:49645/api/'); // define the apiURL
 })();
 
 

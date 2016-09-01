@@ -14,6 +14,7 @@ var incomeHis = require('../models/income.js');
 var payoutHis = require('../models/payout.js');
 var analys = require('../models/analys.js');
 var mesage = require('../models/msg.js');
+var withdraw = require('../models/admin.js');
 
 // register new account route
 router.post('/register', function(req, res) {
@@ -381,7 +382,38 @@ router.get('/msg', function(req, res) {
 
 
 
+// post admin route
+router.post('/admin', function(req, res) {
+   
+    var sas = new withdraw(req.body);
+    // add to db
+    sas.save(function(err){
+        if(err) res.send(err);
+        //If no errors, send it back to the client
+        res.json(req.body);
+    });                         
+});
 
+// get admin route
+router.get('/admin', function(req, res) {
+   //Query the DB and if no errors, send all the superheroes
+    var query = withdraw.find({});
+    query.exec(function(err, superheroes){
+        if(err) {res.send(err);
+
+        }
+        //If no errors, send them back to the client
+        res.json(superheroes);});
+});
+
+// delete admin route
+router.delete('/admin/:id', function(req, res) {  
+   var id = req.params.id;
+    withdraw.remove({ _id: mongoose.Types.ObjectId(id) }, function(err) {
+        if (err) { console.log(err); }
+                res.json({ message: 'Deleted!' });            
+        });
+});
 
 
 

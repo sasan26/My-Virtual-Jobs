@@ -1,0 +1,58 @@
+<div class="container-fluid gamer" ng-click="vm.getWithdraw()">
+    <!-- the page header -->
+    <div class="row">
+
+        <!-- ========================= menu ========================== -->
+        <div class="col-sm-12">
+            <div class="well well-lg well-admin">
+                <table>
+                    <tr>
+                        <!-- pahe logo -->
+                        <td class="logo-partner">Admin Console</td>
+                        
+                        <!-- sign out button -->
+                        <td class="tdMenu3-partner">
+                            <a class="btn icon-btn menu-top-admin" ng-click="vm.getWithdraw()"><span class="glyphicon btn-glyphicon fa fa-cloud-download img-circle menu-top2-admin"></span>load requests</a>
+                        </td>
+                        <!-- sign out button -->
+                        <td class="tdMenu4-partner">
+                            <a class="btn icon-btn menu-top-admin" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2-admin"></span>sign out</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- *************************************************************************************** -->
+        <!-- **************************************** withdraw ************************************* -->
+        <div class="panel-group">
+            <div class="panel panel-warning">
+                <div class="panel-heading">Withdrawal request <span class="fa fa-usd"></span></div>
+                <div class="panel-body">
+                    <div class="alert alert-warning">                            
+                                      
+                        <table>                            
+                            <tr >
+	                            <td class="result">
+                                    <div class="col-md-4" ng-repeat="data in vm.admin">
+                                        <a ng-hide="uncheck" class="close fa fa-remove" aria-label="close" ng-click="vm.id=data._id; vm.delWithdraw(); vm.getWithdraw()">
+                                        </a>
+                                        <div class="alert alert-warning pic-alert">
+	                                        <div class="job-details">
+	                                            <h5>{{data.date}}</h5>
+	                                            <h4>{{data.username}}</h4>
+	                                            <h6>1000 Coins</h6>
+	                                            <h6>$ 79.99</h6>
+	                                        </div>
+                                        </div>
+                                    </div>
+	                            </td>
+                            </tr>                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- ./ row -->
+</div>
