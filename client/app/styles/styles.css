@@ -1,10 +1,7 @@
-#p2 {
-	
-	color: #ff6600;
-	text-align: center;
-	width: 30%;
-	margin: 200px 35% 5000px;
-}
+/* ***************************************************************************************************** 
+   *****                                          Main Page                                       ****** 
+   ***************************************************************************************************** */
+
 /* the background map */
 .background {
 	width: 100%;
@@ -91,7 +88,18 @@ hr {
 	margin-bottom: 10px;
 }
 
-/* ********************************************** GAMER ******************************************* */
+/* ***************************************************************************************************** 
+   *****                                        Gamer console                                     ****** 
+   ***************************************************************************************************** */
+
+/* waiting icon */
+#p2 {
+	
+	color: #ff6600;
+	text-align: center;
+	width: 30%;
+	margin: 200px 35% 5000px;
+}
 
 /* gamer container div */
 .gamer {
@@ -154,7 +162,7 @@ td {
 	color: #ffffff;
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ START of building icon ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ START of building icons ~~~~~~~~~~~~~~~~~~~~~~~~ */
 .admin {
 	position: absolute;
 	bottom:84%;
@@ -326,7 +334,7 @@ td {
     -webkit-filter: drop-shadow(2px 2px 3px red); /* Chrome, Safari, Opera */
 }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End of building icon ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ End of building icons ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* building cursor */
 .building-icon {
@@ -448,8 +456,88 @@ li {
 	width: 4%;
 }
 
+/* style for the Gamer profile panel  */
+.panel2 {
+	width: 100%;
+	margin: 2% 0 0;
+}
 
-/* ********************************************* PARTNER ****************************************** */
+/* gamer - ad - video modal */
+ .ad-video2 {
+ 	margin-top: 20px;
+ 	width: 600px;
+ 	height: 450px;
+ 	border: 10px solid #669999;
+ 	border-radius: 1%;
+ }
+ /* gamer - video ad - modal */
+ .video-ad {
+ 	width: 60%;
+ 	text-align: center;
+ }
+ /* modal background */
+ .modal-back {
+ 	background-color: #b3cccc;
+ }
+/* gamer profile data result */
+.data-result {
+	color: green;
+	font-size: 0.8em;
+}
+/* gamer modal / alert requirment degree video */
+.requirment {
+	font-size: 0.9em;
+	font-weight: bold;
+	color: red;
+	font-family: tahoma;
+}
+/* gamer modal alert icon degree */
+.req-pic {
+	margin-top: 3%;
+	width: 25%;
+}
+/* gamer school highschool diploma picture ads */
+.img-thumbnail {
+	width: 200px;
+	height: 150px;
+	display: inline;
+}
+/*selected course */
+.selected-course {
+	margin-top: 5px;
+}
+
+/* gamer profile degree pic */
+.profile-degree {
+	width: 50%;
+}
+/* gamer video caption */
+.video-caption {
+	font-size: 0.9em;
+	color: #669999;
+}
+/* gamer collect payment btn */
+.collect {
+	margin-top: 10px;
+}
+audio {
+	display: none;
+}
+/*gamer - help- how to play images */
+.img-help {
+	width:400px;
+	height:250px;
+	border-radius: 5%;
+}
+.img-help:hover {
+	width:95%;
+	height: 300px;
+}
+
+
+/* ***************************************************************************************************** 
+   *****                                       Partner console                                    ****** 
+   ***************************************************************************************************** */
 
 /* partner page background */
 .backgroundPartner {
@@ -582,16 +670,16 @@ li {
 	font-size: 0.9em;
 	width: 20%;
 }
-/* result table/ analyse 2nd td */
+/* result table/ analyze 2nd td */
 .result10 {
 	color: #669909;
 	width: 10%;
 }
-/* result table/ analyse 2nd and 3rd td/ content */
+/* result table/ analyze 2nd and 3rd td/ content */
 .res10-1 {
 	margin-top: 10%;
 }
-/* result table/ analyse 3rd td */
+/* result table/ analyze 3rd td */
 .result11 {
 	color: #669909;
 	width: 10%;
@@ -719,11 +807,7 @@ li {
 	margin: 15px auto 15px 0;
 }
 
-/* style for the Gamer profile panel  */
-.panel2 {
-	width: 100%;
-	margin: 2% 0 0;
-}
+
  /* partner - ad - pic.Ads */
  .pic-ad {
  	width: 250px;
@@ -747,23 +831,7 @@ li {
  	margin-top: 20px;
  	border-radius: 5%;
  }
- /* gamer - ad - video modal */
- .ad-video2 {
- 	margin-top: 20px;
- 	width: 600px;
- 	height: 450px;
- 	border: 10px solid #669999;
- 	border-radius: 1%;
- }
- /* gamer - video ad - modal */
- .video-ad {
- 	width: 60%;
- 	text-align: center;
- }
- /* modal background */
- .modal-back {
- 	background-color: #b3cccc;
- }
+ 
  /* partner -ad - job details */
  .job-details {
  	font-size: 0.5em;
@@ -775,43 +843,7 @@ li {
 .ad-details {
 	width: 5%;
 }
-/* gamer profile data result */
-.data-result {
-	color: green;
-	font-size: 0.8em;
-}
-/* gamer modal / alert requirment degree video */
-.requirment {
-	font-size: 0.9em;
-	font-weight: bold;
-	color: red;
-	font-family: tahoma;
-}
-/* gamer modal alert icon degree */
-.req-pic {
-	margin-top: 3%;
-	width: 25%;
-}
-/* gamer school highschool diploma picture ads */
-.img-thumbnail {
-	width: 200px;
-	height: 150px;
-	display: inline;
-}
-/*selected course */
-.selected-course {
-	margin-top: 5px;
-}
 
-/* gamer profile degree pic */
-.profile-degree {
-	width: 50%;
-}
-/* gamer video caption */
-.video-caption {
-	font-size: 0.9em;
-	color: #669999;
-}
 
 /*partner youtube video-id text box */
 .youtube-id {
@@ -840,18 +872,12 @@ li {
 	width: 70%;
 }
 
-/* gamer collect payment btn */
-.collect {
-	margin-top: 10px;
-}
 /* partner- analys video ad */
 .analys-video {
 	width: 50%;
 	height: 60%;
 }
-audio {
-	display: none;
-}
+
 li { cursor: pointer; }
 /* partner menu - question sign  */
 .help-sign {
@@ -859,17 +885,6 @@ li { cursor: pointer; }
 }
 .help-sign:hover {
 	color: white;
-}
-
-/*gamer - help- how to play images */
-.img-help {
-	width:400px;
-	height:250px;
-	border-radius: 5%;
-}
-.img-help:hover {
-	width:95%;
-	height: 300px;
 }
 
 /*partner msg */
@@ -902,40 +917,9 @@ li { cursor: pointer; }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*================================== Like hover images - buildigns ========================================*/
-
+/* ***************************************************************************************************** 
+   *****                                  Like hover images - school                              ****** 
+   ***************************************************************************************************** */
 
 /*** Default shared CSS ****/
 
@@ -1052,16 +1036,16 @@ li { cursor: pointer; }
 }
 
 
+/* ***************************************************************************************************** 
+   *****                                      Help- hover images                                  ****** 
+   ***************************************************************************************************** */
 
-/* ===================================  Help- hover images =================================== */
-
-
-.imagepluscontainer{ /* main image container */
+.help-images{ /* main image container */
 position: relative;
 z-index: 1;
 }
 
-.imagepluscontainer img{ /* CSS for image within container */
+.help-images img{ /* CSS for image within container */
 position: relative;
 z-index: 2;
 -moz-transition: all 0.5s ease; /* Enable CSS3 transition on all props */
@@ -1071,7 +1055,7 @@ z-index: 2;
 transition: all 0.5s ease-in-out;
 }
 
-.imagepluscontainer:hover img{ /* CSS for image when mouse hovers over main container */
+.help-images:hover img{ /* CSS for image when mouse hovers over main container */
 -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -1082,7 +1066,7 @@ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 transform: scale(1.05, 1.05);
 }
 
-.imagepluscontainer div.desc{ /* CSS for desc div of each image. */
+.help-images div.desc{ /* CSS for desc div of each image. */
 position: absolute;
 width: 90%;
 z-index: 1; /* Set z-index to that less than image's, so it's hidden beneath it */
@@ -1105,11 +1089,11 @@ box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 transition: all 0.5s ease 0.5s;
 }
 
-.imagepluscontainer div.desc a{
+.help-images div.desc a{
 color: white;
 }
 
-.imagepluscontainer:hover div.desc{ /* CSS for desc div when mouse hovers over main container */
+.help-images:hover div.desc{ /* CSS for desc div when mouse hovers over main container */
 -moz-transform: translate(0, 100%);
 -webkit-transform: translate(0, 100%);
 -ms-transform: translate(0, 100%);
@@ -1118,52 +1102,11 @@ transform: translate(0, 100%);
 opacity:1; /* Reveal desc DIV fully */
 }
 
-/*### Below CSS when applied to desc DIV slides the desc div from the right edge of the image ###*/
 
-.imagepluscontainer div.rightslide{
-width: 150px; /* reset from default */
-top:15px;
-right:0;
-left:auto;  /* reset from default */
-bottom:auto;  /* reset from default */
-padding-left:15px;
--moz-border-radius: 0 8px 8px 0;
--webkit-border-radius: 0 8px 8px 0;
-border-radius: 0 8px 8px 0;
-}
-
-.imagepluscontainer:hover div.rightslide{
--moz-transform: translate(100%, 0);
--webkit-transform: translate(100%, 0);
--ms-transform: translate(100%, 0);
--o-transform: translate(100%, 0);
-transform: translate(100%, 0);
-}
-
-/*### Below CSS when applied to desc DIV slides the desc div from the left edge of the image ###*/
-
-.imagepluscontainer div.leftslide{
-width: 150px;  /* reset from default */
-top:15px;
-left:0;
-bottom:auto;  /* reset from default */
-padding-left:15px;
--moz-border-radius: 8px 0 0 8px;
--webkit-border-radius: 8px 0 0 8px;
-border-radius: 8px 0 0 8px;
-}
-
-.imagepluscontainer:hover div.leftslide{
--moz-transform: translate(-100%, 0);
--webkit-transform: translate(-100%, 0);
--ms-transform: translate(-100%, 0);
--o-transform: translate(-100%, 0);
-transform:translate(-100%, 0);
-}
 
 /*### Below CSS when applied to desc DIV slides the desc div from the top edge of the image ###*/
 
-.imagepluscontainer div.upslide{
+.help-images div.upslide{
 top:0;
 bottom:auto;  /* reset from default */
 padding-bottom:10px;
@@ -1172,7 +1115,7 @@ padding-bottom:10px;
 border-radius: 8px 8px 0 0;
 }
 
-.imagepluscontainer:hover div.upslide{
+.help-images:hover div.upslide{
 -moz-transform: translate(0, -100%);
 -webkit-transform: translate(0, -100%);
 -ms-transform: translate(0, -100%);

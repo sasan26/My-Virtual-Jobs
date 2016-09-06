@@ -1,8 +1,15 @@
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@                                                                                         @@@@@@ -->
+<!-- @@@@@                                      Partner console                                    @@@@@@ -->
+<!-- @@@@@                                                                                         @@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
 <div class="container-fluid gamer">
-    <!-- the page header -->
     <div class="row">
 
-        <!-- ========================= menu ========================== -->
+        <!-- ========================================================= -->
+        <!-- ===                    Header Menu                    === -->
+        <!-- ========================================================= -->
         <div class="col-sm-12">
             <div class="well well-lg well-partner">
                 <table>
@@ -44,13 +51,15 @@
                     </tr>
                 </table>
             </div>
-        </div>
-        <!-- ./ End of the page header -->
-
-        <!-- Strat of partner user information -->
+        </div> <!-- ./ Menu -->
+        
+        <!-- ===============================    wait icon    ============================ -->
         <div id="p2"><span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>wait . . .</div>
+
+
         <!-- *************************************************************************************** -->
-        <!-- **************************************** Account ************************************** -->
+        <!-- *****                                    Account                                 ****** -->
+        <!-- *************************************************************************************** -->
         <div class="panel-group" ng-show="partnerInfo">
             <div class="panel panel-info">
                 <div class="panel-heading">Account <span class="fa fa-user"></span></div>
@@ -72,12 +81,11 @@
                     <button class="btn btn-danger" ng-click="vm.deleteAccount()"> delete your account</button>
                 </div>
             </div>
-        </div>
-        <!-- ./ End of partner user information -->
+        </div> <!-- ./ Account -->
 
-        <!-- Strat of partner video ads -->
         <!-- *************************************************************************************** -->
-        <!-- **************************************** Ads ****************************************** -->
+        <!-- *****                                     Ads                                    ****** -->
+        <!-- *************************************************************************************** -->
         <div class="panel-group" ng-show="ads">
             <div class="panel panel-info">
                 <div class="panel-heading">Ads <span class="fa fa-file-video-o"></span></div>
@@ -585,8 +593,6 @@
                             </tr>
                         </table>
 
-                        
-
                     </div>
 
                     <div class="alert alert-warning">
@@ -612,18 +618,16 @@
                                 </div>    
                             </td>
                             </tr>
-
-                            
+                           
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ./ End of partner user ad -->
+        </div> <!-- ./ Ads -->
 
-        <!-- Strat of the ad analyse -->
         <!-- *************************************************************************************** -->
-        <!-- **************************************** Analyse ************************************** -->
+        <!-- *****                                    Analyze                                 ****** -->
+        <!-- *************************************************************************************** -->
         <div class="panel-group" ng-show="analyse">
             <div class="panel panel-info">
                 <div class="panel-heading">Analyse <span class="fa fa-line-chart"></span></div>
@@ -652,12 +656,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ./ End of the analyse -->
+        </div> <!-- ./ Analyze -->
         
-        <!-- Strat of the payments -->
         <!-- *************************************************************************************** -->
-        <!-- **************************************** Payment ************************************** -->
+        <!-- *****                                    Payment                                 ****** -->
+        <!-- *************************************************************************************** -->
         <div class="panel-group" ng-show="payment">
             <div class="panel panel-info">
                 <div class="panel-heading">Payment <span class="fa fa-credit-card"></span></div>
@@ -768,12 +771,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End of the payments -->
+        </div> <!-- ./ Payment -->
         
-        <!-- Start of Help -->
         <!-- *************************************************************************************** -->
-        <!-- ****************************************** HELP *************************************** -->
+        <!-- *****                                     Help                                   ****** -->
+        <!-- *************************************************************************************** -->
         <div class="alert alert-success building-back" ng-show="help">
           <a class="close" aria-label="close" ng-click="map=false; help=!help">&times;</a>
           <!-- title -->
@@ -1601,12 +1603,12 @@
                   </p>
                 </div>
               </div>
-        </div>
-        <!-- ./ End of help -->
+        </div> <!-- ./ Help -->
+        
 
-        <!-- Strat of the message -->
         <!-- *************************************************************************************** -->
-        <!-- **************************************** MSG ************************************** -->
+        <!-- *****                                 Message Box                                ****** -->
+        <!-- *************************************************************************************** -->
         <div class="panel-group" ng-hide="msg">
             <div class="panel panel-info">
                 <div class="panel-heading">Message box <span class="fa fa-line-chart"></span></div>
@@ -1633,11 +1635,12 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- ./ End of message -->
+        </div> <!-- ./ Message Box -->
 
 
-        <!-- Strat of partner user Change Email -->
+        <!-- ========================================================= -->
+        <!-- ===                   Change Email                    === -->
+        <!-- ========================================================= -->
         <div class="panel-group" ng-show="changeEmail">
             <div class="panel panel-info panel-chEmail">
                 <div class="panel-heading">Change your Email Address <span class="fa fa-user"></span></div>
@@ -1654,7 +1657,7 @@
                 </div>
             </div>
         </div>
-        <!-- ./ End of partner user change Email -->
+        <!-- ./ Change Email -->
 
 
     </div>
