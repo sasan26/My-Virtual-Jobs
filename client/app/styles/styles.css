@@ -931,7 +931,8 @@ li { cursor: pointer; }
 	overflow: hidden; /* hide overflowing elements by default */
 }
 
-.ad-pics::before, .ad-pics::after{ /* create :before and :after pseudo elements that are initially positioned outside canvas */
+/* create :before and :after pseudo elements that are initially positioned outside canvas */
+.ad-pics::before, .ad-pics::after{ 
 	content: '';
 	width: 100%;
 	height: 100%;
@@ -1101,8 +1102,6 @@ color: white;
 transform: translate(0, 100%);
 opacity:1; /* Reveal desc DIV fully */
 }
-
-
 
 /*### Below CSS when applied to desc DIV slides the desc div from the top edge of the image ###*/
 

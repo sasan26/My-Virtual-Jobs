@@ -11,14 +11,15 @@
     function authControllers($window, $sce, authService, $timeout, $location, $rootScope, $http, filepickerService, $scope) {
         var vm = this;
         vm.title = 'authControllers';
+        
 
-
+        // timeout function for waiting icon
         $timeout(function() {
                 p2.style.display = 'none';
         }, 4000);
         
 
-
+        // Start of status function
         vm.status = function (){
             
             if ( document.location.href.includes("success")) {
@@ -32,7 +33,6 @@
             }
         }
         
-
         // Start of register function
        vm.register = function(registerForm) {
 
@@ -201,8 +201,7 @@
             );
         }; 
 
-
-        // Start of getpic function
+        // Start of get ad function
         vm.getpic = function() {
             $timeout(function() {                                   
                 // call the getSettings from service
@@ -229,14 +228,12 @@
             }, 3000);          
         }; 
 
-
-        // Start of scores function
+        // Start of delete ad function
         vm.deletePic = function() {
                     authService.deletePic(vm.delete)
                         // handle success
                         toastr.warning('Deleted!');                                                               
         };
-
         
         // Start of scores function
         vm.scores = function() {
@@ -248,8 +245,7 @@
                 })                     
         };
 
-
-        // Start of getpic function
+        // Start of getscore function
         vm.getscores = function() {
             $timeout(function() {       
                     // call the getSettings from service
@@ -270,8 +266,7 @@
             }, 1000);          
         };
 
-
-        // Start of scores function
+        // Start of update scores function
         vm.updateScore = function() {
             $timeout(function() {
                             
@@ -285,8 +280,7 @@
             }, 1000);                          
         }; 
 
-
-        // Start of schoolGrades function
+        // Start of post schoolGrades function
         vm.schoolGrades = function() {
             authService.schoolGrades(vm.degree, vm.userScore, $rootScope.username)
                 // handle success
@@ -295,7 +289,6 @@
                                       
                 })                      
         };
-
 
         // Start of getSchoolGrades function
         vm.getSchoolGrades = function() {       
@@ -319,6 +312,7 @@
         vm.masterScore = 0;
         vm.doctoralScore = 0;
 
+        // start of school degrees function - check if the user has already a degree 
         vm.diploma = function() {
             authService.getSchoolGrades($rootScope.id)
                 //handle success
@@ -457,8 +451,10 @@
         vm.schoolDocN = function(){
             vm.doctoralScore -= 1;
         }
+        // End of school degrees function 
 
 
+        // check balance
         vm.checkbalance = function(){
             for (var i=0; i<$rootScope.score.length; i++){
                 if ( vm.pUser === $rootScope.score[i].username){
@@ -472,7 +468,8 @@
                     toastr.error("Sorry! The employer doesn't have enough fund to pay you. Try another job.")
             }
         }
-                
+         
+        // timer for progres bar        
         vm.sas=0;
         vm.timer = function(){
             vm.currentDate();
@@ -498,7 +495,6 @@
                 }, 100);
             }}
         }
-
 
         // Start of earning function
         vm.earnCoin = function() {
@@ -533,7 +529,6 @@
             }
         }; 
 
-
         // success payment
         vm.success = function() {
             
@@ -546,6 +541,7 @@
             $window.close();
         }
 
+        // date function
         vm.currentDate = function(){
             // current date and time
                                 var week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];  
@@ -591,7 +587,6 @@
                 })
         }
 
-
         // Start of get payment history function
         vm.getPayHistory = function() {
             $timeout(function() {       
@@ -607,7 +602,6 @@
                         }); 
             }, 1000);          
         };
-
 
         // Start of get income history function
         vm.getIncome = function() {
@@ -625,7 +619,6 @@
             }, 1000);          
         };
 
-
         // Start of get payout history function
         vm.getPayout = function() {
             $timeout(function() {       
@@ -642,8 +635,7 @@
             }, 1000);          
         };
 
-
-        // Start of get analys function
+        // Start of get analyze function
         vm.getAnalys = function() {
             $timeout(function() {       
                     // call the getSettings from service
@@ -659,7 +651,7 @@
             }, 1000);          
         };
 
-        // Start of scores function
+        // Start of put analyze function
         vm.updateAnalys = function() {
             $timeout(function() {
                     for(var i=0; i<$rootScope.Analys.length; i++){
@@ -692,7 +684,7 @@
                         }) 
         };
 
-
+        // Start of withdraw function
         vm.withdraw = function() {
             if ( $rootScope.scoreBalance < 1000) {
                 toastr.error(' You are not able to withdraw from us! You need more than 1000 coins.')
@@ -727,23 +719,12 @@
                 toastr.warning('Checked!'); 
                 console.log(vm.id);                                                              
         };
-
-       
-
-
-
-
-
-
-
-
         
         vm.status();
         vm.getpic();
         vm.getMsg();
         vm.profile();
         vm.getSchoolGrades();
-
 
 
     }   // end Controller

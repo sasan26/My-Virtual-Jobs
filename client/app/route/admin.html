@@ -1,8 +1,56 @@
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+<!-- @@@@@                                                                                         @@@@@@ -->
+<!-- @@@@@                                        Admin console                                    @@@@@@ -->
+<!-- @@@@@                                                                                         @@@@@@ -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 <div class="container-fluid gamer" ng-click="vm.getWithdraw()">
     <!-- the page header -->
     <div class="row">
 
-        <!-- ========================= menu ========================== -->
+        <!-- ========================================================= -->
+        <!-- ===                    Header Menu                    === -->
+        <!-- ========================================================= -->
+        <div class="col-sm-12">
+            <div class="well well-lg well-partner">
+                <table>
+                    <tr>
+                        <!-- pahe logo -->
+                        <td class="logo-partner">Partner Console</td>
+                        
+                        <td class="tdMenu1-partner">
+                            <!-- msg button -->
+                            <span class="msgCount">{{vm.msgLength}}</span>
+                            <a ng-click="vm.profile(); vm.getMsg(); msg=false; help=false; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-envelope help-sign" aria-hidden="true"></span>
+                            </a>&nbsp;&nbsp;                            
+
+                            <!-- help button -->
+                            <a ng-click="msg=true; help=true; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-question-circle help-sign" aria-hidden="true"></span>
+                            </a>    
+                            
+                            <!-- account info button -->
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores(); help=false;"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                        </td>
+                        <!-- ads button -->
+                        <td class="tdMenu3-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=false; plan=false; ads=true; analyse=false; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
+                        </td>
+                        <!-- analyse button -->
+                        <td class="tdMenu5-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyze</a>
+                        </td>
+                        <!-- payment button -->
+                        <td class="tdMenu6-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getPayHistory(); vm.getPayout(); vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true; help=false;"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                        </td>
+                        <!-- sign out button -->
+                        <td class="tdMenu4-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2-partner"></span>sign out</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         <div class="col-sm-12">
             <div class="well well-lg well-admin">
                 <table>
@@ -21,10 +69,52 @@
                     </tr>
                 </table>
             </div>
-        </div>
+        </div> <!-- ./ header menu -->
 
-        <!-- *************************************************************************************** -->
-        <!-- **************************************** withdraw ************************************* -->
+        <!-- ========================================================= -->
+        <!-- ===                      Withdraw                     === -->
+        <!-- ========================================================= -->
+        <div class="col-sm-12">
+            <div class="well well-lg well-partner">
+                <table>
+                    <tr>
+                        <!-- pahe logo -->
+                        <td class="logo-partner">Partner Console</td>
+                        
+                        <td class="tdMenu1-partner">
+                            <!-- msg button -->
+                            <span class="msgCount">{{vm.msgLength}}</span>
+                            <a ng-click="vm.profile(); vm.getMsg(); msg=false; help=false; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-envelope help-sign" aria-hidden="true"></span>
+                            </a>&nbsp;&nbsp;                            
+
+                            <!-- help button -->
+                            <a ng-click="msg=true; help=true; partnerInfo=false; plan=false; ads=false; analyse=false; payment=false;">
+                                <span class="fa fa-question-circle help-sign" aria-hidden="true"></span>
+                            </a>    
+                            
+                            <!-- account info button -->
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=true; plan=false; ads=false; analyse=false; payment=false; vm.getscores(); help=false;"><span class="glyphicon btn-glyphicon fa fa-user img-circle menu-top2-partner"></span>Account</a>
+                        </td>
+                        <!-- ads button -->
+                        <td class="tdMenu3-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.profile(); partnerInfo=false; plan=false; ads=true; analyse=false; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-file-video-o img-circle menu-top2-partner"></span>Ads</a>
+                        </td>
+                        <!-- analyse button -->
+                        <td class="tdMenu5-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getAnalys(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=true; payment=false; help=false;"><span class="glyphicon btn-glyphicon fa fa-line-chart img-circle menu-top2-partner"></span>Analyze</a>
+                        </td>
+                        <!-- payment button -->
+                        <td class="tdMenu6-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="msg=true; vm.getPayHistory(); vm.getPayout(); vm.getscores(); vm.profile(); partnerInfo=false; plan=false; ads=false; analyse=false; payment=true; help=false;"><span class="glyphicon btn-glyphicon fa fa-credit-card img-circle menu-top2-partner"></span>Payment</a>
+                        </td>
+                        <!-- sign out button -->
+                        <td class="tdMenu4-partner">
+                            <a class="btn icon-btn menu-top-partner" ng-click="vm.logout()"><span class="glyphicon btn-glyphicon glyphicon-off img-circle menu-top2-partner"></span>sign out</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         <div class="panel-group">
             <div class="panel panel-warning">
                 <div class="panel-heading">Withdrawal request <span class="fa fa-usd"></span></div>
@@ -52,7 +142,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> <!-- ./ withdraw -->
 
     </div> <!-- ./ row -->
 </div>

@@ -51,8 +51,6 @@
         ////////////////
 
 
-         
-
         // Start of sign up function
         function register(username, password, usertype) {
             // create a new instance of deferred
@@ -77,8 +75,7 @@
                 });
             // return promise object
             return deferred.promise;
-        } // End of sign up function
-
+        } 
 
         // Start of sign in function
         function login(username, password, usertype) {
@@ -108,8 +105,7 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of sign in function
-
+        }  
 
         // Start of log out function
         function logout() {
@@ -129,8 +125,7 @@
                 });
             // return promise object
             return deferred.promise;
-        }  // End of log out function
-
+        }  
 
         // Start of profile function
         function profile(username) {
@@ -158,10 +153,9 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of profile function
+        }  
 
-
-        // Start of profile function
+        // Start of delete account function
         function deleteAccount(id) {
             
             var deferred = $q.defer();  // create a new instance of deferred   
@@ -187,8 +181,7 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of profile function
-
+        }  
 
         // Start of change Email function
         function changeEmail(id, username){
@@ -210,7 +203,6 @@
                 });
             return defer.promise;      
         }
-
 
         // Start of ad function
         function pic(picurl, filename, username, videoId, job) {
@@ -238,10 +230,9 @@
                 });
             // return promise object
             return deferred.promise;
-        } // End of ad function
+        } 
 
-
-        // // Start of getpic function
+        // Start of getpic function
         function getpic(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -268,8 +259,7 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of getpic function
-
+        }  
 
         // Start of delete ad function
         function deletePic(id){
@@ -289,9 +279,8 @@
                 });
             return defer.promise;      
         }
-
        
-       // Start of score function
+       // Start of post score function
         function scores(balance, username) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -314,10 +303,9 @@
                 });
             // return promise object
             return deferred.promise;
-        } // End of score function
+        } 
 
-
-        // // Start of getpic function
+        // Start of get score function
         function getscores(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -344,10 +332,9 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of getpic function
+        }  
 
-
-            // Start of update score function
+        // Start of update score function
         function updateScore(id, username, balance){
             var defer = $q.defer();
             var data = {username: username, balance: balance};
@@ -371,8 +358,7 @@
             return defer.promise;      
         }
 
-
-        // Start of delete ad function
+        // Start of delete score function
         function deleteScore(id){
             var defer = $q.defer();
             $http({
@@ -391,8 +377,7 @@
             return defer.promise;      
         }
 
-
-        // Start of score function
+        // Start of post school grades function
         function schoolGrades(userScore, degree, username) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -418,8 +403,7 @@
             return deferred.promise;
         } // End of score function
 
-
-        // Start of getpic function
+        // Start of get school grades function
         function getSchoolGrades(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -446,10 +430,9 @@
 
             // return promise object
             return deferred.promise;
-        }  // End of getpic function
+        }  
 
-
-        // // Start of getpic function
+        // Start of get payment function
         function getpayment(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -478,7 +461,6 @@
             return deferred.promise;
         } 
 
-
         // Start of updatepayment function
         function updatepayment(id, status){
             var defer = $q.defer();
@@ -503,7 +485,7 @@
             return defer.promise;      
         }
 
-        // Start of payment history function
+        // Start of post payment history function
         function payHistory(date, username, coins, amount) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -530,7 +512,7 @@
             return deferred.promise;
         } 
 
-        // // Start of getpic function
+        // // Start of get payhistory function
         function getPayHistory(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -559,7 +541,7 @@
             return deferred.promise;
         }
 
-        // Start of payment history function
+        // Start of income function
         function income(date, username, coins, employer) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -586,7 +568,7 @@
             return deferred.promise;
         }
 
-        // // Start of getpic function
+        // // Start of get income function
         function getIncome(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -615,7 +597,7 @@
             return deferred.promise;
         }
 
-        // Start of payment history function
+        // Start of payout function
         function payout(date, username, coins, employee) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -642,6 +624,7 @@
             return deferred.promise;
         }
 
+        // Start of get payout function
         function getPayout(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -670,7 +653,7 @@
             return deferred.promise;
         }
 
-        // Start of analys function
+        // Start of analyze function
         function analys(username, ad, views, paid) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -696,7 +679,6 @@
             // return promise object
             return deferred.promise;
         } 
-
 
         // Start of get analys  function
         function getAnalys(data) {
@@ -727,7 +709,6 @@
             return deferred.promise;
         }  
 
-
         // Start of update analys function
         function updateAnalys(id, views, paid){
             var defer = $q.defer();
@@ -752,8 +733,7 @@
             return defer.promise;      
         }
 
-
-        // Start of payment history function
+        // Start of send message function
         function sendMsg(date, username, subject, msg) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -780,7 +760,7 @@
             return deferred.promise;
         }
 
-        // // Start of getpic function
+        // // Start of getMsg function
         function getMsg(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -809,11 +789,6 @@
             return deferred.promise;
         }
 
-
-
-
-
-
         // Start of post withdraw function
         function sendWithdraw(date, username) {
             // create a new instance of deferred
@@ -839,8 +814,7 @@
             return deferred.promise;
         } 
 
-
-        // // Start of getpic function
+        // Start of getpic function
         function getWithdraw(data) {
             // create a new instance of deferred
             var deferred = $q.defer();
@@ -889,17 +863,7 @@
             return defer.promise;      
         }
 
-
-
-
-
-
-
-
-        
-
-
-    }   
+    } // End of authService  
 })();
 
 
