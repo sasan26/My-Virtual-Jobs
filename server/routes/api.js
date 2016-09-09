@@ -93,7 +93,7 @@ router.get('/logout', function(req, res) {
     });
 });
 
-
+// status route
 router.get('/status', function(req, res) {
 
 
@@ -107,7 +107,7 @@ router.get('/status', function(req, res) {
     });
 });
 
-
+// profile route
 router.get('/profile', function(req, res) {
    User.findOne({
         _id: req.body.id
@@ -203,7 +203,7 @@ router.get('/score', function(req, res) {
     });
 });
 
-
+// school route
 router.post('/school', function(req, res) {
    
     var schoolScore = new School(req.body);
@@ -215,7 +215,7 @@ router.post('/school', function(req, res) {
     });                         
 });
 
-
+// school route
 router.get('/school', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = School.find({});
@@ -227,7 +227,7 @@ router.get('/school', function(req, res) {
         res.json(superheroes);});
 });
 
-
+// send payment route
 router.post('/payments', function(req, res) {
    
     var paymentVal = new Payment(req.body);
@@ -239,6 +239,7 @@ router.post('/payments', function(req, res) {
     });                         
 });
 
+// get payment route
 router.get('/payments', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = Payment.find({});
@@ -250,6 +251,7 @@ router.get('/payments', function(req, res) {
         res.json(superheroes);});
 });
 
+// update payment route
 router.put('/payments/:id', function(req, res) {  
    var id = req.params.id;
     Payment.update({ _id: mongoose.Types.ObjectId(id) }, {
@@ -260,6 +262,7 @@ router.put('/payments/:id', function(req, res) {
         });
 });
 
+// send payment history route
 router.post('/paymenthistory', function(req, res) {
    
     var sas = new PaymentHis(req.body);
@@ -271,6 +274,7 @@ router.post('/paymenthistory', function(req, res) {
     });                         
 });
 
+// get payment history route
 router.get('/paymenthistory', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = PaymentHis.find({});
@@ -282,6 +286,7 @@ router.get('/paymenthistory', function(req, res) {
         res.json(superheroes);});
 });
 
+// send income route
 router.post('/income', function(req, res) {
    
     var sas = new incomeHis(req.body);
@@ -293,6 +298,7 @@ router.post('/income', function(req, res) {
     });                         
 });
 
+// get income route
 router.get('/income', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = incomeHis.find({});
@@ -304,6 +310,7 @@ router.get('/income', function(req, res) {
         res.json(superheroes);});
 });
 
+// send payout route
 router.post('/payout', function(req, res) {
    
     var sas = new payoutHis(req.body);
@@ -315,6 +322,7 @@ router.post('/payout', function(req, res) {
     });                         
 });
 
+// get payout route
 router.get('/payout', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = payoutHis.find({});
@@ -326,6 +334,7 @@ router.get('/payout', function(req, res) {
         res.json(superheroes);});
 });
 
+// send analyze route
 router.post('/analys', function(req, res) {
    
     var sas = new analys(req.body);
@@ -337,6 +346,7 @@ router.post('/analys', function(req, res) {
     });                         
 });
 
+// get analyze route
 router.get('/analys', function(req, res) {
    //Query the DB and if no errors, send all the superheroes
     var query = analys.find({});
@@ -348,6 +358,7 @@ router.get('/analys', function(req, res) {
         res.json(superheroes);});
 });
 
+// update analyze route
 router.put('/analys/:id', function(req, res) {  
    var id = req.params.id;
     analys.update({ _id: mongoose.Types.ObjectId(id) }, {
@@ -358,6 +369,7 @@ router.put('/analys/:id', function(req, res) {
         });
 });
 
+// send msg route
 router.post('/msg', function(req, res) {
    
     var sas = new mesage(req.body);
@@ -369,6 +381,7 @@ router.post('/msg', function(req, res) {
     });                         
 });
 
+// get msg route
 router.get('/msg', function(req, res) {
    //Query the DB and if no errors, send all the sas
     var query = mesage.find({});
@@ -379,7 +392,6 @@ router.get('/msg', function(req, res) {
         //If no errors, send them back to the client
         res.json(sas);});
 });
-
 
 // post admin route
 router.post('/admin', function(req, res) {
@@ -413,10 +425,6 @@ router.delete('/admin/:id', function(req, res) {
                 res.json({ message: 'Deleted!' });            
         });
 });
-
-
-
-
 
 module.exports = router;
 

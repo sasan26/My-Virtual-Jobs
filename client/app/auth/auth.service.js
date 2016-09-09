@@ -42,8 +42,6 @@
             sendWithdraw: sendWithdraw,
             getWithdraw: getWithdraw,
             delWithdraw: delWithdraw
-
-
         };
 
         return service;
