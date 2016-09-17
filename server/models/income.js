@@ -1,27 +1,22 @@
-// user model
+// gamer income model ( gamer console - profile )
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var PayHis = new mongoose.Schema({
     
-    date: {
+    date: {   // income date
       type: String
     },
-    username: {
+    username: {   // gamer username
       type: String
     },
-    coins: {
+    coins: {    // income ( coins )
       type: String
     },
-    employer: {
+    employer: {   // partner name
       type: String
     }
-   
 });
-
-
-
 
 var income = mongoose.model('income', PayHis);
 module.exports = income;

@@ -1,27 +1,22 @@
-// user model
+// message model ( partner console )
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var Msg = new mongoose.Schema({
     
-    date: {
+    date: {   // msg date
       type: String
     },
-    username: {
+    username: {   // gamer username
       type: String
     },
-    subject: {
+    subject: {    // message subject
       type: String
     },
-    msg: {
+    msg: {    // message body
       type: String
-    }
-   
+    }   
 });
-
-
-
 
 var messageBox = mongoose.model('messageBox', Msg);
 module.exports = messageBox;

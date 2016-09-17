@@ -12,8 +12,6 @@
             $urlRouterProvider.otherwise('home'); // redirection
             filepickerProvider.setKey('AHJOdoEgQ9OJkRjndz7Jkz');
 
-
-
             //start router
         	$stateProvider
             .state('home', {    //first state for home.html
@@ -28,19 +26,19 @@
                 controller: 'authControllers as vm',
             })
 
-            .state('partner', {   //2nd state for partner.html
+            .state('partner', {   //3rd state for partner.html
                 url: '/partner', 
                 templateUrl: 'app/route/partner.html', 
                 controller: 'authControllers as vm',
             })
 
-            .state('success', {   //2nd state for partner.html
+            .state('success', {   //4th state for success.html
                 url: '/success', 
                 templateUrl: 'app/route/success.html', 
                 controller: 'authControllers as vm',
             })
 
-            .state('admin', {   //2nd state for partner.html
+            .state('admin', {   //5th state for admin.html
                 url: '/admin', 
                 templateUrl: 'app/route/admin.html', 
                 controller: 'authControllers as vm',

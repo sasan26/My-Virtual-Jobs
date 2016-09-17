@@ -1,27 +1,22 @@
-// user model
+// analyze model ( partner console )
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var Analys = new mongoose.Schema({
     
-    username: {
+    username: {     // gamer username
       type: String
     },
-    ad: {
+    ad: {     //  video ad
       type: String
     },
-    views: {
+    views: {    // number of views
       type: Number
     },
-    paid: {
+    paid: {     // total $ paid for the ad
       type: Number
-    }
-   
+    }   
 });
-
-
-
 
 var analys = mongoose.model('analys', Analys);
 module.exports = analys;

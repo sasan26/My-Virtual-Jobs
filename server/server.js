@@ -51,7 +51,6 @@ passport.deserializeUser(User.deserializeUser());
 
 // routes
 app.use('/user/', routes);
-//app.use('/superhero/', routes);
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
@@ -72,9 +71,9 @@ app.use(function(err, req, res) {
   }));
 });
 
-
-// launch ======================================================================
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// ~~~                  launch                  ~~~
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 app.listen(port, function(){
-  //and... we're live
   console.log('Server is running on port ' + port);
 });

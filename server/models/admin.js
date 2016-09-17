@@ -1,21 +1,17 @@
-// user model
+// admin model ( admin console )
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var Invoice = new mongoose.Schema({
     
-    date: {
+    date: {		// requested date
       type: String
     },
-    username: {
+    username: {		// requested gamer username
       type: String
     }
    
 });
-
-
-
 
 var invoice = mongoose.model('invoice', Invoice);
 module.exports = invoice;
